@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Fundamentos de gestión empresarial para ingenieros - 3&nbsp; Producción y costes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04-objetivos.html" rel="next">
+<link href="./02-mercado.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producción y costes</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Fundamentos de gestión empresarial para ingenieros</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Prólogo</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true"><strong>PARTE I: La empresa y los mercados</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-mercado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funcionamiento de los mercados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-costes.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producción y costes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-objetivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Los objetivos de la empresa</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true"><strong>PARTE II: Finanzas</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-contabilidad.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Contabilidad financiera</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-inversiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Análisis de inversiones y financiación</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true"><strong>PARTE III: Estrategia y planificación</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-interno.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis interno y externo de la empresa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-estrategia.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estrategias y ventajas competitivas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planificación, organización, ejecución y control</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Secciones</h2>
+   
+  <ul>
+  <li><a href="#objetivos-de-la-dirección-de-la-producción" id="toc-objetivos-de-la-dirección-de-la-producción" class="nav-link active" data-scroll-target="#objetivos-de-la-dirección-de-la-producción"><span class="toc-section-number">3.1</span>  Objetivos de la dirección de la producción</a></li>
+  <li><a href="#la-función-de-producción" id="toc-la-función-de-producción" class="nav-link" data-scroll-target="#la-función-de-producción"><span class="toc-section-number">3.2</span>  La función de producción</a></li>
+  <li><a href="#los-costes" id="toc-los-costes" class="nav-link" data-scroll-target="#los-costes"><span class="toc-section-number">3.3</span>  Los costes</a></li>
+  <li><a href="#cuestiones-y-problemas" id="toc-cuestiones-y-problemas" class="nav-link" data-scroll-target="#cuestiones-y-problemas"><span class="toc-section-number">3.4</span>  Cuestiones y problemas</a>
+  <ul class="collapse">
+  <li><a href="#cuestiones-y-problemas-resueltos" id="toc-cuestiones-y-problemas-resueltos" class="nav-link" data-scroll-target="#cuestiones-y-problemas-resueltos"><span class="toc-section-number">3.4.1</span>  Cuestiones y problemas resueltos</a></li>
+  <li><a href="#cuestiones-y-problemas-propuestos" id="toc-cuestiones-y-problemas-propuestos" class="nav-link" data-scroll-target="#cuestiones-y-problemas-propuestos"><span class="toc-section-number">3.4.2</span>  Cuestiones y problemas propuestos</a></li>
+  </ul></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><strong>Referencias</strong></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-chap3" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producción y costes</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>La función de producción de la empresa consiste en crear bienes y servicios para satisfacer las necesidades de los clientes. Es un sistema que se alimenta de una serie de entradas, que son procesadas para generar unas salidas. En este libro nos vamos a mantener a un nivel general que nos permite englobar dentro del mismo esquema empresas tan dispares como una panadería de barrio o una central nuclear.</p>
+<section id="objetivos-de-la-dirección-de-la-producción" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="objetivos-de-la-dirección-de-la-producción"><span class="header-section-number">3.1</span> Objetivos de la dirección de la producción</h2>
+<p>Podemos destacar seis objetivos en la dirección de la producción (o <strong>de operaciones</strong>):</p>
+<ol type="1">
+<li>Reducción de costes para lograr mayor eficiencia.</li>
+<li>Mejora de la calidad. En realidad este es un objetivo de toda la organización.</li>
+<li>Aumento de flexibilidad, para poder adaptarse a los cambios continuos en el entorno, la demanda, etc.</li>
+<li>Cumplimiento de las entregas para mantener y aumentar la base de clientes.</li>
+<li>Servicio al cliente. Cada vez con más frecuencia los bienes vienen acompañados de una serie de servicios adicionales que los hacen más atractivos.</li>
+<li>Desde algunos años se ha añadido el cuidado del medio ambiente.</li>
+</ol>
+<p>Aunque puede haber relaciones positivas entre estos objetivos, también hay conflictos. Basta con fijarse en el primero para ver que está en contradicción con todos los demás, puesto que un afán excesivo por reducir costes puede llevar a no cumplir con algunos de los demás.</p>
+<p>La organización de la producción desde cero conlleva una serie de decisiones que podemos dividir en dos categorías:</p>
+<ol type="1">
+<li><p><strong>Estratégicas</strong>: son aquellas decisiones con repercusión a largo plazo. Resultan cruciales para el futuro desarrollo de la empresa. Una mala elección de cualquiera de ellas puede hacerla inviable. Las principales son:</p>
+<ul>
+<li>Decidir qué bienes o servicios se van a producir.</li>
+<li>Tecnología que se va a usar.</li>
+<li>Planificación de trabajo. Cantidad, competencias, organización.</li>
+<li>Capacidad a largo plazo, relacionado estrechamente con el tamaño de la empresa.</li>
+<li>Localización de la empresa.</li>
+<li>En aquellos empresas que conllevan producción física, es muy importante seleccionar una buena distribución en planta.</li>
+</ul></li>
+<li><p><strong>Tácticas</strong>: son aquellas decisiones a corto plazo, por tanto más rutinarias y estructuradas. Si bien son importantes, pueden modificarse en el curso de la producción a medida que se detecten errores. Por su naturaleza se trata de multitud de decisiones en muchos ámbitos, como en la satisfacción de la demanda, el control de la planificación, flujo de materiales, etc. Hay dos ámbitos especialmente relevantes con un impacto importante en los costes:</p>
+<ul>
+<li><strong>Cadena de suministro</strong> que integra y sincroniza los flujos de materiales, los servicios y la información que se producen con los proveedores y con los clientes.</li>
+<li><strong>Gestión de inventarios</strong> mediante técnicas para calcular cuánto y cuándo pedir entradas de forma que no se produzcan <em>roturas de stock</em> ni haya costes excesivos de almacenamiento.</li>
+</ul></li>
+</ol>
+</section>
+<section id="la-función-de-producción" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="la-función-de-producción"><span class="header-section-number">3.2</span> La función de producción</h2>
+<p>Para conseguir los objetivos de la empresa, el empresario tiene que combinar toda una serie de factores de producción, además de organizar todas las áreas de la empresa (logística, recursos humanos, finanzas, etc.) y utilizar procesos, procedimientos, métodos y técnicas para que la producción se haga de forma <strong>eficiente</strong> y con <strong>eficacia</strong>. La eficacia es la capacidad de cumplir con la finalidad que se desea. La eficiencia implica además hacerlo con el uso mínimo de recursos posible y en general se mide a través de la <strong>productividad</strong> que es un cociente entre algún tipo de producto y recursos utilizados en su consecución (o, más en general como el cociente entre salidas y entradas).</p>
+<p>En todo proceso productivo hay que tener en cuenta aspectos técnicos y económicos:</p>
+<ul>
+<li>Los aspectos <strong>técnicos</strong> tienen que ver con el hecho de que la producción supone la transformación física de entradas, que desaparecen como tales, en salidas. No siempre existe transformación física, como es el caso de las empresas de distribución. Una empresa que simplemente distribuya un producto también produce un servicio, se puede decir que también está transformando recursos para producir un servicio, es decir, también está produciendo.</li>
+<li>De nada sirve conocer una forma novedosa de producir un producto nuevo si los aspectos <strong>económicos</strong> no acompañan. Podemos dividirlos en dos tipos:
+<ul>
+<li>El hecho de producir lleva ineludiblemente a incurrir en <strong>costes de producción</strong>. La compra de factores de producción y toda la organización de la empresa consume recursos. El empresario estará interesado en encontrar la combinación eficiente de factores que consiga el mayor nivel de producción para un nivel de coste dado, o bien el mínimo coste para un nivel de producción dado. Un producto que resulta excesivamente costoso será difícilmente comercializable, por muy importante que sea la necesidad que intenta satisfacer.</li>
+<li>La <strong>demanda</strong> del producto es fundamental. Un producto que en la mente del empresario resuelve problemas cruciales de la Humanidad, pero que no sea percibido así por los potenciales clientes está condenado al fracaso, aunque se sepa cómo producirlo y se haga de forma eficiente. El empresario está irremisiblemente ligado a sus clientes e intentará que sean fieles, cosa que resulta muy complicado, porque la demanda puede ser muy caprichosa.</li>
+</ul></li>
+</ul>
+<p>Matemáticamente, la función de producción se puede formular como la <a href="#eq-fp">Ecuación&nbsp;<span>3.1</span></a>. Se puede definir como una relación entre la cantidad de un bien o servicio <span class="math inline">\(x_i\)</span> y los factores de producción necesarios para obtenerlo por unidad de tiempo. Se suele utilizar <span class="math inline">\(K\)</span> para designar el capital y <span class="math inline">\(L\)</span> como trabajo. Si la unidad de tiempo es lo suficientemente corta como para que algunos factores de producción no puedan cambiar, podremos distinguir entre <strong>factores fijos</strong>, aquellos que no pueden cambiar en el corto plazo, y <strong>factores variables</strong>, aquellos que sí pueden variar.</p>
+<p><span id="eq-fp"><span class="math display">\[
+x_i = f(K, L, M, \dots)
+\tag{3.1}\]</span></span></p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Los factores fijos son necesarios en una determinada proporción y son independientes del nivel de producción, mientras que los variables dependen del nivel de producción. Si la producción es nula el coste fijo tiene una cantidad determinada, pero el coste variables será cero. Si se produce mucho el coste fijo será el mismo, pero el coste variables será muy grande.</p>
+<p>Los costes fijos, sin embargo, pueden variar en el tiempo, porque la definición de coste fijo se hace respecto al nivel de producción.</p>
+<p>A largo plazo, por definición, todos los factores son variables.</p>
+</div>
+</div>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Haz una enumeración de los factores de producción fijos y variables de Mercadona para un plazo de seis meses.</p>
+</div>
+<div id="tabset-1-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Factores variables: prácticamente el único factor variable son los productos que vende.</p>
+<p>Factores fijos: energía, personal, alquileres o propiedad de edificios y otro inmovilizado, seguros, etc.</p>
+<p>Aunque en este ejemplo el factor trabajo (personal contratado) se considera fijo, puesto que los sueldos se pagan independientemente de que se venda mucho o poco, en general se va a considerar un factor variable.</p>
+</div>
+</div>
+</div>
+<p>No toda función matemática es una auténtica función de producción, puesto que tiene que ser al menos monótona creciente, es decir, cualquier aumento de cualquiera de los factores tiene que producir un aumento de producción o al menos tiene que dejar la producción sin variar, pero nunca puede provocar una disminución. Los factores, además, podrán ser sustitutivos unos de otros si luchan entre sí por hacerse un sitio en el proceso producitivo, o complementarios si se tienen que utilizar conjuntamente.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Factores fijos y variables
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Al hablar de funciones de producción abstractas se suelen considerar funciones con dos factores de producción: trabajo (representando a los factores variables) y capital (factores fijos).</p>
+</div>
+</div>
+<p>Un aspecto crucial de las funciones de producción es el concepto de <strong>rendimiento a escala</strong>, que indica la forma cómo varía la producción cuando cambia la escala de producción, cuando los factores de producción varían en una determinada proporción. Los rendimientos pueden ser <strong>constantes</strong>, <strong>crecientes</strong> o <strong>decrecientes</strong> cuando al incrementar todos los factores de producción simultáneamente en una proporción, la producción aumenta en la misma proporción, en una proporción mayor o menor, respectivamente. Si esa constante es 2 diremos que los rendimientos son constantes, crecientes o decrecientes cuando al duplicar todos los factores de producción simultáneamente la producción queda mutiplicada por 2, más de 2 o menos de 2, respectivamente.</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Calcula los rendimientos de las siguientes funciones de producción Cobb-Douglas utilizando su definición (<span class="math inline">\(A\)</span>, <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son constantes positivas):</p>
+<ul>
+<li><span class="math inline">\(x_i=f(L)=AL^{0,5}\)</span>.</li>
+<li><span class="math inline">\(x_i=f(L)=AL\)</span>.</li>
+<li><span class="math inline">\(x_i=f(L)=AL^{1,1}\)</span>.</li>
+<li><span class="math inline">\(x_i=f(L)=AL^a\)</span>.</li>
+<li><span class="math inline">\(x_i=f(L,K)=AL^aK^b\)</span>.</li>
+</ul>
+</div>
+<div id="tabset-2-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<ul>
+<li><span class="math inline">\(x_i=f(L)=AL^{0,5}\)</span>.</li>
+</ul>
+<p>Si multiplicamos todos los factores de producción por una constante arbitraria <span class="math inline">\(m\)</span> tenemos</p>
+<p><span class="math display">\[
+f(mL)=A(mL)^{0,5}=m^{0,5}AL^{0,5}=m^{0,5}f(L),
+\]</span> de donde se obtiene que los rendimientos son decrecientes. Si la constante es 2 tenemos que duplicando los factores de producción hacen crecer la producción en <span class="math inline">\(\sqrt 2\)</span> solamente.</p>
+<ul>
+<li><span class="math inline">\(x_i=f(L)=AL\)</span>.</li>
+</ul>
+<p>Se trata de una función lineal (que además es Cobb-Douglas).</p>
+<p><span class="math display">\[
+f(mL)=A(mL)=mAL=mf(L).
+\]</span></p>
+<ul>
+<li><span class="math inline">\(x_i=f(L)=AL^{1,1}\)</span>.</li>
+</ul>
+<p>Tiene rendimientos crecientes, puesto que</p>
+<p><span class="math display">\[
+f(mL)=A(mL)^{1,1}=m^{1,1}AL^{1,1}=m^{1,1}f(L)
+\]</span></p>
+<p>Duplicar los factores significa incrementar la producción en más del doble.</p>
+<ul>
+<li><span class="math inline">\(x_i=f(L)=AL^a\)</span>.</li>
+</ul>
+<p>Este caso engloba como casos particulares a todos los anteriores.</p>
+<p><span class="math display">\[
+f(mL)=A(mL)^{a}=m^{a}AL^{a}=m^{a}f(L)
+\]</span></p>
+<p>La función tendrá rendimientos crecientes si <span class="math inline">\(a&gt;1\)</span>, constantes si <span class="math inline">\(a=1\)</span> y decrecientes si <span class="math inline">\(a&lt;1\)</span>.</p>
+<ul>
+<li><span class="math inline">\(x_i=f(L,K)=AL^aK^b\)</span>.</li>
+</ul>
+<p>Este es un caso Cobb-Douglas con dos factores de producción.</p>
+<p><span class="math display">\[
+f(mL,mK)=A(mL)^{a}(mK)^b=m^{a+b}AL^{a}K^b=m^{a+b}f(L)
+\]</span></p>
+<p>Ahora los rendimientos serán crecientes si <span class="math inline">\(a+b&gt;1\)</span>, constantes si <span class="math inline">\(a+b=1\)</span> y decrecientes si <span class="math inline">\(a+b&lt;1\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+¡Cuidado!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Los tipos de rendimiento se han definido para incrementos de factores. En el caso de reducciones el razonamiento se invierte (probar con constante <span class="math inline">\(m&lt;1\)</span> en los casos anteriores). El lector debe asegurarse de entender la siguiente frase para estar seguro de que se entiende el concepto: <em>si al reducir todos los factores de producción a la mitad la producción se reduce a menos de la mitad (por ejemplo, a la cuarta parte) los rendimientos son CRECIENTES</em>.</p>
+</div>
+</div>
+<p>El cálculo de los rendimientos de una función de producción se puede realizar utilizando la definición directamente o mediante el signo de la forma cuadrática en la <a href="#eq-fc">Ecuación&nbsp;<span>3.2</span></a>, que en definitiva analiza la convexidad de la función de producción. Si <span class="math inline">\(F&lt;0\)</span> los rendimientos serán decrecientes, <span class="math inline">\(F=0\)</span> será indicativo de que los rendimientos son constantes y <span class="math inline">\(F&gt;0\)</span> implicará redimientos crecientes.</p>
+<p><span id="eq-fc"><span class="math display">\[
+F = \left[ \begin{array}{cccc} K &amp; L &amp; M &amp; \dots \end{array} \right]
+    \left[ \begin{array}{cccc}
+      \frac{\partial ^2 f}{\partial K^2} &amp; \frac{\partial ^2 f}{\partial K \partial L} &amp;                \frac{\partial ^2 f}{\partial K \partial M} &amp; \dots \\
+      \frac{\partial ^2 f}{\partial L \partial K} &amp; \frac{\partial ^2 f}{\partial L^2} &amp;                \frac{\partial ^2 f}{\partial L \partial M} &amp; \dots \\
+      \frac{\partial ^2 f}{\partial M \partial K} &amp; \frac{\partial ^2 f}{\partial M \partial L} &amp;                \frac{\partial ^2 f}{\partial M^2} &amp; \dots \\
+      \vdots &amp; \vdots &amp; \vdots &amp; \ddots
+    \end{array} \right]
+    \left[ \begin{array}{c} K \\ L \\ M \\ \vdots \end{array} \right]
+\tag{3.2}\]</span></span></p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Calcula los rendimientos de las siguientes funciones de producción utilizando la forma cuadrática de la <a href="#eq-fc">Ecuación&nbsp;<span>3.2</span></a> (<span class="math inline">\(A\)</span>, <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son dos constantes positivas):</p>
+<ul>
+<li><span class="math inline">\(x_i=f(L)=AL^{0,5}\)</span>.</li>
+<li><span class="math inline">\(x_i=f(L)=AL\)</span>.</li>
+<li><span class="math inline">\(x_i=f(L)=AL^{1,1}\)</span>.</li>
+<li><span class="math inline">\(x_i=f(L)=AL^a\)</span>.</li>
+<li><span class="math inline">\(x_i=f(L,K)=AL^aK^b\)</span>.</li>
+<li><span class="math inline">\(x_i=f(L,K)=ln(LK + 1)\)</span></li>
+</ul>
+</div>
+<div id="tabset-3-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<ul>
+<li><span class="math inline">\(x_i=f(L)=AL^{0,5}\)</span>.</li>
+</ul>
+<p>Al tratarse de una función con un solo factor de producción el signo de la forma cuadrática es el mismo que de la segunda derivada de la función, por tanto:</p>
+<p><span class="math display">\[
+\frac{\partial f}{\partial L}=A0,5L^{-0,5}; \,\,\,\, \frac{\partial^2 f}{\partial L^2}=A0,5(-0,5)L^{-1,5}&lt;0.
+\]</span> Los rendimientos son decrecientes porque el signo de la forma cuadrática es negativo.</p>
+<ul>
+<li><span class="math inline">\(x_i=f(L)=AL\)</span>.</li>
+</ul>
+<p><span class="math display">\[
+\frac{\partial f}{\partial L}=A; \,\,\,\, \frac{\partial^2 f}{\partial L^2}=0.
+\]</span> Rendimientos constantes.</p>
+<ul>
+<li><span class="math inline">\(x_i=f(L)=AL^{1,1}\)</span>.</li>
+</ul>
+<p><span class="math display">\[
+\frac{\partial f}{\partial L}=A1,1L^{0,1}; \,\,\,\, \frac{\partial^2 f}{\partial L^2}=A1,1(0,1)L^{-0,9}&gt;0.
+\]</span></p>
+<p>Rendimientos crecientes.</p>
+<ul>
+<li><span class="math inline">\(x_i=f(L)=AL^a\)</span>.</li>
+</ul>
+<p><span class="math display">\[
+\frac{\partial f}{\partial L}=AaL^{a-1}; \,\,\,\, \frac{\partial^2 f}{\partial L^2}=Aa(a-1)L^{a-2}.
+\]</span></p>
+<p>El signo del hessiano es el mismo que el signo de <span class="math inline">\(a-1\)</span>, por tnato, la función tendrá rendimientos crecientes si <span class="math inline">\(a&gt;1\)</span>, constantes si <span class="math inline">\(a=1\)</span> y decrecientes si <span class="math inline">\(a&lt;1\)</span>.</p>
+<ul>
+<li><span class="math inline">\(x_i=f(L,K)=AL^aK^b\)</span>.</li>
+</ul>
+<p>Calculando las derivadas primeras y segundas:</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+\frac{\partial f}{\partial L}=AaL^{a-1}K^b &amp; \frac{\partial^2 f}{\partial L^2}=Aa(a-1)L^{a-2}K^b \\
+\frac{\partial f}{\partial K}=AbL^aK^{b-1} &amp; \frac{\partial^2 f}{\partial K^2}=Ab(b-1)L^{a}K^{b-2} \\
+\frac{\partial^2 f}{\partial K\partial L}=AabL^{a-1}K^{b-1} &amp; \\
+\end{array}
+\]</span></p>
+<p>La forma cuadrática es</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+F= &amp; \left[ \begin{array}{cc} L &amp; K \end{array} \right]
+\left[ \begin{array}{cc} Aa(a-1)L^{a-2}K^b &amp;  AabL^{a-1}K^{b-1} \\
+        AabL^{a-1}K^{b-1} &amp; Ab(b-1)L^{a}K^{b-2}\end{array} \right]
+\left[ \begin{array}{c} L \\ K \end{array} \right]= \\
+= &amp;\left[ \begin{array}{c} Aa(a-1)L^{a-1}K^b+AabL^{a-1}K^{b} \\ AabL^{a}K^{b-1}+Ab(b-1)L^{a}K^{b-1} \end{array} \right]'
+\left[ \begin{array}{c} L \\ K \end{array} \right]=\\
+=&amp; Aa(a-1)L^{a}K^b + 2AabL^{a}K^{b}+Ab(b-1)L^{a}K^{b}=\\
+=&amp; A[a^2-a+2ab+b^2-b]L^{a}K^{b}\\
+=&amp;A[(a+b)(a+b-1)]L^{a}K^b
+\end{array}
+\]</span></p>
+<p>El signo depende del signo de <span class="math inline">\(a+b-1\)</span>, de donde se obtiene que si <span class="math inline">\(a+b=1\)</span> los rendimientos son constantes, si <span class="math inline">\(a+b&lt;1\)</span> los rendimientos son crecientes y si <span class="math inline">\(a+b&gt;1\)</span> los rendimientos son crecientes. Como se ve el proceso es mucho más engorroso que aplicar directamente la definición.</p>
+<ul>
+<li><span class="math inline">\(x_i=f(L,K)=ln(LK + 1)\)</span>.</li>
+</ul>
+<p><span class="math display">\[
+\begin{array}{ll}
+\frac{\partial f}{\partial L}=K/(LK+1) &amp; \frac{\partial^2 f}{\partial L^2}=-K^2/(LK+1)^2 \\
+\frac{\partial f}{\partial K}=L/(LK+1) &amp; \frac{\partial^2 f}{\partial K^2}=-L^2/(LK+1)^2 \\
+\frac{\partial^2 f}{\partial K\partial L}=1/(LK+1)^2 &amp;\\
+\end{array}
+\]</span></p>
+<p>Al tener todas las derivadas segundas el mismo divisor positivo, el signo de la forma cuadrática seá el mismo que otra equivalente en la que se prescinde de todos los denominadores. Tenemos</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+F= &amp; \left[ \begin{array}{cc} L &amp; K \end{array} \right]
+\left[ \begin{array}{cc} -K^2 &amp;  1 \\
+        1 &amp; -L^2 \end{array} \right]
+\left[ \begin{array}{c} L \\ K \end{array} \right]= \\
+= &amp;\left[ \begin{array}{cc} K-LK^2 &amp; L-L^2K \end{array} \right]
+\left[ \begin{array}{c} L \\ K \end{array} \right]=\\
+=&amp; 2(LK-L^2K^2)\\
+\end{array}
+\]</span></p>
+<p>Se trata de una función de producción que presenta todos los tipos posibles de rendimientos, puesto que el signo de la forma cuadrática depende de los valores que tomen <span class="math inline">\(L\)</span> y <span class="math inline">\(K\)</span>. Los rendimientos serán decrecientes si <span class="math inline">\(KL&gt;1\)</span>, serán constantes siempre que <span class="math inline">\(KL=1\)</span> y crecientes cuando <span class="math inline">\(KL&lt;1\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Empresas de distribución
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Las empresas de distribución tienen rendimientos a escala constantes, puesto que no tienen un proceso de producción propiamente dicho en el que se transformen materias primas en productos terminados. Simplemente venden lo que compran aplicando un margen comercial.</p>
+</div>
+</div>
+<p>En el panel izquierdo de la <a href="#fig-fig31">Figura&nbsp;<span>3.1</span></a> se representa tres funciones de producción con los distintos tipos de rendimientos. Se puede considerar que se trata de una función que depende de un solo factor o una función de producción con varios factores, pero el gráfico se realiza para determinados valores fijos de todos los demás factores. No debemos olvidar que las funciones de producción pueden tener distintos tipos de rendimiento por regiones. Por ejemplo, la función del panel derecho muestra rendimientos crecientes para valores <span class="math inline">\(L&lt;L^0\)</span> y decrecientes para el resto.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-fig31" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="fig31.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;3.1: Funciones de producción con distintos tipos de rendimientos.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>Identifica los factores de producción que son necesarios para producir conocimiento de gestión empresarial. ¿Qué tipo de rendimientos tiene?</p>
+</div>
+<div id="tabset-4-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>Existen factores fijos que son los materiales que se utilizan, los profesores, las clases, etc. El factor fijo más importante sin duda es la capacidad que tiene cada uno para asimilar la materia.</p>
+<p>El factor variable por excelencia es el tiempo dedicado al estudio. Cuando los conocimientos son muy pequeños cualquier hora dedicada al estudio da la impresión de añadir mucho conocimiento (rendimientos crecientes), pero a medida que sabemos más y más de una materia nos cuesta más añadir conocimiento adicional (rendimientos decrecientes).</p>
+</div>
+</div>
+</div>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>¿Qué rendimientos tiene la función de producción <span class="math inline">\(x_i=-L^3+9L^2+100L\)</span>?</p>
+</div>
+<div id="tabset-5-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>Al tratarse de una función con un solo factor de producción, los rendimientos dependen del signo de la segunda derivada. Por tanto</p>
+<p><span class="math display">\[
+\begin{array}{l}
+\frac{\partial x_i}{\partial L} = -3L^2+18L+100 \\
+\frac{\partial^2 x_i}{\partial L^2} = -6L+18 \\
+\end{array}
+\]</span> Esta segunda derivada será positiva (rendimientos crecientes) para valores <span class="math inline">\(L&lt;3\)</span> y será negativa (rendimientos decrecientes) para valores <span class="math inline">\(L&gt;3\)</span>. Su representación gráfica se parece al panel derecho de la <a href="#fig-fig31">Figura&nbsp;<span>3.1</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recuerda que las funciones de producción pueden tener todos los tipos de rendimiento simultáneamente dependiendo de la región en la que se midan. De hecho, solemos pensar que tienen un tramo de rendimientos crecientes cuando se utilizan poco los factores y que se van convirtiendo en decrecientes a medida que los utilizamos con mayor intensidad.</p>
+</div>
+</div>
+</section>
+<section id="los-costes" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="los-costes"><span class="header-section-number">3.3</span> Los costes</h2>
+<p>Hasta aquí hemos tenido en cuenta solo las consideraciones técnicas asociadas a la producción. Los costes son la primera consideración económica que hay que tener en cuenta. La segunda será la demanda y se especificará en el siguiente capítulo.</p>
+<p>Los costes van inexorablemente unidos a la producción. Si se quiere producir mucho, habrá que utilizar muchos factores y por tanto se incurrirá en costes elevados. Al margen de esta cuestión elemental, lo que es relevante es asegurarse de que para cualquier nivel de producción que se elija se utiliza una combinación de factores que proporciona el menor coste posible. Otra forma de verlo es que, elegido un nivel de coste dado se consiga el mayor nivel de producción posible.</p>
+<p>Los costes pueden ser <strong>fijos</strong> y <strong>variables</strong>. Los costes fijos son aquellos asociados a los factores fijos a corto plazo y por tanto son costes que no varían con el nivel de producción. Por el contrario, los variables son aquellos que varían con el nivel de producción porque van asociados a los factores variables. Llamamos <strong>coste total</strong> al gasto en el que incurre la empresa al utilizar determinadas combinaciones de factores en su proceso de producción. Su formulación es elemental,</p>
+<p><span class="math display">\[
+CT=CF+CV=rK+wL+hM+\dots
+\]</span></p>
+<p>En la ecuación anterior <span class="math inline">\(r\)</span>, <span class="math inline">\(w\)</span> y <span class="math inline">\(h\)</span> son los precios por unidad de los facatores <span class="math inline">\(K\)</span>, <span class="math inline">\(L\)</span> y <span class="math inline">\(M\)</span>, respectivamente. De forma que <span class="math inline">\(rK\)</span> es el gasto en unidades monetarias de la empresa por utilizar el factor <span class="math inline">\(K\)</span> y así sucesivamente. A su vez, el coste total se divide en coste fijo y variable, que serán los gastos en todos los factores fijos y variables, respectivamente. Así, si <span class="math inline">\(K\)</span> es el único factor fijo tendremos que <span class="math inline">\(CF=rK\)</span> y <span class="math inline">\(CV=wL+hM+\dots\)</span>.</p>
+<p>A lo largo de este capítulo hemos visto dos funciones que dependen de las mismas variables exógenas, la función de producción y de coste total. Esto hace que la producción <span class="math inline">\(x_i\)</span> y el coste total <span class="math inline">\(CT\)</span> estén relacionados entre sí. Obviamente, dadas cantidades de todos los factores y los precios por unidad de todos ellos obtenemos automáticamente la producción y el coste total que les corresponde.</p>
+<p>Un aspecto importante en este punto es subrayar que vamos a suponer que los mercados de factores y de bienes y servicios son de competencia perfecta. Eso quiere decir que para el empresario individual todos los precios están dados, son datos que tiene que asumir como le vienen, tanto si le favorecen como si le perjudican.</p>
+<p>Lo anterior nos lleva a preguntarnos si podemos explicitar la relación que hay entre las dos funciones y la respuesta es sí. El caso de un solo factor es inmediato, pero no sucede lo mismo cuando tenemos varios factores, en cuyo caso hace falta manipulaciones adicionales.</p>
+<p>Supongamos una función de producción Cobb-Douglas con un factor de producción fijo <span class="math inline">\(K\)</span> y otro variable <span class="math inline">\(L\)</span>, es decir, <span class="math inline">\(x_i = K^a L^b\)</span>. Hay que hacer notar que, puesto que <span class="math inline">\(K\)</span> no puede variar, en realidad <span class="math inline">\(K^a\)</span> es una magnitud fija positiva que podemos llamar <span class="math inline">\(A\)</span>, con lo que la función de producción es <span class="math inline">\(x_i=A L^b\)</span>. La función de producción se puede reescribir como <span class="math inline">\(x_i=AL^b\)</span>, conde <span class="math inline">\(A\)</span> es una constante positiva. La función de costes totales es <span class="math inline">\(CT=rK+wL=CF+CV=CF+wL\)</span>, donde <span class="math inline">\(CF\)</span> es una magnitud fija independiente del nivel de producción. Si asumimos rendimientos decrecientes, por ejemplo, <span class="math inline">\(b=0,5\)</span>, la función de costes totales se puede escribir como</p>
+<p><span class="math display">\[
+CT=CF+wL=CF+w A^{-2} x_i^{2}.
+\]</span></p>
+<p>Esta expresión no depende de los factores de producción, aunque sí de sus precios. Hemos hecho en realidad un cambio de variable, pasando de una relación entre coste total y cantidades de factores al coste total en función del nivel de producción. La <a href="#fig-fig32">Figura&nbsp;<span>3.2</span></a> representa la función de producción y las funciones de coste total, fijo y variable de este ejemplo.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-fig32" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="fig32.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;3.2: Función de producción con rendimientos decrecientes y funciones de coste total, fijo y variable asociadas.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<p>Considera la función de producción <span class="math inline">\(x_i=AL^{1,1}\)</span>, calcula y representa gráficamente las funciones de coste total, fijo y variable. ¿Qué sucede si aumenta el salario?</p>
+</div>
+<div id="tabset-6-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<p>Considera la función de producción <span class="math inline">\(x_i=AL^{1,1}\)</span>, calcula y representa gráficamente las funciones de coste total, fijo y variable. ¿Qué sucede si aumenta el salario?</p>
+<p>La función tiene rendimientos crecientes, como indica la figura. Si aumenta el salario las curvas de costes tienen mayor pendiente. Es decir, para la misma cantidad de factor, el coste total es mayor.</p>
+<p><span class="math display">\[
+CT=CF+wL=CF+wA^{-1/1,1}x_i^{1/1,1}
+\]</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figRendCrec.png" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<p>Considera la función de producción <span class="math inline">\(x_i=AL\)</span>, calcula y representa gráficamente las funciones de coste total, fijo y variable.</p>
+</div>
+<div id="tabset-7-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<p><span class="math display">\[
+CT=CF+wL=CF+wx_i/A
+\]</span></p>
+<p>La función de producción es lineal y Cobb-Douglas y las funciones de costes son lineales también, pero no Cobb-Douglas.</p>
+</div>
+</div>
+</div>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<p>¿Qué efecto tendría una mejora de la tecnología en la función de producción <span class="math inline">\(x_i=AL^{0,5}\)</span> y los costes?</p>
+</div>
+<div id="tabset-8-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<p>La mejora tecnológica hace que con la misma cantidad de trabajo se produzca una cantidad superior de bienes y servicios. Esto hace que la función de producción se desplace hacia arriba manteniendo el origen de coordenadas fijo. Se puede simular considerando <span class="math inline">\(x_i=AL^{0,8}\)</span> la función de producción con mejor tecnología.</p>
+<p>Los costes totales pasaría de ser <span class="math inline">\(CT=CF+A^{-2}x_i^2\)</span> a <span class="math inline">\(CT=CF+A^{-1/0,8}x_i^{1/0,8}\)</span>. Los cambios se muestran en la figura. Se puede ver cómo la mayor producción va asociada a costes más bajos.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figProdCrec.png" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="cuestiones-y-problemas" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="cuestiones-y-problemas"><span class="header-section-number">3.4</span> Cuestiones y problemas</h2>
+<section id="cuestiones-y-problemas-resueltos" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="cuestiones-y-problemas-resueltos"><span class="header-section-number">3.4.1</span> Cuestiones y problemas resueltos</h3>
+<ol class="example" type="1">
+<li>Una empresa se dedica a la realización de zanjas y agujeros de todas clases en el pavimento de Ciudad Real. La tecnología utilizada es rudimentaria; cada agujero es perforado por un obrero auxiliado de un pico. Identifica los factores de producción. ¿Qué tipo de rendimientos tiene esta función de producción?</li>
+</ol>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
+
+</div>
+<div id="tabset-9-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
+<p>Los factores de producción son los obreros y los picos. La función de producción tiene rendimientos constantes. Los factores son perfectamente complementarios, puesto que cada obrero necesita exactamente un pico.</p>
+</div>
+</div>
+</div>
+<ol start="2" class="example" type="1">
+<li>Una empresa presta un servicio por 20€ por unidad. Sus costes vienen dados por <span class="math inline">\(CT=0,1x_i^2+10x_i+5\)</span>. Calcula la cantidad que debe producir para maximizar el beneficio y los beneficios máximos.</li>
+</ol>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-10-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
+
+</div>
+<div id="tabset-10-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
+<p>La función de beneficio es <span class="math inline">\(\pi=IT-CT=P_i x_i-0,1x_i^2-10x_i-5\)</span>. Derivando e igualando a cero tenemos <span class="math inline">\(0=P_i x_i-0,1x_i^2-10x_i-5\)</span>. Despejando de esta expresión la cantidad tenemos la función de oferta del bien. Sustituyendo el precio por 20 tenemos que la cantidad óptima es 50 unidades. Para esa cantidad los beneficios son 245.</p>
+</div>
+</div>
+</div>
+<ol start="3" class="example" type="1">
+<li><p>La función de producción de una empresa en régimen de competencia perfecta es <span class="math inline">\(x_i=50L-L^2\)</span>. La curva de oferta en el mercado de trabajo es <span class="math inline">\(L=5+0,75w\)</span>.</p>
+<ol type="a">
+<li>¿Qué tipo de rendimientos tiene la función de producción? Si el precio del bien que vende es de 2, calcula la demanda de trabajo y el salario y cantidad de trabajo de equilibrio.</li>
+<li>Si el precio del bien sube hasta 4, ¿qué ocurrirá con el salario de equilibrio y la cantidad de trabajo contratada? Representa gráficamente las dos situaciones.</li>
+</ol></li>
+</ol>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-11-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
+
+</div>
+<div id="tabset-11-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
+<ol type="a">
+<li><p>Calculando la segunda derivada de la función de producción tenemos que es negativa siempre, lo que implica que los rendimientos son decrecientes. La demanda de trabajo se calcula maximizando el beneficio <span class="math inline">\(\pi=P_i x_i-wL=P_i (50L-L^2 )-wL\)</span>. <span class="math inline">\(\partial \pi/\partial L=0=P_i (50-2L)-w\)</span>, de donde la demanda de trabajo será <span class="math inline">\(L=25-w/(2P_i)\)</span>, que sustituyendo el precio del bien será <span class="math inline">\(L=25-w/4\)</span>. El equilibrio se obtendrá igualando la demanda a la oferta, <span class="math inline">\(25-w/4=5+0,75w\)</span>. El equilibrio es <span class="math inline">\(w=20\)</span> y <span class="math inline">\(L=20\)</span>.</p></li>
+<li><p>Si el precio del bien se duplica la demanda de trabajo pasa a ser <span class="math inline">\(L=25-w/8\)</span>, es decir, aumenta y el equilibrio es <span class="math inline">\(w=22,85\)</span> y <span class="math inline">\(L=22,13\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<ol start="4" class="example" type="1">
+<li>Demuestra que la curva de costes marginales es la función de oferta para un empresario en competencia perfecta. ¿Es el beneficio de un empresario constante a lo largo de la curva de oferta con pendiente positiva? ¿Cómo se relaciona el concepto de excedente del productor con la curva de oferta?</li>
+</ol>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-12-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
+
+</div>
+<div id="tabset-12-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
+<p>La demanda de un solo productor en competencia perfecta es completamente elástica, es decir, puede vender todo lo que quiera al precio de mercado. A su vez el ingreso marginal es exactamente el precio de mercado. Si igualamos el ingreso marginal (o precio) al coste marginal para todos los precios posibles para maximizar el beneficio tenemos que las combinaciones de precios y cantidades que maximizan el beneficio para el productor lo da precisamente la curva de costes marginales.</p>
+<p>Siempre que los costes crezcan más despacio que los ingresos cuando aumenta el precio de un bien los beneficios crecerán a medida que aumenta el precio. También aumenta el excedente del productor, por lo que hay una relación directa entre dicho excedente y beneficio.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="cuestiones-y-problemas-propuestos" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="cuestiones-y-problemas-propuestos"><span class="header-section-number">3.4.2</span> Cuestiones y problemas propuestos</h3>
+<ol type="1">
+<li>Calcula el tipo de rendimientos (crecientes, constantes o decrecientes a escala) de las siguientes funciones de producción:</li>
+</ol>
+<ol type="a">
+<li><span class="math inline">\(x_i=f(K,L)=aK+bL\)</span> (<span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son constantes positivas).</li>
+<li>Cobb-Douglas: <span class="math inline">\(x_i=f(K,L)=AK^aL^b\)</span> (<span class="math inline">\(A\)</span>, <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son constantes positivas).</li>
+<li>CES: <span class="math inline">\(x_i=f(K,L)=[K^a+L^a]^{b/a}\)</span> (<span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son constantes positivas).</li>
+<li><span class="math inline">\(x_i=f(K,L)=\sqrt{2KL+4K^2+6L^2}\)</span>.</li>
+<li><span class="math inline">\(x_i=f(K,L)=2KL+4K^2+6L^2\)</span>.</li>
+<li><span class="math inline">\(x_i=KL+M\)</span>.</li>
+<li><span class="math inline">\(x_i=-L^3+24L^2-L\)</span>.</li>
+<li><span class="math inline">\(x_i=K^a+L^b\)</span>.</li>
+</ol>
+<ol start="2" type="1">
+<li>Analiza los rendimientos de las siguientes funciones de producción y calcular los costes marginales (en función del nivel de producción):</li>
+</ol>
+<ol type="a">
+<li><span class="math inline">\(x_i=L\)</span>; <span class="math inline">\(x_i=\sqrt{L}\)</span>; <span class="math inline">\(x_i=L^2\)</span>.</li>
+<li><span class="math inline">\(x_i=KL\)</span>; <span class="math inline">\(x_i=\sqrt{KL}\)</span>; <span class="math inline">\(x_i=(KL)^{1/3}\)</span>.</li>
+<li><span class="math inline">\(x_i=KLM\)</span>; <span class="math inline">\(x_i=\sqrt{KLM}\)</span>; <span class="math inline">\(x_i=(KLM)^{1/3}\)</span>; <span class="math inline">\(x_i=(KLM)^{1/4}\)</span>.</li>
+<li><span class="math inline">\(x_i=ln(L)\)</span>; <span class="math inline">\(x_i=ln(KL)\)</span>; <span class="math inline">\(x_i=ln(KLM)\)</span>; <span class="math inline">\(x_i=ln(L^2)\)</span>; <span class="math inline">\(x_i=ln(K^2L^2)\)</span>.</li>
+</ol>
+</section>
+</section>
+<section id="referencias" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="referencias"><strong>Referencias</strong></h2>
+<p>de Miguel, B., Baixauli, J.J. (2010), Empresa y Economía Industrial, Mc-Graw Hill.</p>
+<p>Pedregal, D.J.(2016). Economía para ingenieros, Ediciones Lulú. ISBN 978-1-326-73331-5. <a href="https://www.lulu.com/es/shop/diego-j-pedregal-tercero/econom%C3%ADa-para-ingenieros/paperback/product-14rgv4m5.html?q=pedregal&amp;page=1&amp;pageSize=4" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2011). Manual de Microeconomía. Todo lo imprescindible para entenderla. Ediciones Lulú. ISBN 978-1-4475-1725-2. <a href="https://www.lulu.com/es/shop/diego-jos%C3%A9-pedregal-tercero/microeconom%C3%ADa/paperback/product-16qw7j2n.html?page=1&amp;pageSize=4" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2011). Manual de Macroeconomía. Todo lo imprescindible para entenderla. Ediciones Lulú. ISBN 978-1-4477-1113-1. <a href="https://www.lulu.com/es/shop/diego-jos%C3%A9-pedregal-tercero/macroeconom%C3%ADa/paperback/product-12vngrz8.html?page=1&amp;pageSize=4" target="_blank">Enlace</a>.</p>
+<p>Trapero, J.R., García, F.P., Pedregal, D.J. (2013). Dirección y Gestión Empresarial. Mcgraw-Hill. <a href="https://www.mheducation.es/direccion-y-gestion-empresarial-9788448190385-spain" target="_blank">Enlace</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-mercado.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funcionamiento de los mercados</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04-objetivos.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Los objetivos de la empresa</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
