@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
-
+<meta name="generator" content="quarto-1.3.450">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Fundamentos de gestión empresarial para ingenieros - 3&nbsp; Producción y costes</title>
 <style>
 code{white-space: pre-wrap;}
@@ -17,11 +14,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
-
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -40,8 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -57,150 +52,156 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar"
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
-}</script>
-
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
+}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producción y costes</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-mercado.html"><strong>PARTE I: La empresa y los mercados</strong></a></li><li class="breadcrumb-item"><a href="./03-costes.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producción y costes</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Fundamentos de gestión empresarial para ingenieros</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Prólogo</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prólogo</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a>
+  <a href="./01-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true"><strong>PARTE I: La empresa y los mercados</strong></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text"><strong>PARTE I: La empresa y los mercados</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-mercado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funcionamiento de los mercados</span></a>
+  <a href="./02-mercado.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funcionamiento de los mercados</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-costes.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producción y costes</span></a>
+  <a href="./03-costes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producción y costes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-objetivos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Los objetivos de la empresa</span></a>
+  <a href="./04-objetivos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Los objetivos de la empresa</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true"><strong>PARTE II: Finanzas</strong></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text"><strong>PARTE II: Finanzas</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-contabilidad.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Contabilidad financiera</span></a>
+  <a href="./05-contabilidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Contabilidad financiera</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-inversiones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Análisis de inversiones y financiación</span></a>
+  <a href="./06-inversiones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Análisis de inversiones y financiación</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true"><strong>PARTE III: Estrategia y planificación</strong></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text"><strong>PARTE III: Estrategia y planificación</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-interno.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis interno y externo de la empresa</span></a>
+  <a href="./07-interno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis interno y externo de la empresa</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-estrategia.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estrategias y ventajas competitivas</span></a>
+  <a href="./08-estrategia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estrategias y ventajas competitivas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planificación, organización, ejecución y control</span></a>
+  <a href="./09-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Planificación, organización, ejecución y control</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Secciones</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Secciones</h2>
    
   <ul>
-  <li><a href="#objetivos-de-la-dirección-de-la-producción" id="toc-objetivos-de-la-dirección-de-la-producción" class="nav-link active" data-scroll-target="#objetivos-de-la-dirección-de-la-producción"><span class="toc-section-number">3.1</span>  Objetivos de la dirección de la producción</a></li>
-  <li><a href="#la-función-de-producción" id="toc-la-función-de-producción" class="nav-link" data-scroll-target="#la-función-de-producción"><span class="toc-section-number">3.2</span>  La función de producción</a></li>
-  <li><a href="#los-costes" id="toc-los-costes" class="nav-link" data-scroll-target="#los-costes"><span class="toc-section-number">3.3</span>  Los costes</a></li>
-  <li><a href="#cuestiones-y-problemas" id="toc-cuestiones-y-problemas" class="nav-link" data-scroll-target="#cuestiones-y-problemas"><span class="toc-section-number">3.4</span>  Cuestiones y problemas</a>
+<li><a href="#objetivos-de-la-direcci%C3%B3n-de-la-producci%C3%B3n" id="toc-objetivos-de-la-dirección-de-la-producción" class="nav-link active" data-scroll-target="#objetivos-de-la-direcci%C3%B3n-de-la-producci%C3%B3n"><span class="header-section-number">3.1</span> Objetivos de la dirección de la producción</a></li>
+  <li><a href="#la-funci%C3%B3n-de-producci%C3%B3n" id="toc-la-función-de-producción" class="nav-link" data-scroll-target="#la-funci%C3%B3n-de-producci%C3%B3n"><span class="header-section-number">3.2</span> La función de producción</a></li>
+  <li><a href="#los-costes" id="toc-los-costes" class="nav-link" data-scroll-target="#los-costes"><span class="header-section-number">3.3</span> Los costes</a></li>
+  <li>
+<a href="#cuestiones-y-problemas" id="toc-cuestiones-y-problemas" class="nav-link" data-scroll-target="#cuestiones-y-problemas"><span class="header-section-number">3.4</span> Cuestiones y problemas</a>
   <ul class="collapse">
-  <li><a href="#cuestiones-y-problemas-resueltos" id="toc-cuestiones-y-problemas-resueltos" class="nav-link" data-scroll-target="#cuestiones-y-problemas-resueltos"><span class="toc-section-number">3.4.1</span>  Cuestiones y problemas resueltos</a></li>
-  <li><a href="#cuestiones-y-problemas-propuestos" id="toc-cuestiones-y-problemas-propuestos" class="nav-link" data-scroll-target="#cuestiones-y-problemas-propuestos"><span class="toc-section-number">3.4.2</span>  Cuestiones y problemas propuestos</a></li>
-  </ul></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><strong>Referencias</strong></a></li>
+<li><a href="#cuestiones-y-problemas-resueltos" id="toc-cuestiones-y-problemas-resueltos" class="nav-link" data-scroll-target="#cuestiones-y-problemas-resueltos"><span class="header-section-number">3.4.1</span> Cuestiones y problemas resueltos</a></li>
+  <li><a href="#cuestiones-y-problemas-propuestos" id="toc-cuestiones-y-problemas-propuestos" class="nav-link" data-scroll-target="#cuestiones-y-problemas-propuestos"><span class="header-section-number">3.4.2</span> Cuestiones y problemas propuestos</a></li>
   </ul>
-</nav>
+</li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><strong>Referencias</strong></a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><span id="sec-chap3" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producción y costes</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title"><span id="sec-chap3" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producción y costes</span></span></h1>
 </div>
 
 
@@ -213,11 +214,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-</header>
-
-<p>La función de producción de la empresa consiste en crear bienes y servicios para satisfacer las necesidades de los clientes. Es un sistema que se alimenta de una serie de entradas, que son procesadas para generar unas salidas. En este libro nos vamos a mantener a un nivel general que nos permite englobar dentro del mismo esquema empresas tan dispares como una panadería de barrio o una central nuclear.</p>
-<section id="objetivos-de-la-dirección-de-la-producción" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="objetivos-de-la-dirección-de-la-producción"><span class="header-section-number">3.1</span> Objetivos de la dirección de la producción</h2>
+</header><p>La función de producción de la empresa consiste en crear bienes y servicios para satisfacer las necesidades de los clientes. Es un sistema que se alimenta de una serie de entradas, que son procesadas para generar unas salidas. En este libro nos vamos a mantener a un nivel general que nos permite englobar dentro del mismo esquema empresas tan dispares como una panadería de barrio o una central nuclear.</p>
+<section id="objetivos-de-la-dirección-de-la-producción" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="objetivos-de-la-dirección-de-la-producción">
+<span class="header-section-number">3.1</span> Objetivos de la dirección de la producción</h2>
 <p>Podemos destacar seis objetivos en la dirección de la producción (o <strong>de operaciones</strong>):</p>
 <ol type="1">
 <li>Reducción de costes para lograr mayor eficiencia.</li>
@@ -230,7 +229,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Aunque puede haber relaciones positivas entre estos objetivos, también hay conflictos. Basta con fijarse en el primero para ver que está en contradicción con todos los demás, puesto que un afán excesivo por reducir costes puede llevar a no cumplir con algunos de los demás.</p>
 <p>La organización de la producción desde cero conlleva una serie de decisiones que podemos dividir en dos categorías:</p>
 <ol type="1">
-<li><p><strong>Estratégicas</strong>: son aquellas decisiones con repercusión a largo plazo. Resultan cruciales para el futuro desarrollo de la empresa. Una mala elección de cualquiera de ellas puede hacerla inviable. Las principales son:</p>
+<li>
+<p><strong>Estratégicas</strong>: son aquellas decisiones con repercusión a largo plazo. Resultan cruciales para el futuro desarrollo de la empresa. Una mala elección de cualquiera de ellas puede hacerla inviable. Las principales son:</p>
 <ul>
 <li>Decidir qué bienes o servicios se van a producir.</li>
 <li>Tecnología que se va a usar.</li>
@@ -238,16 +238,19 @@ ul.task-list li input[type="checkbox"] {
 <li>Capacidad a largo plazo, relacionado estrechamente con el tamaño de la empresa.</li>
 <li>Localización de la empresa.</li>
 <li>En aquellos empresas que conllevan producción física, es muy importante seleccionar una buena distribución en planta.</li>
-</ul></li>
-<li><p><strong>Tácticas</strong>: son aquellas decisiones a corto plazo, por tanto más rutinarias y estructuradas. Si bien son importantes, pueden modificarse en el curso de la producción a medida que se detecten errores. Por su naturaleza se trata de multitud de decisiones en muchos ámbitos, como en la satisfacción de la demanda, el control de la planificación, flujo de materiales, etc. Hay dos ámbitos especialmente relevantes con un impacto importante en los costes:</p>
+</ul>
+</li>
+<li>
+<p><strong>Tácticas</strong>: son aquellas decisiones a corto plazo, por tanto más rutinarias y estructuradas. Si bien son importantes, pueden modificarse en el curso de la producción a medida que se detecten errores. Por su naturaleza se trata de multitud de decisiones en muchos ámbitos, como en la satisfacción de la demanda, el control de la planificación, flujo de materiales, etc. Hay dos ámbitos especialmente relevantes con un impacto importante en los costes:</p>
 <ul>
-<li><strong>Cadena de suministro</strong> que integra y sincroniza los flujos de materiales, los servicios y la información que se producen con los proveedores y con los clientes.</li>
-<li><strong>Gestión de inventarios</strong> mediante técnicas para calcular cuánto y cuándo pedir entradas de forma que no se produzcan <em>roturas de stock</em> ni haya costes excesivos de almacenamiento.</li>
-</ul></li>
-</ol>
-</section>
-<section id="la-función-de-producción" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="la-función-de-producción"><span class="header-section-number">3.2</span> La función de producción</h2>
+<li>
+<strong>Cadena de suministro</strong> que integra y sincroniza los flujos de materiales, los servicios y la información que se producen con los proveedores y con los clientes.</li>
+<li>
+<strong>Gestión de inventarios</strong> mediante técnicas para calcular cuánto y cuándo pedir entradas de forma que no se produzcan <em>roturas de stock</em> ni haya costes excesivos de almacenamiento.</li>
+</ul>
+</li>
+</ol></section><section id="la-función-de-producción" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="la-función-de-producción">
+<span class="header-section-number">3.2</span> La función de producción</h2>
 <p>Para conseguir los objetivos de la empresa, el empresario tiene que combinar toda una serie de factores de producción, además de organizar todas las áreas de la empresa (logística, recursos humanos, finanzas, etc.) y utilizar procesos, procedimientos, métodos y técnicas para que la producción se haga de forma <strong>eficiente</strong> y con <strong>eficacia</strong>. La eficacia es la capacidad de cumplir con la finalidad que se desea. La eficiencia implica además hacerlo con el uso mínimo de recursos posible y en general se mide a través de la <strong>productividad</strong> que es un cociente entre algún tipo de producto y recursos utilizados en su consecución (o, más en general como el cociente entre salidas y entradas).</p>
 <p>En todo proceso productivo hay que tener en cuenta aspectos técnicos y económicos:</p>
 <ul>
@@ -256,18 +259,19 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>El hecho de producir lleva ineludiblemente a incurrir en <strong>costes de producción</strong>. La compra de factores de producción y toda la organización de la empresa consume recursos. El empresario estará interesado en encontrar la combinación eficiente de factores que consiga el mayor nivel de producción para un nivel de coste dado, o bien el mínimo coste para un nivel de producción dado. Un producto que resulta excesivamente costoso será difícilmente comercializable, por muy importante que sea la necesidad que intenta satisfacer.</li>
 <li>La <strong>demanda</strong> del producto es fundamental. Un producto que en la mente del empresario resuelve problemas cruciales de la Humanidad, pero que no sea percibido así por los potenciales clientes está condenado al fracaso, aunque se sepa cómo producirlo y se haga de forma eficiente. El empresario está irremisiblemente ligado a sus clientes e intentará que sean fieles, cosa que resulta muy complicado, porque la demanda puede ser muy caprichosa.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p>Matemáticamente, la función de producción se puede formular como la <a href="#eq-fp">Ecuación&nbsp;<span>3.1</span></a>. Se puede definir como una relación entre la cantidad de un bien o servicio <span class="math inline">\(x_i\)</span> y los factores de producción necesarios para obtenerlo por unidad de tiempo. Se suele utilizar <span class="math inline">\(K\)</span> para designar el capital y <span class="math inline">\(L\)</span> como trabajo. Si la unidad de tiempo es lo suficientemente corta como para que algunos factores de producción no puedan cambiar, podremos distinguir entre <strong>factores fijos</strong>, aquellos que no pueden cambiar en el corto plazo, y <strong>factores variables</strong>, aquellos que sí pueden variar.</p>
 <p><span id="eq-fp"><span class="math display">\[
 x_i = f(K, L, M, \dots)
 \tag{3.1}\]</span></span></p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Importante
 </div>
 </div>
@@ -277,13 +281,16 @@ Importante
 <p>A largo plazo, por definición, todos los factores son variables.</p>
 </div>
 </div>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Solución</a></li></ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Resuelve</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Solución</a></li>
+</ul>
 <div class="tab-content">
-<div id="tabset-1-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Haz una enumeración de los factores de producción fijos y variables de Mercadona para un plazo de seis meses.</p>
 </div>
-<div id="tabset-1-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>Factores variables: prácticamente el único factor variable son los productos que vende.</p>
 <p>Factores fijos: energía, personal, alquileres o propiedad de edificios y otro inmovilizado, seguros, etc.</p>
 <p>Aunque en este ejemplo el factor trabajo (personal contratado) se considera fijo, puesto que los sueldos se pagan independientemente de que se venda mucho o poco, en general se va a considerar un factor variable.</p>
@@ -291,12 +298,12 @@ Importante
 </div>
 </div>
 <p>No toda función matemática es una auténtica función de producción, puesto que tiene que ser al menos monótona creciente, es decir, cualquier aumento de cualquiera de los factores tiene que producir un aumento de producción o al menos tiene que dejar la producción sin variar, pero nunca puede provocar una disminución. Los factores, además, podrán ser sustitutivos unos de otros si luchan entre sí por hacerse un sitio en el proceso producitivo, o complementarios si se tienen que utilizar conjuntamente.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Factores fijos y variables
 </div>
 </div>
@@ -305,36 +312,47 @@ Factores fijos y variables
 </div>
 </div>
 <p>Un aspecto crucial de las funciones de producción es el concepto de <strong>rendimiento a escala</strong>, que indica la forma cómo varía la producción cuando cambia la escala de producción, cuando los factores de producción varían en una determinada proporción. Los rendimientos pueden ser <strong>constantes</strong>, <strong>crecientes</strong> o <strong>decrecientes</strong> cuando al incrementar todos los factores de producción simultáneamente en una proporción, la producción aumenta en la misma proporción, en una proporción mayor o menor, respectivamente. Si esa constante es 2 diremos que los rendimientos son constantes, crecientes o decrecientes cuando al duplicar todos los factores de producción simultáneamente la producción queda mutiplicada por 2, más de 2 o menos de 2, respectivamente.</p>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Solución</a></li></ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Resuelve</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Solución</a></li>
+</ul>
 <div class="tab-content">
-<div id="tabset-2-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>Calcula los rendimientos de las siguientes funciones de producción Cobb-Douglas utilizando su definición (<span class="math inline">\(A\)</span>, <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son constantes positivas):</p>
 <ul>
-<li><span class="math inline">\(x_i=f(L)=AL^{0,5}\)</span>.</li>
-<li><span class="math inline">\(x_i=f(L)=AL\)</span>.</li>
-<li><span class="math inline">\(x_i=f(L)=AL^{1,1}\)</span>.</li>
-<li><span class="math inline">\(x_i=f(L)=AL^a\)</span>.</li>
-<li><span class="math inline">\(x_i=f(L,K)=AL^aK^b\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL^{0,5}\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL^{1,1}\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL^a\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L,K)=AL^aK^b\)</span>.</li>
 </ul>
 </div>
-<div id="tabset-2-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <ul>
-<li><span class="math inline">\(x_i=f(L)=AL^{0,5}\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL^{0,5}\)</span>.</li>
 </ul>
 <p>Si multiplicamos todos los factores de producción por una constante arbitraria <span class="math inline">\(m\)</span> tenemos</p>
 <p><span class="math display">\[
 f(mL)=A(mL)^{0,5}=m^{0,5}AL^{0,5}=m^{0,5}f(L),
 \]</span> de donde se obtiene que los rendimientos son decrecientes. Si la constante es 2 tenemos que duplicando los factores de producción hacen crecer la producción en <span class="math inline">\(\sqrt 2\)</span> solamente.</p>
 <ul>
-<li><span class="math inline">\(x_i=f(L)=AL\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL\)</span>.</li>
 </ul>
 <p>Se trata de una función lineal (que además es Cobb-Douglas).</p>
 <p><span class="math display">\[
 f(mL)=A(mL)=mAL=mf(L).
 \]</span></p>
 <ul>
-<li><span class="math inline">\(x_i=f(L)=AL^{1,1}\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL^{1,1}\)</span>.</li>
 </ul>
 <p>Tiene rendimientos crecientes, puesto que</p>
 <p><span class="math display">\[
@@ -342,7 +360,8 @@ f(mL)=A(mL)^{1,1}=m^{1,1}AL^{1,1}=m^{1,1}f(L)
 \]</span></p>
 <p>Duplicar los factores significa incrementar la producción en más del doble.</p>
 <ul>
-<li><span class="math inline">\(x_i=f(L)=AL^a\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL^a\)</span>.</li>
 </ul>
 <p>Este caso engloba como casos particulares a todos los anteriores.</p>
 <p><span class="math display">\[
@@ -350,7 +369,8 @@ f(mL)=A(mL)^{a}=m^{a}AL^{a}=m^{a}f(L)
 \]</span></p>
 <p>La función tendrá rendimientos crecientes si <span class="math inline">\(a&gt;1\)</span>, constantes si <span class="math inline">\(a=1\)</span> y decrecientes si <span class="math inline">\(a&lt;1\)</span>.</p>
 <ul>
-<li><span class="math inline">\(x_i=f(L,K)=AL^aK^b\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L,K)=AL^aK^b\)</span>.</li>
 </ul>
 <p>Este es un caso Cobb-Douglas con dos factores de producción.</p>
 <p><span class="math display">\[
@@ -360,12 +380,12 @@ f(mL,mK)=A(mL)^{a}(mK)^b=m^{a+b}AL^{a}K^b=m^{a+b}f(L)
 </div>
 </div>
 </div>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 ¡Cuidado!
 </div>
 </div>
@@ -384,50 +404,63 @@ F = \left[ \begin{array}{cccc} K &amp; L &amp; M &amp; \dots \end{array} \right]
     \end{array} \right]
     \left[ \begin{array}{c} K \\ L \\ M \\ \vdots \end{array} \right]
 \tag{3.2}\]</span></span></p>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Solución</a></li></ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Resuelve</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Solución</a></li>
+</ul>
 <div class="tab-content">
-<div id="tabset-3-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p>Calcula los rendimientos de las siguientes funciones de producción utilizando la forma cuadrática de la <a href="#eq-fc">Ecuación&nbsp;<span>3.2</span></a> (<span class="math inline">\(A\)</span>, <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son dos constantes positivas):</p>
 <ul>
-<li><span class="math inline">\(x_i=f(L)=AL^{0,5}\)</span>.</li>
-<li><span class="math inline">\(x_i=f(L)=AL\)</span>.</li>
-<li><span class="math inline">\(x_i=f(L)=AL^{1,1}\)</span>.</li>
-<li><span class="math inline">\(x_i=f(L)=AL^a\)</span>.</li>
-<li><span class="math inline">\(x_i=f(L,K)=AL^aK^b\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL^{0,5}\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL^{1,1}\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL^a\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L,K)=AL^aK^b\)</span>.</li>
 <li><span class="math inline">\(x_i=f(L,K)=ln(LK + 1)\)</span></li>
 </ul>
 </div>
-<div id="tabset-3-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <ul>
-<li><span class="math inline">\(x_i=f(L)=AL^{0,5}\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL^{0,5}\)</span>.</li>
 </ul>
 <p>Al tratarse de una función con un solo factor de producción el signo de la forma cuadrática es el mismo que de la segunda derivada de la función, por tanto:</p>
 <p><span class="math display">\[
 \frac{\partial f}{\partial L}=A0,5L^{-0,5}; \,\,\,\, \frac{\partial^2 f}{\partial L^2}=A0,5(-0,5)L^{-1,5}&lt;0.
 \]</span> Los rendimientos son decrecientes porque el signo de la forma cuadrática es negativo.</p>
 <ul>
-<li><span class="math inline">\(x_i=f(L)=AL\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL\)</span>.</li>
 </ul>
 <p><span class="math display">\[
 \frac{\partial f}{\partial L}=A; \,\,\,\, \frac{\partial^2 f}{\partial L^2}=0.
 \]</span> Rendimientos constantes.</p>
 <ul>
-<li><span class="math inline">\(x_i=f(L)=AL^{1,1}\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL^{1,1}\)</span>.</li>
 </ul>
 <p><span class="math display">\[
 \frac{\partial f}{\partial L}=A1,1L^{0,1}; \,\,\,\, \frac{\partial^2 f}{\partial L^2}=A1,1(0,1)L^{-0,9}&gt;0.
 \]</span></p>
 <p>Rendimientos crecientes.</p>
 <ul>
-<li><span class="math inline">\(x_i=f(L)=AL^a\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L)=AL^a\)</span>.</li>
 </ul>
 <p><span class="math display">\[
 \frac{\partial f}{\partial L}=AaL^{a-1}; \,\,\,\, \frac{\partial^2 f}{\partial L^2}=Aa(a-1)L^{a-2}.
 \]</span></p>
 <p>El signo del hessiano es el mismo que el signo de <span class="math inline">\(a-1\)</span>, por tnato, la función tendrá rendimientos crecientes si <span class="math inline">\(a&gt;1\)</span>, constantes si <span class="math inline">\(a=1\)</span> y decrecientes si <span class="math inline">\(a&lt;1\)</span>.</p>
 <ul>
-<li><span class="math inline">\(x_i=f(L,K)=AL^aK^b\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L,K)=AL^aK^b\)</span>.</li>
 </ul>
 <p>Calculando las derivadas primeras y segundas:</p>
 <p><span class="math display">\[
@@ -453,7 +486,8 @@ F= &amp; \left[ \begin{array}{cc} L &amp; K \end{array} \right]
 \]</span></p>
 <p>El signo depende del signo de <span class="math inline">\(a+b-1\)</span>, de donde se obtiene que si <span class="math inline">\(a+b=1\)</span> los rendimientos son constantes, si <span class="math inline">\(a+b&lt;1\)</span> los rendimientos son crecientes y si <span class="math inline">\(a+b&gt;1\)</span> los rendimientos son crecientes. Como se ve el proceso es mucho más engorroso que aplicar directamente la definición.</p>
 <ul>
-<li><span class="math inline">\(x_i=f(L,K)=ln(LK + 1)\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(L,K)=ln(LK + 1)\)</span>.</li>
 </ul>
 <p><span class="math display">\[
 \begin{array}{ll}
@@ -478,12 +512,12 @@ F= &amp; \left[ \begin{array}{cc} L &amp; K \end{array} \right]
 </div>
 </div>
 </div>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Empresas de distribución
 </div>
 </div>
@@ -495,32 +529,36 @@ Empresas de distribución
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-fig31" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig31.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;3.1: Funciones de producción con distintos tipos de rendimientos.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="fig31.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.1: Funciones de producción con distintos tipos de rendimientos.</figcaption></figure>
 </div>
 </div>
 </div>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Solución</a></li></ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Resuelve</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Solución</a></li>
+</ul>
 <div class="tab-content">
-<div id="tabset-4-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <p>Identifica los factores de producción que son necesarios para producir conocimiento de gestión empresarial. ¿Qué tipo de rendimientos tiene?</p>
 </div>
-<div id="tabset-4-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <p>Existen factores fijos que son los materiales que se utilizan, los profesores, las clases, etc. El factor fijo más importante sin duda es la capacidad que tiene cada uno para asimilar la materia.</p>
 <p>El factor variable por excelencia es el tiempo dedicado al estudio. Cuando los conocimientos son muy pequeños cualquier hora dedicada al estudio da la impresión de añadir mucho conocimiento (rendimientos crecientes), pero a medida que sabemos más y más de una materia nos cuesta más añadir conocimiento adicional (rendimientos decrecientes).</p>
 </div>
 </div>
 </div>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Solución</a></li></ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Resuelve</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Solución</a></li>
+</ul>
 <div class="tab-content">
-<div id="tabset-5-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <p>¿Qué rendimientos tiene la función de producción <span class="math inline">\(x_i=-L^3+9L^2+100L\)</span>?</p>
 </div>
-<div id="tabset-5-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <p>Al tratarse de una función con un solo factor de producción, los rendimientos dependen del signo de la segunda derivada. Por tanto</p>
 <p><span class="math display">\[
 \begin{array}{l}
@@ -531,12 +569,12 @@ Empresas de distribución
 </div>
 </div>
 </div>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Importante
 </div>
 </div>
@@ -544,9 +582,8 @@ Importante
 <p>Recuerda que las funciones de producción pueden tener todos los tipos de rendimiento simultáneamente dependiendo de la región en la que se midan. De hecho, solemos pensar que tienen un tramo de rendimientos crecientes cuando se utilizan poco los factores y que se van convirtiendo en decrecientes a medida que los utilizamos con mayor intensidad.</p>
 </div>
 </div>
-</section>
-<section id="los-costes" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="los-costes"><span class="header-section-number">3.3</span> Los costes</h2>
+</section><section id="los-costes" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="los-costes">
+<span class="header-section-number">3.3</span> Los costes</h2>
 <p>Hasta aquí hemos tenido en cuenta solo las consideraciones técnicas asociadas a la producción. Los costes son la primera consideración económica que hay que tener en cuenta. La segunda será la demanda y se especificará en el siguiente capítulo.</p>
 <p>Los costes van inexorablemente unidos a la producción. Si se quiere producir mucho, habrá que utilizar muchos factores y por tanto se incurrirá en costes elevados. Al margen de esta cuestión elemental, lo que es relevante es asegurarse de que para cualquier nivel de producción que se elija se utiliza una combinación de factores que proporciona el menor coste posible. Otra forma de verlo es que, elegido un nivel de coste dado se consiga el mayor nivel de producción posible.</p>
 <p>Los costes pueden ser <strong>fijos</strong> y <strong>variables</strong>. Los costes fijos son aquellos asociados a los factores fijos a corto plazo y por tanto son costes que no varían con el nivel de producción. Por el contrario, los variables son aquellos que varían con el nivel de producción porque van asociados a los factores variables. Llamamos <strong>coste total</strong> al gasto en el que incurre la empresa al utilizar determinadas combinaciones de factores en su proceso de producción. Su formulación es elemental,</p>
@@ -565,20 +602,21 @@ CT=CF+wL=CF+w A^{-2} x_i^{2}.
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-fig32" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig32.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;3.2: Función de producción con rendimientos decrecientes y funciones de coste total, fijo y variable asociadas.</figcaption><p></p>
-</figure>
+<figure class="figure"><p><img src="fig32.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figura&nbsp;3.2: Función de producción con rendimientos decrecientes y funciones de coste total, fijo y variable asociadas.</figcaption></figure>
 </div>
 </div>
 </div>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Solución</a></li></ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Resuelve</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Solución</a></li>
+</ul>
 <div class="tab-content">
-<div id="tabset-6-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <p>Considera la función de producción <span class="math inline">\(x_i=AL^{1,1}\)</span>, calcula y representa gráficamente las funciones de coste total, fijo y variable. ¿Qué sucede si aumenta el salario?</p>
 </div>
-<div id="tabset-6-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <p>Considera la función de producción <span class="math inline">\(x_i=AL^{1,1}\)</span>, calcula y representa gráficamente las funciones de coste total, fijo y variable. ¿Qué sucede si aumenta el salario?</p>
 <p>La función tiene rendimientos crecientes, como indica la figura. Si aumenta el salario las curvas de costes tienen mayor pendiente. Es decir, para la misma cantidad de factor, el coste total es mayor.</p>
 <p><span class="math display">\[
@@ -587,8 +625,7 @@ CT=CF+wL=CF+wA^{-1/1,1}x_i^{1/1,1}
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figRendCrec.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figure class="figure"><p><img src="figRendCrec.png" class="img-fluid figure-img" style="width:70.0%"></p>
 </figure>
 </div>
 </div>
@@ -596,13 +633,16 @@ CT=CF+wL=CF+wA^{-1/1,1}x_i^{1/1,1}
 </div>
 </div>
 </div>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Solución</a></li></ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Resuelve</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Solución</a></li>
+</ul>
 <div class="tab-content">
-<div id="tabset-7-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
 <p>Considera la función de producción <span class="math inline">\(x_i=AL\)</span>, calcula y representa gráficamente las funciones de coste total, fijo y variable.</p>
 </div>
-<div id="tabset-7-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
 <p><span class="math display">\[
 CT=CF+wL=CF+wx_i/A
 \]</span></p>
@@ -610,20 +650,22 @@ CT=CF+wL=CF+wx_i/A
 </div>
 </div>
 </div>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Solución</a></li></ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Resuelve</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Solución</a></li>
+</ul>
 <div class="tab-content">
-<div id="tabset-8-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
 <p>¿Qué efecto tendría una mejora de la tecnología en la función de producción <span class="math inline">\(x_i=AL^{0,5}\)</span> y los costes?</p>
 </div>
-<div id="tabset-8-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
 <p>La mejora tecnológica hace que con la misma cantidad de trabajo se produzca una cantidad superior de bienes y servicios. Esto hace que la función de producción se desplace hacia arriba manteniendo el origen de coordenadas fijo. Se puede simular considerando <span class="math inline">\(x_i=AL^{0,8}\)</span> la función de producción con mejor tecnología.</p>
 <p>Los costes totales pasaría de ser <span class="math inline">\(CT=CF+A^{-2}x_i^2\)</span> a <span class="math inline">\(CT=CF+A^{-1/0,8}x_i^{1/0,8}\)</span>. Los cambios se muestran en la figura. Se puede ver cómo la mayor producción va asociada a costes más bajos.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figProdCrec.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figure class="figure"><p><img src="figProdCrec.png" class="img-fluid figure-img" style="width:70.0%"></p>
 </figure>
 </div>
 </div>
@@ -631,53 +673,60 @@ CT=CF+wL=CF+wx_i/A
 </div>
 </div>
 </div>
-</section>
-<section id="cuestiones-y-problemas" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="cuestiones-y-problemas"><span class="header-section-number">3.4</span> Cuestiones y problemas</h2>
-<section id="cuestiones-y-problemas-resueltos" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="cuestiones-y-problemas-resueltos"><span class="header-section-number">3.4.1</span> Cuestiones y problemas resueltos</h3>
-<ol class="example" type="1">
+</section><section id="cuestiones-y-problemas" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="cuestiones-y-problemas">
+<span class="header-section-number">3.4</span> Cuestiones y problemas</h2>
+<section id="cuestiones-y-problemas-resueltos" class="level3" data-number="3.4.1"><h3 data-number="3.4.1" class="anchored" data-anchor-id="cuestiones-y-problemas-resueltos">
+<span class="header-section-number">3.4.1</span> Cuestiones y problemas resueltos</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true"></a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Solución</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
+<ol type="1">
 <li>Una empresa se dedica a la realización de zanjas y agujeros de todas clases en el pavimento de Ciudad Real. La tecnología utilizada es rudimentaria; cada agujero es perforado por un obrero auxiliado de un pico. Identifica los factores de producción. ¿Qué tipo de rendimientos tiene esta función de producción?</li>
 </ol>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Solución</a></li></ul>
-<div class="tab-content">
-<div id="tabset-9-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
-
 </div>
-<div id="tabset-9-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
+<div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
 <p>Los factores de producción son los obreros y los picos. La función de producción tiene rendimientos constantes. Los factores son perfectamente complementarios, puesto que cada obrero necesita exactamente un pico.</p>
 </div>
 </div>
 </div>
-<ol start="2" class="example" type="1">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true"></a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">Solución</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
+<ol start="2" type="1">
 <li>Una empresa presta un servicio por 20€ por unidad. Sus costes vienen dados por <span class="math inline">\(CT=0,1x_i^2+10x_i+5\)</span>. Calcula la cantidad que debe producir para maximizar el beneficio y los beneficios máximos.</li>
 </ol>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">Solución</a></li></ul>
-<div class="tab-content">
-<div id="tabset-10-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
-
 </div>
-<div id="tabset-10-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
+<div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
 <p>La función de beneficio es <span class="math inline">\(\pi=IT-CT=P_i x_i-0,1x_i^2-10x_i-5\)</span>. Derivando e igualando a cero tenemos <span class="math inline">\(0=P_i x_i-0,1x_i^2-10x_i-5\)</span>. Despejando de esta expresión la cantidad tenemos la función de oferta del bien. Sustituyendo el precio por 20 tenemos que la cantidad óptima es 50 unidades. Para esa cantidad los beneficios son 245.</p>
 </div>
 </div>
 </div>
-<ol start="3" class="example" type="1">
-<li><p>La función de producción de una empresa en régimen de competencia perfecta es <span class="math inline">\(x_i=50L-L^2\)</span>. La curva de oferta en el mercado de trabajo es <span class="math inline">\(L=5+0,75w\)</span>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true"></a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">Solución</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
+<ol start="3" type="1">
+<li>
+<p>La función de producción de una empresa en régimen de competencia perfecta es <span class="math inline">\(x_i=50L-L^2\)</span>. La curva de oferta en el mercado de trabajo es <span class="math inline">\(L=5+0,75w\)</span>.</p>
 <ol type="a">
 <li>¿Qué tipo de rendimientos tiene la función de producción? Si el precio del bien que vende es de 2, calcula la demanda de trabajo y el salario y cantidad de trabajo de equilibrio.</li>
 <li>Si el precio del bien sube hasta 4, ¿qué ocurrirá con el salario de equilibrio y la cantidad de trabajo contratada? Representa gráficamente las dos situaciones.</li>
-</ol></li>
 </ol>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">Solución</a></li></ul>
-<div class="tab-content">
-<div id="tabset-11-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
-
+</li>
+</ol>
 </div>
-<div id="tabset-11-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
+<div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
 <ol type="a">
 <li><p>Calculando la segunda derivada de la función de producción tenemos que es negativa siempre, lo que implica que los rendimientos son decrecientes. La demanda de trabajo se calcula maximizando el beneficio <span class="math inline">\(\pi=P_i x_i-wL=P_i (50L-L^2 )-wL\)</span>. <span class="math inline">\(\partial \pi/\partial L=0=P_i (50-2L)-w\)</span>, de donde la demanda de trabajo será <span class="math inline">\(L=25-w/(2P_i)\)</span>, que sustituyendo el precio del bien será <span class="math inline">\(L=25-w/4\)</span>. El equilibrio se obtendrá igualando la demanda a la oferta, <span class="math inline">\(25-w/4=5+0,75w\)</span>. El equilibrio es <span class="math inline">\(w=20\)</span> y <span class="math inline">\(L=20\)</span>.</p></li>
 <li><p>Si el precio del bien se duplica la demanda de trabajo pasa a ser <span class="math inline">\(L=25-w/8\)</span>, es decir, aumenta y el equilibrio es <span class="math inline">\(w=22,85\)</span> y <span class="math inline">\(L=22,13\)</span>.</p></li>
@@ -685,50 +734,57 @@ CT=CF+wL=CF+wx_i/A
 </div>
 </div>
 </div>
-<ol start="4" class="example" type="1">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true"></a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false">Solución</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
+<ol start="4" type="1">
 <li>Demuestra que la curva de costes marginales es la función de oferta para un empresario en competencia perfecta. ¿Es el beneficio de un empresario constante a lo largo de la curva de oferta con pendiente positiva? ¿Cómo se relaciona el concepto de excedente del productor con la curva de oferta?</li>
 </ol>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false">Solución</a></li></ul>
-<div class="tab-content">
-<div id="tabset-12-1" class="unnumbered tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
-
 </div>
-<div id="tabset-12-2" class="unnumbered tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
+<div id="tabset-12-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
 <p>La demanda de un solo productor en competencia perfecta es completamente elástica, es decir, puede vender todo lo que quiera al precio de mercado. A su vez el ingreso marginal es exactamente el precio de mercado. Si igualamos el ingreso marginal (o precio) al coste marginal para todos los precios posibles para maximizar el beneficio tenemos que las combinaciones de precios y cantidades que maximizan el beneficio para el productor lo da precisamente la curva de costes marginales.</p>
 <p>Siempre que los costes crezcan más despacio que los ingresos cuando aumenta el precio de un bien los beneficios crecerán a medida que aumenta el precio. También aumenta el excedente del productor, por lo que hay una relación directa entre dicho excedente y beneficio.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="cuestiones-y-problemas-propuestos" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="cuestiones-y-problemas-propuestos"><span class="header-section-number">3.4.2</span> Cuestiones y problemas propuestos</h3>
+</section><section id="cuestiones-y-problemas-propuestos" class="level3" data-number="3.4.2"><h3 data-number="3.4.2" class="anchored" data-anchor-id="cuestiones-y-problemas-propuestos">
+<span class="header-section-number">3.4.2</span> Cuestiones y problemas propuestos</h3>
 <ol type="1">
 <li>Calcula el tipo de rendimientos (crecientes, constantes o decrecientes a escala) de las siguientes funciones de producción:</li>
 </ol>
 <ol type="a">
-<li><span class="math inline">\(x_i=f(K,L)=aK+bL\)</span> (<span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son constantes positivas).</li>
+<li>
+<span class="math inline">\(x_i=f(K,L)=aK+bL\)</span> (<span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son constantes positivas).</li>
 <li>Cobb-Douglas: <span class="math inline">\(x_i=f(K,L)=AK^aL^b\)</span> (<span class="math inline">\(A\)</span>, <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son constantes positivas).</li>
 <li>CES: <span class="math inline">\(x_i=f(K,L)=[K^a+L^a]^{b/a}\)</span> (<span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son constantes positivas).</li>
-<li><span class="math inline">\(x_i=f(K,L)=\sqrt{2KL+4K^2+6L^2}\)</span>.</li>
-<li><span class="math inline">\(x_i=f(K,L)=2KL+4K^2+6L^2\)</span>.</li>
-<li><span class="math inline">\(x_i=KL+M\)</span>.</li>
-<li><span class="math inline">\(x_i=-L^3+24L^2-L\)</span>.</li>
-<li><span class="math inline">\(x_i=K^a+L^b\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(K,L)=\sqrt{2KL+4K^2+6L^2}\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=f(K,L)=2KL+4K^2+6L^2\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=KL+M\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=-L^3+24L^2-L\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=K^a+L^b\)</span>.</li>
 </ol>
 <ol start="2" type="1">
 <li>Analiza los rendimientos de las siguientes funciones de producción y calcular los costes marginales (en función del nivel de producción):</li>
 </ol>
 <ol type="a">
-<li><span class="math inline">\(x_i=L\)</span>; <span class="math inline">\(x_i=\sqrt{L}\)</span>; <span class="math inline">\(x_i=L^2\)</span>.</li>
-<li><span class="math inline">\(x_i=KL\)</span>; <span class="math inline">\(x_i=\sqrt{KL}\)</span>; <span class="math inline">\(x_i=(KL)^{1/3}\)</span>.</li>
-<li><span class="math inline">\(x_i=KLM\)</span>; <span class="math inline">\(x_i=\sqrt{KLM}\)</span>; <span class="math inline">\(x_i=(KLM)^{1/3}\)</span>; <span class="math inline">\(x_i=(KLM)^{1/4}\)</span>.</li>
-<li><span class="math inline">\(x_i=ln(L)\)</span>; <span class="math inline">\(x_i=ln(KL)\)</span>; <span class="math inline">\(x_i=ln(KLM)\)</span>; <span class="math inline">\(x_i=ln(L^2)\)</span>; <span class="math inline">\(x_i=ln(K^2L^2)\)</span>.</li>
-</ol>
-</section>
-</section>
-<section id="referencias" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="referencias"><strong>Referencias</strong></h2>
+<li>
+<span class="math inline">\(x_i=L\)</span>; <span class="math inline">\(x_i=\sqrt{L}\)</span>; <span class="math inline">\(x_i=L^2\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=KL\)</span>; <span class="math inline">\(x_i=\sqrt{KL}\)</span>; <span class="math inline">\(x_i=(KL)^{1/3}\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=KLM\)</span>; <span class="math inline">\(x_i=\sqrt{KLM}\)</span>; <span class="math inline">\(x_i=(KLM)^{1/3}\)</span>; <span class="math inline">\(x_i=(KLM)^{1/4}\)</span>.</li>
+<li>
+<span class="math inline">\(x_i=ln(L)\)</span>; <span class="math inline">\(x_i=ln(KL)\)</span>; <span class="math inline">\(x_i=ln(KLM)\)</span>; <span class="math inline">\(x_i=ln(L^2)\)</span>; <span class="math inline">\(x_i=ln(K^2L^2)\)</span>.</li>
+</ol></section></section><section id="referencias" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="referencias"><strong>Referencias</strong></h2>
 <p>de Miguel, B., Baixauli, J.J. (2010), Empresa y Economía Industrial, Mc-Graw Hill.</p>
 <p>Pedregal, D.J.(2016). Economía para ingenieros, Ediciones Lulú. ISBN 978-1-326-73331-5. <a href="https://www.lulu.com/es/shop/diego-j-pedregal-tercero/econom%C3%ADa-para-ingenieros/paperback/product-14rgv4m5.html?q=pedregal&amp;page=1&amp;pageSize=4" target="_blank">Enlace</a>.</p>
 <p>Pedregal, D.J. (2011). Manual de Microeconomía. Todo lo imprescindible para entenderla. Ediciones Lulú. ISBN 978-1-4475-1725-2. <a href="https://www.lulu.com/es/shop/diego-jos%C3%A9-pedregal-tercero/microeconom%C3%ADa/paperback/product-16qw7j2n.html?page=1&amp;pageSize=4" target="_blank">Enlace</a>.</p>
@@ -736,10 +792,7 @@ CT=CF+wL=CF+wx_i/A
 <p>Trapero, J.R., García, F.P., Pedregal, D.J. (2013). Dirección y Gestión Empresarial. Mcgraw-Hill. <a href="https://www.mheducation.es/direccion-y-gestion-empresarial-9788448190385-spain" target="_blank">Enlace</a>.</p>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -766,9 +819,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -833,6 +900,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -871,9 +1024,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./02-mercado.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funcionamiento de los mercados</span></span>
       </a>          
