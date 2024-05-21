@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -65,6 +72,33 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar floating">
@@ -73,12 +107,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-contabilidad.html"><strong>PARTE II: Finanzas</strong></a></li><li class="breadcrumb-item"><a href="./06-inversiones.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Análisis de inversiones y financiación</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-contabilidad.html"><strong>PARTE II: Finanzas</strong></a></li><li class="breadcrumb-item"><a href="./06-inversiones.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Análisis de inversiones y financiación</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -88,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Fundamentos de gestión empresarial para ingenieros</a> 
@@ -197,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -219,13 +253,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#periodo-de-recuperación-pay-back-o-pay-off" id="toc-periodo-de-recuperación-pay-back-o-pay-off" class="nav-link" data-scroll-target="#periodo-de-recuperación-pay-back-o-pay-off"><span class="header-section-number">6.4.1</span> Periodo de recuperación (<em>pay-back</em> o <em>pay-off</em>)</a></li>
   <li><a href="#valor-actualizado-neto-van" id="toc-valor-actualizado-neto-van" class="nav-link" data-scroll-target="#valor-actualizado-neto-van"><span class="header-section-number">6.4.2</span> Valor Actualizado Neto (VAN)</a></li>
   <li><a href="#tasa-interna-de-rentabilidad-tir" id="toc-tasa-interna-de-rentabilidad-tir" class="nav-link" data-scroll-target="#tasa-interna-de-rentabilidad-tir"><span class="header-section-number">6.4.3</span> Tasa Interna de Rentabilidad (TIR)</a></li>
-  <li><a href="#análisis-de-sensibilidad" id="toc-análisis-de-sensibilidad" class="nav-link" data-scroll-target="#análisis-de-sensibilidad"><span class="header-section-number">6.4.4</span> Análisis de sensibilidad</a></li>
+  <li><a href="#análisis-de-sensibilidad" id="toc-análisis-de-sensibilidad" class="nav-link" data-scroll-target="#análisis-de-sensibilidad"><span class="header-section-number">6.6.1</span> Análisis de sensibilidad</a></li>
   </ul></li>
-  <li><a href="#cálculo-de-rentabilidades-y-costes-de-activos-financieros" id="toc-cálculo-de-rentabilidades-y-costes-de-activos-financieros" class="nav-link" data-scroll-target="#cálculo-de-rentabilidades-y-costes-de-activos-financieros"><span class="header-section-number">6.5</span> Cálculo de rentabilidades y costes de activos financieros</a></li>
-  <li><a href="#cuestiones-y-problemas" id="toc-cuestiones-y-problemas" class="nav-link" data-scroll-target="#cuestiones-y-problemas"><span class="header-section-number">6.6</span> Cuestiones y problemas</a>
+  <li><a href="#cálculo-de-rentabilidades-y-costes-de-activos-financieros" id="toc-cálculo-de-rentabilidades-y-costes-de-activos-financieros" class="nav-link" data-scroll-target="#cálculo-de-rentabilidades-y-costes-de-activos-financieros"><span class="header-section-number">6.7</span> Cálculo de rentabilidades y costes de activos financieros</a></li>
+  <li><a href="#cuestiones-y-problemas" id="toc-cuestiones-y-problemas" class="nav-link" data-scroll-target="#cuestiones-y-problemas"><span class="header-section-number">6.8</span> Cuestiones y problemas</a>
   <ul class="collapse">
-  <li><a href="#cuestiones-y-problemas-resueltos" id="toc-cuestiones-y-problemas-resueltos" class="nav-link" data-scroll-target="#cuestiones-y-problemas-resueltos"><span class="header-section-number">6.6.1</span> Cuestiones y problemas resueltos</a></li>
-  <li><a href="#cuestiones-y-problemas-propuestos" id="toc-cuestiones-y-problemas-propuestos" class="nav-link" data-scroll-target="#cuestiones-y-problemas-propuestos"><span class="header-section-number">6.6.2</span> Cuestiones y problemas propuestos</a></li>
+  <li><a href="#cuestiones-y-problemas-resueltos" id="toc-cuestiones-y-problemas-resueltos" class="nav-link" data-scroll-target="#cuestiones-y-problemas-resueltos"><span class="header-section-number">6.8.1</span> Cuestiones y problemas resueltos</a></li>
+  <li><a href="#cuestiones-y-problemas-propuestos" id="toc-cuestiones-y-problemas-propuestos" class="nav-link" data-scroll-target="#cuestiones-y-problemas-propuestos"><span class="header-section-number">6.8.2</span> Cuestiones y problemas propuestos</a></li>
   </ul></li>
   <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><strong>Referencias</strong></a></li>
   </ul>
@@ -234,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-contabilidad.html"><strong>PARTE II: Finanzas</strong></a></li><li class="breadcrumb-item"><a href="./06-inversiones.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Análisis de inversiones y financiación</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-chap6" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Análisis de inversiones y financiación</span></span></h1>
 </div>
@@ -249,7 +283,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p>Las necesidades de financiación de la empresa son continuas. A menudo se suele pensar que solo hace falta recurrir a la financiación de las entidades financieras cuando se van a realizar inversiones a largo plazo que requieran grandes cantidades de recursos. Así es en general para las familias, pero no es, ni mucho menos, la forma de actuar de las empresas.</p>
 <p>En efecto, las empresas están continuamente acudiendo a las entidades financieras por necesidades corrientes de financiación. La explicación es muy sencilla, los tiempos en que se producen los cobros y los pagos son muy diferentes y a veces imprevisibles. Algunos ejemplos son las ventas estacionales, compras de campaña, compras imprevistas, ampliaciones y recesiones de negocio, etc. La financiación permite a las empresas cubrir los desfases entre esos momentos de tiempo que van en su contra.</p>
@@ -259,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Como ya se dijo en capítulos anteriores, invertir significa renunciar a consumo presente a cambio de mayores posibilidades de consumo futuro. La renuncia al consumo actual permite adquirir algún activo real o financiero con el que la rentabilidad esperada haya hecho merecer la pena la renuncia.</p>
 <p>El dinero cambia de valor en el tiempo, y esto es un hecho que complica cualquier inversión. Ese cambio de valor se debe a muchos factores. Los principales son:</p>
 <ul>
-<li>La <strong>preferencia intertemporal</strong> del dinero, que significa simplemente que los humanos preferimos una cantidad de dinero hoy a la misma cantidad en el futuro, aunque sea inmediato. Es una cualidad psicológica inherente a toda persona, auque la percepción puede variar sustancialmente de unas a otras. Dicho de otro modo, el dinero tiene fecha.</li>
+<li>La <strong>preferencia intertemporal</strong> del dinero, que significa simplemente que los humanos preferimos una cantidad de dinero hoy a la misma cantidad en el futuro, aunque sea inmediato. Es una cualidad psicológica inherente a toda persona, aunque la percepción puede variar sustancialmente de unas a otras. Dicho de otro modo, el dinero tiene fecha.</li>
 <li>El <strong>riesgo</strong> y la <strong>incertidumbre</strong>. El hecho de que el rendimiento se produzca en el futuro hace que las expectativas se cumplan, no se cumplan o se cumplan solo parcialmente. Solemos hablar de riesgo cuando hay posibilidad de establecer alguna cuantificación del resultado en términos de probabilidades. Una situación de incertidumbre se da cuando no es posible ningún cálculo. Las personas con espíritu emprendedor están dispuestas a jugar con el riesgo, nunca con la incertidumbre. Eso es lo que sucede cuando los inversores huyen de aquellos países en los que los gobiernos cambian arbitrariamente las leyes, en los que las instituciones no son de fiar, etc.</li>
 </ul>
 <p>Naturalmente, cuanto mayor sea el riesgo, mayor será la rentabilidad que se le va a exigir a una inversión para que alguien se anime a llevarla a cabo. La percepción sobre el riesgo y la incertidumbre es subjetiva y puede haber unas diferencias importantes entre personas, hasta tal punto que hay personas con una gran <strong>aversión</strong> al riesgo y no invertirían nunca o necesitarían una compensación tan grande que hacen cualquier inversión inviable.</p>
@@ -282,10 +318,14 @@ La inflación en España
 </div>
 <div class="callout-body-container callout-body">
 <p>La figura siguiente muestra la inflación anual en España desde 1960. El máximo se dio en 1977 en medio de una crisis económica muy intensa en un momento de profundas transformaciones políticas, económicas y sociales, espoleadas además por una fuerte crisis del petróleo. <a href="https://www.ine.es/calcula" data-taget="_blank">En este enlace</a> puedes calcular el incremento del coste de la vida entre dos fechas de tu elección.</p>
-<div id="fig-caption61" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="https://datos.bancomundial.org/indicador/FP.CPI.TOTL.ZG?contextual=default&amp;end=2021&amp;locations=ES&amp;start=1960&amp;view=chart" target="_blank"><img src="inflacion.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figura&nbsp;6.1: Inflación histórica en España.</figcaption>
+<div id="fig-caption61" class="quarto-figure quarto-figure-center quarto-float anchored" target="_blank">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-caption61-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://datos.bancomundial.org/indicador/FP.CPI.TOTL.ZG?contextual=default&amp;end=2021&amp;locations=ES&amp;start=1960&amp;view=chart" target="_blank"><img src="inflacion.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-caption61-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6.1: Inflación histórica en España.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -372,7 +412,7 @@ Euribor
 <p>Esto se puede ver de tres formas:</p>
 <ol type="1">
 <li>Averiguar cuánto valen los 5.000€ de hoy dentro de un año: <span class="math inline">\(c_1=5.000 \times 1,05=5.250\)</span>. Como es inferior a 5.600€ que voy a obtener con el proyecto el proyecto es rentable.</li>
-<li>Averiguar cuánto vale hoy los 5.600€ del año que viene: <span class="math inline">\(c_0=5.600/1,05=5.333,33\)</span>. Como es superior al capital que inverto es rentable.</li>
+<li>Averiguar cuánto vale hoy los 5.600€ del año que viene: <span class="math inline">\(c_0=5.600/1,05=5.333,33\)</span>. Como es superior al capital que invierto es rentable.</li>
 <li>Calcular la rentabilidad del proyecto: <span class="math inline">\(5.600=5.000(1+i)\)</span>, de donde <span class="math inline">\(i=12\%\)</span>. Como la rentabilidad es superior al coste del capital (<span class="math inline">\(5\%\)</span>) la inversión es rentable.</li>
 </ol>
 </div>
@@ -464,12 +504,25 @@ A_{n \rceil i_t}=\frac{10}{1,01}+\frac{10}{1,01 \times 1,02}+\frac{10}{1,01 \tim
 </section>
 <section id="tipos-de-interés-nominales-y-efectivos" class="level3" data-number="6.2.4">
 <h3 data-number="6.2.4" class="anchored" data-anchor-id="tipos-de-interés-nominales-y-efectivos"><span class="header-section-number">6.2.4</span> Tipos de interés nominales y efectivos</h3>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/WO1TVTqBTLo?start=27" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
 <p>A menudo los tipos de interés o <strong>rentabilidades</strong> o <strong>costes de capital</strong> se refieren a un periodo de tiempo, normalmente un año, pero se capitalizan varias veces durante ese periodo. Esto genera cierto grado de dificultad en la comprensión de lo que realmente está sucediendo. Es por eso que se calculan los tipos efectivos, que son tasas anuales devengadas anualmente. El tipo efectivo es perfectamente comprensible y comparable con cualquier otro. La forma de realizar el cálculo es plantear una ecuación en la que las dos capitalizaciones coinciden. Siempre utilizaremos interés compuesto.</p>
-<p>Supongamos un tipo de interés del <span class="math inline">\(12\%\)</span> anual que se devenga mensualmente, la pregunta que nos hacemos es ¿a qué tipo de interés anual devengado anualmente equivale?. La <a href="#fig-fig63">Figura&nbsp;<span>6.2</span></a> muestra el caso en el que se realiza una capitalización 12 veces al año, una por mes.</p>
-<div id="fig-fig63" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig63.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figura&nbsp;6.2: Capitalización mensual de tipo de interés anual.</figcaption>
+<p>Supongamos un tipo de interés del <span class="math inline">\(12\%\)</span> anual que se devenga mensualmente, la pregunta que nos hacemos es ¿a qué tipo de interés anual devengado anualmente equivale?. La <a href="#fig-fig63" class="quarto-xref">Figura&nbsp;<span>6.2</span></a> muestra el caso en el que se realiza una capitalización 12 veces al año, una por mes.</p>
+<div id="fig-fig63" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig63-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig63.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig63-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6.2: Capitalización mensual de tipo de interés anual.
+</figcaption>
 </figure>
 </div>
 <!-- ```{r fig-fig63, echo=FALSE, fig.cap = 'Capitalización mensual de tipo de interés anual.', fig.align='center'} -->
@@ -480,11 +533,15 @@ A_{n \rceil i_t}=\frac{10}{1,01}+\frac{10}{1,01 \times 1,02}+\frac{10}{1,01 \tim
 (1+x)=\left( 1+\frac{0,12}{12} \right) ^{12},
 \]</span></p>
 <p>cuya solución es <span class="math inline">\(12,68\%\)</span>, superior al <span class="math inline">\(12\%\)</span> inicial debido a que el interés es compuesto, es decir, los intereses de cada mes se añaden al capital y generan intereses en los meses posteriores. La conclusión es que da igual recibir una rentabilidad del <span class="math inline">\(12\%\)</span> anual devengado mensualmente o un <span class="math inline">\(12,68\%\)</span> anual devengado anualmente.</p>
-<p>La <a href="#fig-fig64">Figura&nbsp;<span>6.3</span></a> muestra un caso diferente, puesto que la incógnita ahora es un tipo de interés semestral devengado semestralmente (dos veces al año). En ese caso la ecuación es <span class="math inline">\((1+x)^2 = (1+0,12/12)^{12}\)</span>, cuya solución es <span class="math inline">\(6,15\%\)</span>.</p>
-<div id="fig-fig64" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig64.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figura&nbsp;6.3: Capitalización mensual de tipo de interés semestral.</figcaption>
+<p>La <a href="#fig-fig64" class="quarto-xref">Figura&nbsp;<span>6.3</span></a> muestra un caso diferente, puesto que la incógnita ahora es un tipo de interés semestral devengado semestralmente (dos veces al año). En ese caso la ecuación es <span class="math inline">\((1+x)^2 = (1+0,12/12)^{12}\)</span>, cuya solución es <span class="math inline">\(6,15\%\)</span>.</p>
+<div id="fig-fig64" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig64-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig64.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig64-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6.3: Capitalización mensual de tipo de interés semestral.
+</figcaption>
 </figure>
 </div>
 <!-- ```{r fig-fig64, echo=FALSE, fig.cap = 'Capitalización mensual de tipo de interés semestral.', fig.align='center'} -->
@@ -537,7 +594,7 @@ TIN y TAE
 <div class="column" style="width:15%;">
 
 </div><div class="column" style="width:70%;">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/jb7_n0H0sRg?start=18" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/jb7_n0H0sRg?start=19" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div><div class="column" style="width:15%;">
 
 </div>
@@ -648,7 +705,7 @@ Cuotas constantes
 </tr>
 </tbody>
 </table>
-<p>La cuota fija del sistema francés es <span class="math inline">\(\alpha=c_0/a_{3 \rceil 0,01}=3.060,2\)</span>. Los intereses se calculan sobre el capital pendiente y la amortización de capital de cada año se calaula como la diferencia entre la cuota y el interés. La tabla es</p>
+<p>La cuota fija del sistema francés es <span class="math inline">\(\alpha=c_0/a_{3 \rceil 0,01}=3.060,2\)</span>. Los intereses se calculan sobre el capital pendiente y la amortización de capital de cada año se calcula como la diferencia entre la cuota y el interés. La tabla es</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -732,7 +789,7 @@ Cuotas constantes
 <ul>
 <li><strong>Cuotas fijas</strong>: todos los años se amortiza el mismo importe, es decir, <span class="math inline">\(A_j=(I-v_0)/n\)</span>.</li>
 <li><strong>Números dígitos crecientes</strong>: cada año se amortiza un importe proporcional creciente, <span class="math inline">\(A_j=(I-v_0) / \sum_{i=1}^n i \times j\)</span>.</li>
-<li><strong>Números dígittos decrecientes</strong>: es igual que el anterior pero decreciente, <span class="math inline">\(A_j=(I-v_0) /\sum_{i=1}^n i \times (n-j+1)\)</span>.</li>
+<li><strong>Números dígitos decrecientes</strong>: es igual que el anterior pero decreciente, <span class="math inline">\(A_j=(I-v_0) /\sum_{i=1}^n i \times (n-j+1)\)</span>.</li>
 </ul>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Solución</a></li></ul>
@@ -788,7 +845,7 @@ Amortización de inmovilizado y amortización financiera
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>No se debe confundir la amortización del inmovilizado considerada en esta sección con la amortización de activos financieros vista anteriormente. La mortización del inmovilizado se puede realizar por cuotas constantes, números dígitos crecientes o decrecientes. La mortización de activos financieros se puede realizar por el sistema americano, alemán o francés.</p>
+<p>No se debe confundir la amortización del inmovilizado considerada en esta sección con la amortización de activos financieros vista anteriormente. La amortización del inmovilizado se puede realizar por cuotas constantes, números dígitos crecientes o decrecientes. La amortización de activos financieros se puede realizar por el sistema americano, alemán o francés.</p>
 </div>
 </div>
 </section>
@@ -800,12 +857,16 @@ Amortización de inmovilizado y amortización financiera
 <p>El concepto de proyecto de inversión en este contexto es muy amplio, puede referirse a la amortización de un título de deuda o a la compra de una cadena de montaje para una industria pesada. En el primer caso los flujos se conocen con exactitud y se supone que el riesgo es pequeño. En el segundo caso el éxito de la evaluación depende crucialmente de la experiencia de quien va a emprender la inversión.</p>
 <p>En definitiva, la valoración de los proyectos va depender de las hipótesis sobre el futuro de aspectos estrictos del proyecto, pero también del ambiente económico local y general. No es lo mismo emprender un negocio cuando la economía está en pleno proceso de expansión que cuando está en recesión. Por todo ello, en la vida real se suele realizar <strong>análisis de sensibilidad</strong>, <strong>de riesgos</strong> o se plantean distintas hipótesis correspondientes con escenarios más optimistas o más pesimistas.</p>
 <p>La situación típica consiste, por tanto, en tener un conjunto de flujos de caja esperados distribuidos en el tiempo. Además habremos hecho una evaluación del riesgo, de la rentabilidad mínima esperada y de todo aquello que sea relevante para el proyecto. Todos estos aspectos tendrán su materialización en la tasa de descuento que se vaya a considerar.</p>
-<p>En la <a href="#tbl-tab61">Tabla&nbsp;<span>6.1</span></a> se muestran los flujos de caja de dos inversiones para las que nos interesará ver cuál de ellas es realizable y cuál es preferible.</p>
+<p>En la <a href="#tbl-tab61" class="quarto-xref">Tabla&nbsp;<span>6.1</span></a> se muestran los flujos de caja de dos inversiones para las que nos interesará ver cuál de ellas es realizable y cuál es preferible.</p>
 <div class="cell">
+<div id="tbl-tab61" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab61-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;6.1: Flujos de caja de dos proyectos de inversión.
+</figcaption>
+<div aria-describedby="tbl-tab61-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab61" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;6.1: Flujos de caja de dos proyectos de inversión.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 24%">
 <col style="width: 10%">
@@ -853,6 +914,8 @@ Amortización de inmovilizado y amortización financiera
 </table>
 </div>
 </div>
+</figure>
+</div>
 </div>
 <p>Dado este volumen de información lo único que resta es utilizar los criterios de evaluación de inversiones, que en realidad son muchos. Los principales se presentan a continuación.</p>
 <section id="periodo-de-recuperación-pay-back-o-pay-off" class="level3" data-number="6.4.1">
@@ -862,7 +925,7 @@ Amortización de inmovilizado y amortización financiera
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
-<p>Calcula el periodo de recuperación sin y con descuento al 5% de los proyectos de la <a href="#tbl-tab61">Tabla&nbsp;<span>6.1</span></a>.</p>
+<p>Calcula el periodo de recuperación sin y con descuento al 5% de los proyectos de la <a href="#tbl-tab61" class="quarto-xref">Tabla&nbsp;<span>6.1</span></a>.</p>
 </div>
 <div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
 <p>Para calcular el periodo de recuperación del proyecto A tenemos que ver cuándo se recuperan los 1.500€ de inversión. Cuando han pasado tres años ya se han recuperado 1.200€, por lo que los 300€ restantes se recuperarán a lo largo del año siguiente. Si suponemos una distribución uniforme de los flujos a lo largo del año, tenemos que el plazo de recuperación será de <span class="math inline">\(3+3/4\)</span> años, es decir, 3 años y 9 meses.</p>
@@ -935,7 +998,7 @@ VAN(k)=-c_0+\frac{c_1}{(1+k)}+\frac{c_2}{(1+k)^2}+\dots+\frac{c_n}{(1+k)^n}.
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
-<p>Calcula el VAN al 5% de los proyectos de la <a href="#tbl-tab61">Tabla&nbsp;<span>6.1</span></a>.</p>
+<p>Calcula el VAN al 5% de los proyectos de la <a href="#tbl-tab61" class="quarto-xref">Tabla&nbsp;<span>6.1</span></a>.</p>
 </div>
 <div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
 <p><span class="math display">\[
@@ -945,9 +1008,31 @@ VAN_A(5\%)=-1.500+\frac{400}{1,05}+\frac{400}{1,05^2}+\dots +\frac{400}{1,05^6}=
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Coste de oportunidad de nuevo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La actualización se utiliza mucho en cualquier cálculo económico, considera de nuevo el cálculo del coste de oportunidad de estudiar una carrera.</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/xovTl7VJXuI?start=21" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="tasa-interna-de-rentabilidad-tir" class="level3" data-number="6.4.3">
-<h3 data-number="6.4.3" class="anchored" data-anchor-id="tasa-interna-de-rentabilidad-tir"><span class="header-section-number">6.4.3</span> Tasa Interna de Rentabilidad (TIR)</h3>
+<h3 data-number="6.4.3" class="anchored"><span class="header-section-number">6.4.3</span> Tasa Interna de Rentabilidad (TIR)</h3>
 <p>La Tasa Interna de Rentabilidad se define como la tasa de descuento que hace el VAN igual a cero. Se calcula como la solución de la siguiente ecuación</p>
 <p><span class="math display">\[
 0=-c_0+\frac{c_1}{(1+TIR)}+\frac{c_2}{(1+TIR)^2}+\dots+\frac{c_n}{(1+TIR)^n}.
@@ -959,7 +1044,7 @@ VAN_A(5\%)=-1.500+\frac{400}{1,05}+\frac{400}{1,05^2}+\dots +\frac{400}{1,05^6}=
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
-<p>Calcula la TIR de los proyectos de la <a href="#tbl-tab61">Tabla&nbsp;<span>6.1</span></a>.</p>
+<p>Calcula la TIR de los proyectos de la <a href="#tbl-tab61" class="quarto-xref">Tabla&nbsp;<span>6.1</span></a>.</p>
 </div>
 <div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
 <p><span class="math display">\[
@@ -1142,17 +1227,183 @@ c_0(1+TIR)^n=c_1+c_2+\dots+c_{n-1}+c_n,
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Resuelve
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Una empresa está considerando invertir en una máquina por valor de 100€ con un valor residual de 10€ y una vida útil de tres años. Se estima que producirá 50€ al año y generará unos pagos de 10€ anuales. El impuesto sobre la renta es del 25%. Considera la amortización constante. Calcula el plazo de recuperación, el VAN al 10% y la TIR.</p>
+<p>Considera una segunda opción consistente en financiar la mitad de la inversión con un préstamo al 4% amortizado por el método americano.</p>
+<section id="solución-13" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="solución-13"><span class="header-section-number">6.5</span> Solución</h2>
+<p>La tabla conteniendo toda la información del problema es la siguiente:</p>
+<!-- ```{r tbl-ttt1, echo=FALSE} -->
+<!-- #| tbl-cap: Flujos de caja de dos proyectos de inversión. -->
+<!-- tt1 = rbind(c("**0**", "-100", " ", " ", " ", " ", "-100"), -->
+<!--             c("**1**", " ", "40", "30", "10", "-2,5", "37,5"), -->
+<!--             c("**2**", " ", "40", "30", "10", "-2,5", "37,5"), -->
+<!--             c("**3**", "10", "40", "30", "10", "-2,5", "47,5") -->
+<!-- ) -->
+<!-- colnames(tt1) = c("Periodo", "Inversión", "Cobros-Pagos", "Dígitos", "BAI", "Impuesto", "Flujo") -->
+<!-- knitr::kable(tt1, align = "crrrrrr", -->
+<!-- ) -->
+<!-- ``` -->
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Periodo</th>
+<th style="text-align: right;">Inversión</th>
+<th style="text-align: right;">Cobros-Pagos</th>
+<th style="text-align: right;">Dígitos</th>
+<th style="text-align: right;">BAI</th>
+<th style="text-align: right;">Impuesto</th>
+<th style="text-align: right;">Flujo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><strong>0</strong></td>
+<td style="text-align: right;">-100</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">-100</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>1</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">-2,5</td>
+<td style="text-align: right;">37,5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>2</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">-2,5</td>
+<td style="text-align: right;">37,5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>3</strong></td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">-2,5</td>
+<td style="text-align: right;">47,5</td>
+</tr>
+</tbody>
+</table>
+<p>El beneficio se calcula como los cobros menos pagos menos la amortización. El flujo de caja es la inversión inicial más el valor residual (que se asume que se recupera al final de la vida del activo), más cobros menos pagos, menos el impuesto.</p>
+<p>El plazo de recuperación sin descuento es <span class="math inline">\(2 + 25 / 47,5\)</span>, que es aproximadamente dos años y medio. <span class="math display">\[
+VAN(10\%)=-100+\frac{37,5}{1,1}+\frac{37,5}{1,1^2}+\frac{47,5}{1,1^3}=0,77
+\]</span></p>
+<p>La TIR es 10,42%. El proyecto es rentable con muy poco margen, puesto que el VAN es a penas positivo y la TIR supera en muy poco a la tasa de descuento.</p>
+<p>Si consideramos el préstamo, la tabla cambiaría de la siguiente forma:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Periodo</th>
+<th style="text-align: right;">Préstamo</th>
+<th style="text-align: right;">Intereses</th>
+<th style="text-align: right;">BAI</th>
+<th style="text-align: right;">Impuesto</th>
+<th style="text-align: right;">Flujo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><strong>0</strong></td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">-50</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>1</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>2</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">36</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>3</strong></td>
+<td style="text-align: right;">-50</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-4</td>
+</tr>
+</tbody>
+</table>
+<p>En este caso el plazo de recuperación es <span class="math inline">\(1+14/36\)</span>, un año y casi cinco meses. El VAN es 9,47 y la TIR es 24,62%. El endeudamiento ha actuado como “palanca” de la inversión, incrementando la rentabilidad. Esto es así porque el coste de la financiación es inferior a la rentabilidad del proyecto sin financiación ajena.</p>
 </section>
-<section id="análisis-de-sensibilidad" class="level3" data-number="6.4.4">
-<h3 data-number="6.4.4" class="anchored" data-anchor-id="análisis-de-sensibilidad"><span class="header-section-number">6.4.4</span> Análisis de sensibilidad</h3>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Resuelve
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Calcula la TIR de un proyecto de inversión con una inversión inicial <span class="math inline">\(c_0\)</span> y flujos constantes y de horizonte temporal infinito. ¿Te llama la atención el resultado?</p>
+<section id="solución-14" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="solución-14"><span class="header-section-number">6.6</span> Solución</h2>
+<p>La ecuación será</p>
+<p><span class="math display">\[
+0 = -c_0+c a_{\infty\rceil TIR}=-c_0+c/TIR  \quad \Rightarrow \quad TIR=c/c_0
+\]</span> Resulta curioso que teniendo periodo infinito la TIR sea finita.</p>
+</section>
+</div>
+</div>
+</section>
+<section id="análisis-de-sensibilidad" class="level3" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="análisis-de-sensibilidad"><span class="header-section-number">6.6.1</span> Análisis de sensibilidad</h3>
 <p>El análisis de sensibilidad consiste en perturbar algunas variables claves del análisis y observar cómo varían las variables respuesta. Por ejemplo, cómo varían el plazo de recuperación, el VAN o la TIR cuando los flujos de caja son superiores o inferiores en un 10%, etc. Un análisis exhaustivo de sensibilidad en un proyecto real tiene muchas ramificaciones. En el esquema sencillo que seguimos aquí se puede hacer un análisis rápido calculando el VAN para un continuo de tasas de descuento. Si para tasas de descuento elevadas el VAN es positivo será una señal ineludible de que el proyecto es muy bueno. Por el contrario, si para tasas de descuento pequeñas el VAN es negativo implica que el proyecto hay que abandonarlo o modificarlo sustancialmente.</p>
-<p>Si se realiza una representación gráfica del VAN frente a la tasa de descuento se obtiene la <a href="#fig-fig65">Figura&nbsp;<span>6.4</span></a>. Cuando la tasa de descuento es cero el VAN es la suma de los flujos de caja sin descontar. Cuando la tasa de descuento es muy grande el VAN tiende al flujo inicial. El corte de las curvas con el eje horizontal es precisamente la TIR del proyecto por definición. El corte de ambas curvas se suele llamar <em>intersección de Fisher</em> y marca la tasa de descuento para la que los proyectos son indiferentes. Valores superiores de la tasa de descuento hará que el proyecto B sea mejor desde el punto de vista del VAN, mientras que tasas inferiores harán preferible el A.</p>
+<p>Si se realiza una representación gráfica del VAN frente a la tasa de descuento se obtiene la <a href="#fig-fig65" class="quarto-xref">Figura&nbsp;<span>6.4</span></a>. Cuando la tasa de descuento es cero el VAN es la suma de los flujos de caja sin descontar. Cuando la tasa de descuento es muy grande el VAN tiende al flujo inicial. El corte de las curvas con el eje horizontal es precisamente la TIR del proyecto por definición. El corte de ambas curvas se suele llamar <em>intersección de Fisher</em> y marca la tasa de descuento para la que los proyectos son indiferentes. Valores superiores de la tasa de descuento hará que el proyecto B sea mejor desde el punto de vista del VAN, mientras que tasas inferiores harán preferible el A.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig65" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="06-inversiones_files/figure-html/fig-fig65-1.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;6.4: VAN para dos proyectos de inversión.</figcaption>
+<div id="fig-fig65" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig65-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="06-inversiones_files/figure-html/fig-fig65-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig65-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6.4: VAN para dos proyectos de inversión.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1166,8 +1417,8 @@ c_0(1+TIR)^n=c_1+c_2+\dots+c_{n-1}+c_n,
 <p>Si el volumen de recursos empleados en la inversión fuera similar la TIR sería una buena guía, aunque el VAN también valdría puesto que una de las curvas estaría siempre por encima de la otra, es decir, el VAN sería mejor para uno de los proyectos con independencia de la tasa de descuento. Si se tiene muy claro que el valor de la tasa de descuento el VAN sería la guía a seguir. Si ninguna de esas posibilidades es clara, no queda más remedio que incluir criterios adicionales, entre ellos el volumen de inversión total. Hay que tener en cuenta que en el proyecto A la inversión inicial es un <span class="math inline">\(50\%\)</span> superior a la del B. Una inversión de 1€ con una TIR del <span class="math inline">\(500\%\)</span> convertiría la inversión en 6€, pero es una inversión ridícula desde cualquier punto de vista.</p>
 </section>
 </section>
-<section id="cálculo-de-rentabilidades-y-costes-de-activos-financieros" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="cálculo-de-rentabilidades-y-costes-de-activos-financieros"><span class="header-section-number">6.5</span> Cálculo de rentabilidades y costes de activos financieros</h2>
+<section id="cálculo-de-rentabilidades-y-costes-de-activos-financieros" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="cálculo-de-rentabilidades-y-costes-de-activos-financieros"><span class="header-section-number">6.7</span> Cálculo de rentabilidades y costes de activos financieros</h2>
 <p>El cálculo de la TIR proporciona una ecuación que se usa repetidamente en finanzas para el cálculo de rentabilidades y coste de cualquier activo y pasivo financiero. De igual forma se puede utilizar para calcular las TAE. La ventaja es su generalidad, puesto que depende de los flujos de caja, que pueden ser tan irregulares como se quiera.</p>
 <p>Imaginemos que queremos calcular la rentabilidad de un bono de deuda pública de 6.000€ de nominal con un interés del 2% anual a 5 años (los bonos se amortizan al tirón o por el sistema americano). La ecuación depende de los flujos de caja descontados por la rentabilidad que queremos calcular,</p>
 <p><span class="math display">\[
@@ -1206,7 +1457,7 @@ c_0(1+TIR)^n=c_1+c_2+\dots+c_{n-1}+c_n,
 <p>Si en el caso americano se produce una amortización anticipada de 500€ al finalizar el segundo periodo, ¿cuál es el nuevo coste del préstamo?</p>
 </div>
 <div id="tabset-14-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-2-tab">
-<p>Este ejemplo ya se vio anteriormente. Los flujos de caja son el capital que se recibe inicialmente y las cuotas que se devuelven durante la vida del prétamo.</p>
+<p>Este ejemplo ya se vio anteriormente. Los flujos de caja son el capital que se recibe inicialmente y las cuotas que se devuelven durante la vida del préstamo.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -1271,7 +1522,7 @@ Cuestiones para pensar
 <div class="column" style="width:15%;">
 
 </div><div class="column" style="width:70%;">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XMNBdaCjKXg?start=21" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XMNBdaCjKXg?start=22" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div><div class="column" style="width:15%;">
 
 </div>
@@ -1288,10 +1539,10 @@ Cuestiones para pensar
 </div>
 </div>
 </section>
-<section id="cuestiones-y-problemas" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="cuestiones-y-problemas"><span class="header-section-number">6.6</span> Cuestiones y problemas</h2>
-<section id="cuestiones-y-problemas-resueltos" class="level3" data-number="6.6.1">
-<h3 data-number="6.6.1" class="anchored" data-anchor-id="cuestiones-y-problemas-resueltos"><span class="header-section-number">6.6.1</span> Cuestiones y problemas resueltos</h3>
+<section id="cuestiones-y-problemas" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="cuestiones-y-problemas"><span class="header-section-number">6.8</span> Cuestiones y problemas</h2>
+<section id="cuestiones-y-problemas-resueltos" class="level3" data-number="6.8.1">
+<h3 data-number="6.8.1" class="anchored" data-anchor-id="cuestiones-y-problemas-resueltos"><span class="header-section-number">6.8.1</span> Cuestiones y problemas resueltos</h3>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
@@ -1582,7 +1833,7 @@ VAN_{\text{delantero}}=\frac{3}{1,1}+\frac{3}{1,1^2}+\frac{3}{1,1^3}+\frac{3}{1,
 <p><span class="math display">\[
 VAN_{\text{defensa}}=4+\frac{2}{1,1}+\frac{2}{1,1^2}+\frac{2}{1,1^3}+\frac{2}{1,1^4}+\frac{2}{1,1^5}=11.581
 \]</span></p>
-<p>La respuesta depende del tipo de interés. Se puede calcular el tipo de interés para el que los dos proyectos son equivalentes igualandos las dos expresiones del VAN anteriores considerando como incógnita el tipo de interés. Aprovechando que los flujos de caja son constantes la ecuación es</p>
+<p>La respuesta depende del tipo de interés. Se puede calcular el tipo de interés para el que los dos proyectos son equivalentes igualando las dos expresiones del VAN anteriores considerando como incógnita el tipo de interés. Aprovechando que los flujos de caja son constantes la ecuación es</p>
 <p><span class="math display">\[
 3 \times a_{5 \rceil i} = 4 + 2 \times a_{5 \rceil i}
 \]</span></p>
@@ -2088,7 +2339,7 @@ VAN=-10.000+\frac{2.000}{1,113}+\frac{3.000}{1,113^2} +\frac{4.000}{1,113^3} +\f
 <div class="tab-content">
 <div id="tabset-33-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-33-1-tab">
 <ol start="19" type="1">
-<li>La adquisición por unos determinados equipos por una empresa industrial supone un desembolso inicial de 9.500. Se estima que generará en los 3 años de duración de su vida útil unos flujos netos de caja anuales de 5.000, 2.000 y 5.000, respectivamente. Existe una tasa de inflación del 2% anual acumulativa y la rentabilidad que se requere en ausencia de inflación es del 7%. Calcula el VAN, la TIR, la TIR real y la TIR real si la inflación no fuera constante, es decir, si fuera del 1%, 1,5% y 2% para cada uno de los años.</li>
+<li>La adquisición por unos determinados equipos por una empresa industrial supone un desembolso inicial de 9.500. Se estima que generará en los 3 años de duración de su vida útil unos flujos netos de caja anuales de 5.000, 2.000 y 5.000, respectivamente. Existe una tasa de inflación del 2% anual acumulativa y la rentabilidad que se requiere en ausencia de inflación es del 7%. Calcula el VAN, la TIR, la TIR real y la TIR real si la inflación no fuera constante, es decir, si fuera del 1%, 1,5% y 2% para cada uno de los años.</li>
 </ol>
 </div>
 <div id="tabset-33-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-33-2-tab">
@@ -2286,7 +2537,7 @@ VAN=-9.500+\frac{5.000}{1,07 \times 1,02}+\frac{2.000}{1,07^2 \times 1,02^2} +\f
 <p>Con un VAN de 3.269,76 y una TIR de 19,86%. Este proyecto es superior al anterior. Además sucede así para cualquier valor de la tasa de descuento, como indica la figura.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="fig6.png" class="img-fluid figure-img"></p>
+<p><img src="fig6.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2412,8 +2663,8 @@ VAN=-9.500+\frac{5.000}{1,07 \times 1,02}+\frac{2.000}{1,07^2 \times 1,02^2} +\f
 </div>
 </div>
 </section>
-<section id="cuestiones-y-problemas-propuestos" class="level3" data-number="6.6.2">
-<h3 data-number="6.6.2" class="anchored" data-anchor-id="cuestiones-y-problemas-propuestos"><span class="header-section-number">6.6.2</span> Cuestiones y problemas propuestos</h3>
+<section id="cuestiones-y-problemas-propuestos" class="level3" data-number="6.8.2">
+<h3 data-number="6.8.2" class="anchored" data-anchor-id="cuestiones-y-problemas-propuestos"><span class="header-section-number">6.8.2</span> Cuestiones y problemas propuestos</h3>
 <ol type="1">
 <li><p>¿Prefieres tener 100€ hoy o 130€ dentro de 5 años? ¿Y si los intereses fueran del 5%? ¿Qué interés anual hacen las dos cantidades equivalentes?</p></li>
 <li><p>Calcula el valor futuro de los siguientes montantes a un 5% anual devengado anualmente y trimestralmente (compáralos y saca conclusiones):</p>
@@ -2541,6 +2792,13 @@ VAN=-9.500+\frac{5.000}{1,07 \times 1,02}+\frac{2.000}{1,07^2 \times 1,02^2} +\f
 <p>Garrido, S., Romero, M. (2021), Fundamentos de gestión de empresas, Editorial Universitaria Ramón Areces.</p>
 <p>INE (2023). ¿Quiere actualizar una renta? Recuperado el 18 de mayo de 2023. <a href="https://www.ine.es/calcula" target="_blank">Enlace</a>.</p>
 <p>Maynar, P. (2007), La economía de la empresa en el espacio de educación superior, Mc-Graw Hill, Madrid, España.</p>
+<p>Pedregal, D.J. (2023). Cuidado con las tasas de rentabilidad efectiva anual [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=jb7_n0H0sRg" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2023). Flujos de caja diferentes, rentabilidades iguales ¿y ahora qué? [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=endA1y_Q_Qo" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2023). Calcular el coste de la financiación [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=MKdMFUZmfkA" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2023). Precios y rentabilidades de bonos [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=XMNBdaCjKXg" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2023). ¡Ojo con el apalancamiento! [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=SxDdCPfQVSI" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). Calcular el tipo efectivo a partir del nominal no es tan difícil [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=WO1TVTqBTLo" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). A vueltas con el coste de estudiar [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=xovTl7VJXuI" target="_blank">Enlace</a>.</p>
 <p>Trapero, J.R., García, F.P., Pedregal, D.J. (2013). Dirección y Gestión Empresarial. Mcgraw-Hill. <a href="https://www.mheducation.es/direccion-y-gestion-empresarial-9788448190385-spain" target="_blank">Enlace</a>.</p>
 
 
@@ -2626,10 +2884,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2639,8 +2914,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2652,7 +2936,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2696,6 +3103,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2721,6 +3129,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2782,17 +3216,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./05-contabilidad.html" class="pagination-link">
+      <a href="./05-contabilidad.html" class="pagination-link" aria-label="Contabilidad financiera">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Contabilidad financiera</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./07-interno.html" class="pagination-link">
+      <a href="./07-interno.html" class="pagination-link" aria-label="Análisis interno y externo de la empresa">
         <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis interno y externo de la empresa</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

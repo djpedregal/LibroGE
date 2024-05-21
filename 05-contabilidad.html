@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -65,6 +72,33 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar floating">
@@ -73,12 +107,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-contabilidad.html"><strong>PARTE II: Finanzas</strong></a></li><li class="breadcrumb-item"><a href="./05-contabilidad.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Contabilidad financiera</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-contabilidad.html"><strong>PARTE II: Finanzas</strong></a></li><li class="breadcrumb-item"><a href="./05-contabilidad.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Contabilidad financiera</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -88,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Fundamentos de gestión empresarial para ingenieros</a> 
@@ -197,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -230,7 +264,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-contabilidad.html"><strong>PARTE II: Finanzas</strong></a></li><li class="breadcrumb-item"><a href="./05-contabilidad.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Contabilidad financiera</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-chap5" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Contabilidad financiera</span></span></h1>
 </div>
@@ -245,7 +279,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p>La <strong>contabilidad</strong> es un sistema de información sistemático de las empresas para conocer su situación <strong>patrimonial</strong>, <strong>económica</strong> y <strong>financiera</strong>, que servirá al propósito de facilitar la toma de decisiones. La contabilidad informa sobre la situación patrimonial, es decir, sobre la riqueza de la empresa. Además informa de la situación económica, es decir, si la empresa es capaz de generar beneficios o renta. Finalmente, informa sobre la situación financiera, que implica detectar si la gestión de los flujos monetarios es adecuada para evitar caer en suspensión de pagos e incluso quiebra.</p>
 <p>Toda esta información sistematizada interesa a todos los agentes que intervienen en la empresa. Normalmente se habla de <strong>contabilidad de gestión</strong> o <strong>de costes</strong> a aquella que es interna cuyo objetivo es suministrar información detallada y fluida sobre la producción y los costes a los responsables de la gestión. Por otro lado existe la <strong>contabilidad financiera</strong> que es más de uso externo y va dirigida a los accionistas o propietarios actuales y potenciales, a los prestamistas, al Estado y a la sociedad en general.</p>
@@ -324,11 +360,15 @@ Importante
 <li><strong>Pasivo</strong>: está constituido por las distintas fuentes de financiación ajena que utiliza la empresa para llevar a cabo sus objetivos. Son las fuentes de financiación de terceros que la empresa les debe.</li>
 </ul></li>
 </ol>
-<p>La Figura <a href="#fig-fig51">Figura&nbsp;<span>5.1</span></a> muestra el esquema general del balance que más tarde se extenderá. En él se ve que el PGC ordena los activos y pasivos empezando por el largo plazo (no corrientes) y acabando los de más corto plazo (corrientes). Además se han marcado algunas partidas cuya importancia se verá más tarde. Estas son la <strong>caja</strong> en el activo corriente por la que pasarán todos los <strong>flujos de caja</strong> y el <strong>resultado del ejercicio</strong> que refleja el <strong>beneficio después de impuestos</strong>, que, como veremos más tarde es el saldo de la cuenta de pérdidas y ganancias.</p>
-<div id="fig-fig51" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig51.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figura&nbsp;5.1: Esquema general del balance de situación.</figcaption>
+<p>La Figura <a href="#fig-fig51" class="quarto-xref">Figura&nbsp;<span>5.1</span></a> muestra el esquema general del balance que más tarde se extenderá. En él se ve que el PGC ordena los activos y pasivos empezando por el largo plazo (no corrientes) y acabando los de más corto plazo (corrientes). Además se han marcado algunas partidas cuya importancia se verá más tarde. Estas son la <strong>caja</strong> en el activo corriente por la que pasarán todos los <strong>flujos de caja</strong> y el <strong>resultado del ejercicio</strong> que refleja el <strong>beneficio después de impuestos</strong>, que, como veremos más tarde es el saldo de la cuenta de pérdidas y ganancias.</p>
+<div id="fig-fig51" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig51-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig51.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig51-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.1: Esquema general del balance de situación.
+</figcaption>
 </figure>
 </div>
 <!-- ```{r fig-fig51, echo=FALSE, fig.cap='Esquema general del balance de situación.', fig.align='center'} -->
@@ -346,6 +386,26 @@ Balance y cuenta de resultados
 <div class="callout-body-container callout-body">
 <p>El balance es una foto estática en un momento del tiempo y refleja el <strong>patrimonio bruto</strong> de la empresa, es decir, su <strong>riqueza</strong>. En el balance se reflejan las inversiones y desinversiones (activo), además de las fuentes de financiación (patrimonio neto y pasivo).</p>
 <p>Hay que diferenciarlo radicalmente de la cuenta de pérdidas y ganancias que aglutina la <strong>renta</strong> de la empresa, que es una película dinámica de lo que ha sucedido durante un ejercicio, y que refleja los ingresos y gastos del mismo (¡¡<em>no los cobros y pagos, que en realidad son los flujos de caja</em>!!).</p>
+<p>Aquí tienes una explicación en vivo del esquema general del balance de situación.</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/gB2x-zUbYus?start=31" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
+<p>Esta es una descripción detallada del balance.</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/YGUVbbPHthg?start=18" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -424,12 +484,16 @@ Balance de situación
 </section>
 <section id="activo-no-corriente" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="activo-no-corriente">Activo no corriente</h4>
-<p>El activo no corriente recogerá todos los bienes y derechos que la empresa tiene reconocidos en un momento del tiempo para un plazo mayor de un año, que es lo que se considera el largo plazo. Los componentes agregados se muestran en la <a href="#tbl-tab51">Tabla&nbsp;<span>5.1</span></a> y se explican a continuación:</p>
+<p>El activo no corriente recogerá todos los bienes y derechos que la empresa tiene reconocidos en un momento del tiempo para un plazo mayor de un año, que es lo que se considera el largo plazo. Los componentes agregados se muestran en la <a href="#tbl-tab51" class="quarto-xref">Tabla&nbsp;<span>5.1</span></a> y se explican a continuación:</p>
 <div class="cell">
+<div id="tbl-tab51" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab51-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;5.1: Activo no corriente.
+</figcaption>
+<div aria-describedby="tbl-tab51-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab51" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;5.1: Activo no corriente.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
@@ -456,6 +520,8 @@ Balance de situación
 </table>
 </div>
 </div>
+</figure>
+</div>
 </div>
 <ul>
 <li><strong>Inmovilizado intangible</strong> está constituido por todos aquellos activos que no tienen apariencia física, que son susceptibles de valoración económica y que no se pueden liquidar en un periodo inferior a un año. Entre ellos cabe destacar el <strong>fondo de comercio</strong>, que es todo aquello con valor inmaterial derivado de cuestiones como el valor de la clientela, la eficiencia, la organización, el crédito, el prestigio, la experiencia, etc. que le permiten obtener rentabilidades superiores a las esperadas por la simple suma de sus activos contables.</li>
@@ -481,12 +547,16 @@ Amortización acumulada del inmovilizado
 </section>
 <section id="activo-corriente" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="activo-corriente">Activo corriente</h4>
-<p>El activo corriente recogerá todos los bienes y derechos que la empresa tiene reconocidos en un momento del tiempo para un plazo inferior a un año. La <a href="#tbl-tab52">Tabla&nbsp;<span>5.2</span></a> muestra su estructura.</p>
+<p>El activo corriente recogerá todos los bienes y derechos que la empresa tiene reconocidos en un momento del tiempo para un plazo inferior a un año. La <a href="#tbl-tab52" class="quarto-xref">Tabla&nbsp;<span>5.2</span></a> muestra su estructura.</p>
 <div class="cell">
+<div id="tbl-tab52" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab52-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;5.2: Activo corriente.
+</figcaption>
+<div aria-describedby="tbl-tab52-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab52" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;5.2: Activo corriente.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
@@ -516,6 +586,8 @@ Amortización acumulada del inmovilizado
 </table>
 </div>
 </div>
+</figure>
+</div>
 </div>
 <ul>
 <li><strong>Activos no corrientes mantenidos para la venta</strong> son activos que ya no se utilizan en la producción y que se espera vender en un período inferior a un año.</li>
@@ -539,22 +611,30 @@ El IVA no es un gasto ni un ingreso
 <p>Todo lo anterior se puede repetir para el caso del cobro del IVA que realizan las empresas y que se ubicará en la partida de <em>Hacienda Pública acreedora por IVA repercutido</em> en el activo corriente del balance.</p>
 </div>
 </div>
-<p>La <a href="#fig-ejemploActivo">Figura&nbsp;<span>5.2</span></a> recoge de forma resumida un ejemplo de activo de una empresa real.</p>
-<div id="fig-ejemploActivo" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="https://docs.google.com/spreadsheets/d/1yO3XQgBnm3zzXpbAwjq4VNDKFmTEowAH9lddd4HtE7Q/edit?usp=sharing" target="_blank"><img src="ejemploActivo.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figura&nbsp;5.2: Ejemplo real de activo, en miles de euros.</figcaption>
+<p>La <a href="#fig-ejemploActivo" class="quarto-xref">Figura&nbsp;<span>5.2</span></a> recoge de forma resumida un ejemplo de activo de una empresa real.</p>
+<div id="fig-ejemploActivo" class="quarto-figure quarto-figure-center quarto-float anchored" target="_blank">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ejemploActivo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://docs.google.com/spreadsheets/d/1yO3XQgBnm3zzXpbAwjq4VNDKFmTEowAH9lddd4HtE7Q/edit?usp=sharing" target="_blank"><img src="ejemploActivo.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ejemploActivo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.2: Ejemplo real de activo, en miles de euros.
+</figcaption>
 </figure>
 </div>
 </section>
 <section id="el-patrimonio-neto" class="level4" data-number="5.2.1.2">
 <h4 data-number="5.2.1.2" class="anchored" data-anchor-id="el-patrimonio-neto"><span class="header-section-number">5.2.1.2</span> El patrimonio neto</h4>
-<p>La estructura del patrimonio neto se observa en la <a href="#tbl-tab53">Tabla&nbsp;<span>5.3</span></a>. El patrimonio neto es por definición la diferencia entre el patrimonio bruto (activo) y las deudas que recaen sobre él (pasivo). Es, por tanto, aquella parte de la empresa que es propiedad de sus dueños.</p>
+<p>La estructura del patrimonio neto se observa en la <a href="#tbl-tab53" class="quarto-xref">Tabla&nbsp;<span>5.3</span></a>. El patrimonio neto es por definición la diferencia entre el patrimonio bruto (activo) y las deudas que recaen sobre él (pasivo). Es, por tanto, aquella parte de la empresa que es propiedad de sus dueños.</p>
 <div class="cell">
+<div id="tbl-tab53" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab53-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;5.3: Estructura del patrimonio neto.
+</figcaption>
+<div aria-describedby="tbl-tab53-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab53" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;5.3: Estructura del patrimonio neto.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><strong>A-1. Fondos propios</strong>.</td>
@@ -605,6 +685,8 @@ El IVA no es un gasto ni un ingreso
 </table>
 </div>
 </div>
+</figure>
+</div>
 </div>
 <ul>
 <li><strong>Fondos propios</strong> es estrictamente el patrimonio neto que no está sujeto a variaciones y que lo ha conseguido la empresa por aportación de los socios o por la actividad de la empresa.</li>
@@ -631,24 +713,41 @@ Quiebra
 </div>
 <div class="callout-body-container callout-body">
 <p>Como se puede observar, hay varias partidas que son negativas y otras que pueden serlo. Eso quiere decir que pueden existir casos en los que la parte negativa supere a la positiva resultando en un patrimonio neto negativo. Es decir, las pérdidas acumuladas durante años agotan las aportaciones de los socios, las reservas que puediera haber y todos los demás elementos del patrimonio neto. Es fácil imaginar que se trata de una situación muy grave para la empresa, de hecho la empresa estará en <strong>quiebra</strong> y significa, básicamente, que la empresa debe ser liquidada, es decir, se debe vender el activo y convertirlo en liquidez para pagar, por este orden, el pasivo y luego los propietarios. Si la empresa está efectivamente quebrada no habrá suficientes recursos para cubrir ni siquiera a los acreedores. Volveremos más tarde sobre esto.</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/nMU32Efsa04?start=21" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
 </div>
 </div>
-<p>La <a href="#fig-ejemploPatrimonio">Figura&nbsp;<span>5.3</span></a> muestra un ejemplo de patrimonio neto de una empresa real.</p>
-<div id="fig-ejemploPatrimonio" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="https://docs.google.com/spreadsheets/d/1RlPtDftOZ5zYDTOzR-i1JGB0B9iSX7UoyPBVDPyuwDQ/edit?usp=sharing" target="_blank"><img src="ejemploPatrimonio.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figura&nbsp;5.3: Ejemplo real de patrimonio neto, en miles de euros.</figcaption>
+</div>
+</div>
+<p>La <a href="#fig-ejemploPatrimonio" class="quarto-xref">Figura&nbsp;<span>5.3</span></a> muestra un ejemplo de patrimonio neto de una empresa real.</p>
+<div id="fig-ejemploPatrimonio" class="quarto-figure quarto-figure-center quarto-float anchored" target="_blank">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ejemploPatrimonio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://docs.google.com/spreadsheets/d/1RlPtDftOZ5zYDTOzR-i1JGB0B9iSX7UoyPBVDPyuwDQ/edit?usp=sharing" target="_blank"><img src="ejemploPatrimonio.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ejemploPatrimonio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.3: Ejemplo real de patrimonio neto, en miles de euros.
+</figcaption>
 </figure>
 </div>
 </section>
 <section id="el-pasivo" class="level4" data-number="5.2.1.3">
 <h4 data-number="5.2.1.3" class="anchored" data-anchor-id="el-pasivo"><span class="header-section-number">5.2.1.3</span> El pasivo</h4>
-<p>El pasivo refleja lo que la empresa debe a terceros. La estructura del pasivo no corriente se ilustra en la <a href="#tbl-tab54">Tabla&nbsp;<span>5.4</span></a>.</p>
+<p>El pasivo refleja lo que la empresa debe a terceros. La estructura del pasivo no corriente se ilustra en la <a href="#tbl-tab54" class="quarto-xref">Tabla&nbsp;<span>5.4</span></a>.</p>
 <div class="cell">
+<div id="tbl-tab54" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab54-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;5.4: Pasivo no corriente.
+</figcaption>
+<div aria-describedby="tbl-tab54-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab54" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;5.4: Pasivo no corriente.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
@@ -669,6 +768,8 @@ Quiebra
 </table>
 </div>
 </div>
+</figure>
+</div>
 </div>
 <ul>
 <li><strong>Provisiones a largo plazo</strong> son fondos que se reservan para futuros pagos a los que la empresa tenga que hacer frente más adelante y de los que no conoce la cuantía exacta o el momento exacto en el que se producirán. Puede ser que toda la provisión o parte de la misma se recupere en el futuro. También puede suceder que resulte insuficiente por optimismo en la estimación inicial. Las provisiones se dotan con cargo al gasto de que se trate.</li>
@@ -676,12 +777,16 @@ Quiebra
 <li><strong>Deudas con empresas del grupo y asociadas a largo plazo</strong> son como los anteriores, pero contraidos con empresas del grupo o asociadas.</li>
 <li><strong>Pasivos por impuesto diferido</strong> es todo lo que la empresa debe a la Hacienda Pública por la gestión del impuesto sobre la renta.</li>
 </ul>
-<p>El pasivo corriente tiene la estructura que se muestra en la <a href="#tbl-tab55">Tabla&nbsp;<span>5.5</span></a> y a estas alturas no debería ofrecer ningún problema de interpretación, puesto que, o bien son conceptos análogos a los del pasivo no corriente, o bien son contrapartidas de otras de activo. La <a href="#fig-ejemploPasivo">Figura&nbsp;<span>5.4</span></a> muestra un ejemplo de pasivo de una empresa real.</p>
+<p>El pasivo corriente tiene la estructura que se muestra en la <a href="#tbl-tab55" class="quarto-xref">Tabla&nbsp;<span>5.5</span></a> y a estas alturas no debería ofrecer ningún problema de interpretación, puesto que, o bien son conceptos análogos a los del pasivo no corriente, o bien son contrapartidas de otras de activo. La <a href="#fig-ejemploPasivo" class="quarto-xref">Figura&nbsp;<span>5.4</span></a> muestra un ejemplo de pasivo de una empresa real.</p>
 <div class="cell">
+<div id="tbl-tab55" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab55-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;5.5: Pasivo corriente.
+</figcaption>
+<div aria-describedby="tbl-tab55-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab55" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;5.5: Pasivo corriente.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
@@ -708,23 +813,42 @@ Quiebra
 </table>
 </div>
 </div>
+</figure>
 </div>
-<div id="fig-ejemploPasivo" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="https://docs.google.com/spreadsheets/d/1RlPtDftOZ5zYDTOzR-i1JGB0B9iSX7UoyPBVDPyuwDQ/edit?usp=sharing" target="_blank"><img src="ejemploPasivo.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figura&nbsp;5.4: Ejemplo real de pasivo, en miles de euros.</figcaption>
+</div>
+<div id="fig-ejemploPasivo" class="quarto-figure quarto-figure-center quarto-float anchored" target="_blank">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ejemploPasivo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://docs.google.com/spreadsheets/d/1RlPtDftOZ5zYDTOzR-i1JGB0B9iSX7UoyPBVDPyuwDQ/edit?usp=sharing" target="_blank"><img src="ejemploPasivo.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ejemploPasivo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.4: Ejemplo real de pasivo, en miles de euros.
+</figcaption>
 </figure>
 </div>
 </section>
 </section>
 <section id="la-cuenta-de-pérdidas-y-ganancias" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="la-cuenta-de-pérdidas-y-ganancias"><span class="header-section-number">5.2.2</span> La cuenta de pérdidas y ganancias</h3>
-<p>La <strong>cuenta de pérdidas y ganancias</strong> o <strong>cuenta de explotación</strong> o <strong>cuenta de resultados</strong> es otro estado contable anual de suma importancia para conocer el estado de una empresa. Tiene un contenido dinámico y refleja de forma ordenada y sistemática los ingresos y gastos corrientes de un ejercicio económico. Naturalmente, los ingresos se reflejan con signo positivo y los gastos con signo negativo. El saldo, es decir, la diferencia entre ingresos y gastos es el <strong>beneficio después de impuestos</strong> o el <strong>resultado del ejercicio</strong>. Es muy importante distinguir la diferencia entre ingresos y gastos por un lado, e inversiones y desinversiones por otro. La diferencia es crucial, puesto que todos los ingresos y gastos se reflejan en la cuenta de resultados, mientras que las inversiones y desinversiones van directamente al balance de situación. El esquema se presenta en la <a href="#tbl-tab56">Tabla&nbsp;<span>5.6</span></a>.</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/VYek1LmqG-U?start=30" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
+<p>La <strong>cuenta de pérdidas y ganancias</strong> o <strong>cuenta de explotación</strong> o <strong>cuenta de resultados</strong> es otro estado contable anual de suma importancia para conocer el estado de una empresa. Tiene un contenido dinámico y refleja de forma ordenada y sistemática los ingresos y gastos corrientes de un ejercicio económico. Naturalmente, los ingresos se reflejan con signo positivo y los gastos con signo negativo. El saldo, es decir, la diferencia entre ingresos y gastos es el <strong>beneficio después de impuestos</strong> o el <strong>resultado del ejercicio</strong>. Es muy importante distinguir la diferencia entre ingresos y gastos por un lado, e inversiones y desinversiones por otro. La diferencia es crucial, puesto que todos los ingresos y gastos se reflejan en la cuenta de resultados, mientras que las inversiones y desinversiones van directamente al balance de situación. El esquema se presenta en la <a href="#tbl-tab56" class="quarto-xref">Tabla&nbsp;<span>5.6</span></a>.</p>
 <div class="cell">
+<div id="tbl-tab56" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab56-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;5.6: La cuenta de pérdidas y ganancias.
+</figcaption>
+<div aria-describedby="tbl-tab56-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab56" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;5.6: La cuenta de pérdidas y ganancias.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
@@ -808,14 +932,20 @@ Quiebra
 </table>
 </div>
 </div>
+</figure>
 </div>
-<p>La cuenta se divide en dos grandes apartados (ver esquema en la <a href="#fig-fig52">Figura&nbsp;<span>5.5</span></a>): A) operaciones continuadas que son las operaciones corrientes de la empresa a las que se se supone que la empresa está dedicada indefinidamente, y B) operaciones interrumpidas que son aquellas de las que la empresa tiene intención de desprenderse en un periodo breve de tiempo. Las operaciones interrumpidas solo se reflejan de forma resumida en la cuenta de resultados neta de impuestos.</p>
+</div>
+<p>La cuenta se divide en dos grandes apartados (ver esquema en la <a href="#fig-fig52" class="quarto-xref">Figura&nbsp;<span>5.5</span></a>): A) operaciones continuadas que son las operaciones corrientes de la empresa a las que se se supone que la empresa está dedicada indefinidamente, y B) operaciones interrumpidas que son aquellas de las que la empresa tiene intención de desprenderse en un periodo breve de tiempo. Las operaciones interrumpidas solo se reflejan de forma resumida en la cuenta de resultados neta de impuestos.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig52" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig52.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;5.5: Esquema de la cuenta de pérdidas y ganancias. En verde se marca la parte de explotación y en rojo la financiera.</figcaption>
+<div id="fig-fig52" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig52-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig52.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig52-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.5: Esquema de la cuenta de pérdidas y ganancias. En verde se marca la parte de explotación y en rojo la financiera.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -853,6 +983,15 @@ Amortizaciones
 <li>Puesto que los beneficios suelen salir de la empresa, el hecho de considerar las amortizaciones del inmovilizado como gasto permite que una parte del valor de dicho inmovilizado se quede dentro de la empresa cada año para poder hacer frente en el futuro a la reposición de dicho inmovilizado.</li>
 <li>Contabilizar la inversión en inmovilizado en la cuenta de resultados (considerarlo erróneamente como un gasto corriente) implicaría obtener reducciones de resultados muy importantes en los años en que se acometen dichas inversiones. Las amortizaciones es una forma de imputar a cada ejercicio como gasto corriente una parte del inmovilizado, que de hecho se puede tomar como el desgaste del mismo, de forma que se consigue una distribución de los beneficios más suave a lo largo del tiempo.</li>
 </ol>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/MfNdOuidMcI?start=20" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -912,11 +1051,15 @@ Amortizaciones
 </div>
 </div>
 </div>
-<p>La <a href="#fig-ejemploResultado">Figura&nbsp;<span>5.6</span></a> muestra la cuenta de resultados de una empresa real.</p>
-<div id="fig-ejemploResultado" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="https://docs.google.com/spreadsheets/d/15FYmIL_X_FcBJsqT1LVMSU9MSyHzPFAZ2yo9p-FOzM4/edit?usp=sharing" target="_blank"><img src="ejemploResultado.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figura&nbsp;5.6: Ejemplo real de cuenta de resultados, en miles de euros.</figcaption>
+<p>La <a href="#fig-ejemploResultado" class="quarto-xref">Figura&nbsp;<span>5.6</span></a> muestra la cuenta de resultados de una empresa real.</p>
+<div id="fig-ejemploResultado" class="quarto-figure quarto-figure-center quarto-float anchored" target="_blank">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ejemploResultado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://docs.google.com/spreadsheets/d/15FYmIL_X_FcBJsqT1LVMSU9MSyHzPFAZ2yo9p-FOzM4/edit?usp=sharing" target="_blank"><img src="ejemploResultado.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ejemploResultado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.6: Ejemplo real de cuenta de resultados, en miles de euros.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -932,12 +1075,16 @@ Amortizaciones
 </section>
 <section id="estado-de-flujos-de-efectivo." class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="estado-de-flujos-de-efectivo.">Estado de flujos de efectivo.</h4>
-<p>El <strong>estado de flujos de efectivo</strong> es obligatorio solo para las empresas que deben presentar los modelos normales de cuentas anuales e informa de las variaciones netas de efectivo y otros activos líquidos entre dos ejercicios contables, expresando su origen y utilización durante el ejercicio y clasificando sus movimientos por actividades. Este estado es en realidad una lista exhaustiva de los flujos de caja en la empresa, que suele ser un aspecto que genera cierta confusión. Ese es el objeto de la <a href="#tbl-tab57">Tabla&nbsp;<span>5.7</span></a>, en la que se indican todos las partidas que constituyen los flujos de caja y el signo con el que habría que corregir el resultado del ejercicio para poder calcular el flujo de caja global de la empresa. <!-- Por ejemplo, partiendo del resultado del ejercicio las amortizaciones de inmovilizado habría que sumarlas para llegar al flujo de caja. --></p>
+<p>El <strong>estado de flujos de efectivo</strong> es obligatorio solo para las empresas que deben presentar los modelos normales de cuentas anuales e informa de las variaciones netas de efectivo y otros activos líquidos entre dos ejercicios contables, expresando su origen y utilización durante el ejercicio y clasificando sus movimientos por actividades. Este estado es en realidad una lista exhaustiva de los flujos de caja en la empresa, que suele ser un aspecto que genera cierta confusión. Ese es el objeto de la <a href="#tbl-tab57" class="quarto-xref">Tabla&nbsp;<span>5.7</span></a>, en la que se indican todos las partidas que constituyen los flujos de caja y el signo con el que habría que corregir el resultado del ejercicio para poder calcular el flujo de caja global de la empresa. <!-- Por ejemplo, partiendo del resultado del ejercicio las amortizaciones de inmovilizado habría que sumarlas para llegar al flujo de caja. --></p>
 <div class="cell">
+<div id="tbl-tab57" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab57-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;5.7: Estado de flujos de efectivo.
+</figcaption>
+<div aria-describedby="tbl-tab57-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab57" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;5.7: Estado de flujos de efectivo.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 100%">
 </colgroup>
@@ -997,6 +1144,8 @@ Amortizaciones
 </table>
 </div>
 </div>
+</figure>
+</div>
 </div>
 <p>Como se ve en la tabla, los flujos de caja provienen de distintas fuentes, de actividades de explotación, inversión y financiación. En cada parte simplemente se compensan los flujos positivos con los negativos. El apartado A) merece especial mención, puesto que parte del beneficio antes de impuestos y se hacen las correcciones pertinentes para pasar del mismo al flujo de caja. Es decir, en el apartado A) se compendian todas las operaciones que hay que realizar para pasar del beneficio al flujo de caja.</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -1020,6 +1169,15 @@ Beneficio y flujos de caja
 <li>El pago de IVA es un flujo de caja, pero no es un gasto.</li>
 <li>…</li>
 </ul>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/-1JmOEfNbqE?start=35" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -1038,12 +1196,16 @@ Beneficio y flujos de caja
 </section>
 <section id="memoria." class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="memoria.">Memoria.</h4>
-<p>La <strong>memoria</strong> comenta, completa y amplia la información cuantitativa contenida en las demás cuentas anuales, para dar una imagen fiel de la situación de la empresa. La <a href="#tbl-tab59">Tabla&nbsp;<span>5.8</span></a> muestra los 25 puntos en los que se estructura.</p>
+<p>La <strong>memoria</strong> comenta, completa y amplia la información cuantitativa contenida en las demás cuentas anuales, para dar una imagen fiel de la situación de la empresa. La <a href="#tbl-tab59" class="quarto-xref">Tabla&nbsp;<span>5.8</span></a> muestra los 25 puntos en los que se estructura.</p>
 <div class="cell">
+<div id="tbl-tab59" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab59-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;5.8: La memoria.
+</figcaption>
+<div aria-describedby="tbl-tab59-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab59" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;5.8: La memoria.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 54%">
 <col style="width: 45%">
@@ -1108,6 +1270,8 @@ Beneficio y flujos de caja
 </tbody>
 </table>
 </div>
+</div>
+</figure>
 </div>
 </div>
 </section>
@@ -1672,13 +1836,17 @@ Doble partida
 <section id="análisis-económico-y-financiero" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="análisis-económico-y-financiero"><span class="header-section-number">5.4</span> Análisis económico y financiero</h2>
 <p>Todo lo expuesto anteriormente va dirigido al análisis económico y financiero de las empresas. Puesto que el activo refleja las inversiones de la empresa (a corto y largo plazo), mientras que el pasivo son las fuentes de financiación, es de sentido común suponer que tiene que existir una correlación entre unos y otros. En efecto, lo habitual es que las inversiones a largo plazo se financien con fuentes de financiación a largo plazo (patrimonio neto y pasivo no corriente) y los activos a corto plazo con fuentes a corto (pasivo corriente). Una empresa sufrirá mucho si pretende financiar la inversión en un edificio que va a permanecer en la empresa durante mucho tiempo con préstamos anuales, puesto que tendrá que renovar y negociar con las entidades financieras repetidamente el préstamo. Por regla general, tampoco lo consentirán dichas entidades.</p>
-<p>Por tanto, la empresa estará equilibrada financieramente cuando exista una correspondencia entre los dos lados del balance, como indica la <a href="#fig-fig53">Figura&nbsp;<span>5.7</span></a>. Hay una anotación que hacer, que consiste en que el equilibrio real implica que una parte del activo corriente se financie con pasivo no corriente. La empresa funcionará con más tranquilidad si tiene este colchón financiero que da margen para poder sobrevivir a los desfases entre cobros y pagos. Este colchón financiero se suele llamar <strong>fondo de maniobra</strong>, sobre el que volveremos más tarde. Lo habitual, para que una empresa esté en equilibrio financiero es que tenga un fondo de maniobra positivo, como en la <a href="#fig-fig53">Figura&nbsp;<span>5.7</span></a>.</p>
+<p>Por tanto, la empresa estará equilibrada financieramente cuando exista una correspondencia entre los dos lados del balance, como indica la <a href="#fig-fig53" class="quarto-xref">Figura&nbsp;<span>5.7</span></a>. Hay una anotación que hacer, que consiste en que el equilibrio real implica que una parte del activo corriente se financie con pasivo no corriente. La empresa funcionará con más tranquilidad si tiene este colchón financiero que da margen para poder sobrevivir a los desfases entre cobros y pagos. Este colchón financiero se suele llamar <strong>fondo de maniobra</strong>, sobre el que volveremos más tarde. Lo habitual, para que una empresa esté en equilibrio financiero es que tenga un fondo de maniobra positivo, como en la <a href="#fig-fig53" class="quarto-xref">Figura&nbsp;<span>5.7</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig53" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig53.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;5.7: Equilibrio financiero de la empresa.</figcaption>
+<div id="fig-fig53" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig53-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig53.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig53-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.7: Equilibrio financiero de la empresa.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1706,12 +1874,16 @@ Empresas de nueva creación
 <li><strong>Rentabilidad financiera</strong> o <strong>ROE</strong> (<em>Return on Equity</em>): rentabilidad obtenida por los propietarios de la empresa o rentabilidad del patrimonio neto, se calcula como <span class="math inline">\(ROE=BDI/PN\)</span>.</li>
 <li><strong>Margen o rentabilidad sobre ventas</strong> (RV): rentabilidad obtenida de cada venta, se calcula como <span class="math inline">\(RV=BAII/V\)</span>.</li>
 </ul>
-<p>Hay otra cuestión muy importante que no se refleja en un ratio, que es el <strong>punto muerto</strong> o <strong>punto de equilibrio</strong> o <strong>umbral de rentabilidad</strong>. Se define como el volumen de ventas que hace el beneficio exactamente igual a cero, es decir, que compensa exactamente los costes fijos y variables de la producción, conceptos que se introdujeron en el <a href="03-costes.html">Capítulo&nbsp;<span>3</span></a>. Si asumimos una empresa con un determinado nivel de costes fijos (CF) y variables (CV), el coste total será la suma de ambos (CT=CF+CV). El ingreso total (IT) es el producto del precio por unidad por las unidades vendidas.</p>
-<p>La <a href="#fig-fig54">Figura&nbsp;<span>5.8</span></a> representa gráficamente en unos ejes tanto el CT como el IT frente a las unidades vendidas o las ventas (recuerda las figuras del <a href="03-costes.html">Capítulo&nbsp;<span>3</span></a>). El punto muerto divide las ventas en dos zonas, la izquierda en la que habrá pérdidas y la derecha en la que habrá beneficios. Cuanto más a la izquierda las pérdidas son mayores, cuanto más a la derecha los beneficios son más grandes. El punto muerto, por tanto, proporciona al empresario una visión del volumen de ventas que debe alcanzar como mínimo para tener beneficios. Por ejemplo, si el punto muerto de un concesionario de coches son 100 coches al año, quiere decir que si en junio ya han vendido los 100, seguramente será un año de cuantiosos beneficios.</p>
-<div id="fig-fig54" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig54.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figura&nbsp;5.8: Representación del punto muerto.</figcaption>
+<p>Hay otra cuestión muy importante que no se refleja en un ratio, que es el <strong>punto muerto</strong> o <strong>punto de equilibrio</strong> o <strong>umbral de rentabilidad</strong>. Se define como el volumen de ventas que hace el beneficio exactamente igual a cero, es decir, que compensa exactamente los costes fijos y variables de la producción, conceptos que se introdujeron en el <a href="03-costes.html" class="quarto-xref">Capítulo&nbsp;<span>3</span></a>. Si asumimos una empresa con un determinado nivel de costes fijos (CF) y variables (CV), el coste total será la suma de ambos (CT=CF+CV). El ingreso total (IT) es el producto del precio por unidad por las unidades vendidas.</p>
+<p>La <a href="#fig-fig54" class="quarto-xref">Figura&nbsp;<span>5.8</span></a> representa gráficamente en unos ejes tanto el CT como el IT frente a las unidades vendidas o las ventas (recuerda las figuras del <a href="03-costes.html" class="quarto-xref">Capítulo&nbsp;<span>3</span></a>). El punto muerto divide las ventas en dos zonas, la izquierda en la que habrá pérdidas y la derecha en la que habrá beneficios. Cuanto más a la izquierda las pérdidas son mayores, cuanto más a la derecha los beneficios son más grandes. El punto muerto, por tanto, proporciona al empresario una visión del volumen de ventas que debe alcanzar como mínimo para tener beneficios. Por ejemplo, si el punto muerto de un concesionario de coches son 100 coches al año, quiere decir que si en junio ya han vendido los 100, seguramente será un año de cuantiosos beneficios.</p>
+<div id="fig-fig54" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig54-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig54.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig54-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.8: Representación del punto muerto.
+</figcaption>
 </figure>
 </div>
 <!-- ```{r fig-fig54, echo=FALSE, fig.cap='Representación del punto muerto.', fig.align='center'} -->
@@ -1745,14 +1917,18 @@ Quiebra
 <h3 data-number="5.4.3" class="anchored" data-anchor-id="otros-ratios"><span class="header-section-number">5.4.3</span> Otros ratios</h3>
 <p>Existe una infinidad de ratios adicionales con distintas utilidades. Los más habituales son los <strong>ratios de rotación</strong>, que consisten en dividir las ventas por otras partidas del balance. Así, por ejemplo, podemos tener la <strong>rotación de activos</strong>, de <strong>existencias</strong>, de <strong>materias primas</strong>, de <strong>clientes</strong>, de <strong>fondos propios</strong>, etc. Todos esos ratios reflejan el número de veces que las ventas contienen a las partidas que se consideran en el denominador.</p>
 <p>Otros ratios de interés son el <strong>periodos medio de cobro</strong>, que es el número de días que en media tarda la empresa en cobrar a sus clientes (<span class="math inline">\(PMC=365\times \text{clientes}/\text{ventas}\)</span>), y el <strong>periodo medio de pago</strong>, que es el tiempo que se tarda en pagar a acreedores <span class="math inline">\((PMC=365\times \text{proveedores}/\text{compras})\)</span>.</p>
-<p>Un último apunte interesante es que el ROA se puede descomponer en el producto de dos factores, el margen sobre ventas y la rotación del activo. Esto implica que una rentabilidad alta se puede conseguir por un margen amplio de beneficio sobre cada venta aunque haya pocas ventas o bien por un volumen de ventas enorme, aunque el margen sobre ventas sea pequeño. Naturalmente, si los dos son grandes el ROA lo será también. LA <a href="#fig-ejemploRatios">Figura&nbsp;<span>5.9</span></a> muestra los ratios para la empresa real que se ha utilizado de ejemplo a lo largo del capítulo.</p>
+<p>Un último apunte interesante es que el ROA se puede descomponer en el producto de dos factores, el margen sobre ventas y la rotación del activo. Esto implica que una rentabilidad alta se puede conseguir por un margen amplio de beneficio sobre cada venta aunque haya pocas ventas o bien por un volumen de ventas enorme, aunque el margen sobre ventas sea pequeño. Naturalmente, si los dos son grandes el ROA lo será también. LA <a href="#fig-ejemploRatios" class="quarto-xref">Figura&nbsp;<span>5.9</span></a> muestra los ratios para la empresa real que se ha utilizado de ejemplo a lo largo del capítulo.</p>
 <p><span class="math display">\[
 ROA = \frac{BAII}{A}=\frac{BAII}{V}\frac{V}{A}
 \]</span></p>
-<div id="fig-ejemploRatios" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="https://docs.google.com/spreadsheets/d/1OujqcTm5wBl2w_foKq3vB4eg9zybBWMBLLDwh-NjQUM/edit?usp=sharing" target="_blank"><img src="ejemploRatios.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figura&nbsp;5.9: Ejemplo real de ratios.</figcaption>
+<div id="fig-ejemploRatios" class="quarto-figure quarto-figure-center quarto-float anchored" target="_blank">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ejemploRatios-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://docs.google.com/spreadsheets/d/1OujqcTm5wBl2w_foKq3vB4eg9zybBWMBLLDwh-NjQUM/edit?usp=sharing" target="_blank"><img src="ejemploRatios.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ejemploRatios-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.9: Ejemplo real de ratios.
+</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -2901,6 +3077,13 @@ A quien tiene 100 acciones le corresponden 150.000 de beneficio.</p></li>
 <h2 class="unnumbered anchored" data-anchor-id="referencias"><strong>Referencias</strong></h2>
 <p>BOE (2007). Plan General Contable. <a href="https://www.boe.es/buscar/pdf/2007/BOE-A-2007-19884-consolidado.pdf" target="_blank">Enlace</a>.</p>
 <p>de Miguel, B., Baixauli, J.J. (2010), Empresa y Economía Industrial, Mc-Graw Hill.</p>
+<p>Pedregal, D.J. (2023). Cómo se hacen los asientos contables [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=VUq1qavZmqE" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). Descripción del balance de situación [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=gB2x-zUbYus" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). El balance de situación de las empresas [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=YGUVbbPHthg" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). La cuenta de resultados [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=VYek1LmqG-U" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). La peculiaridad de las amortizaciones y provisiones [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=MfNdOuidMcI" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). ¿Y el IVA qué? [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=-1JmOEfNbqE" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). ¿Qué significa que una empresa esté quebrada? [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=nMU32Efsa04" target="_blank">Enlace</a>.</p>
 <p>Trapero, J.R., García, F.P., Pedregal, D.J. (2013). Dirección y Gestión Empresarial. Mcgraw-Hill. <a href="https://www.mheducation.es/direccion-y-gestion-empresarial-9788448190385-spain" target="_blank">Enlace</a>.</p>
 
 
@@ -2986,10 +3169,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2999,8 +3199,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -3012,7 +3221,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -3056,6 +3388,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -3081,6 +3414,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -3142,17 +3501,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04-objetivos.html" class="pagination-link">
+      <a href="./04-objetivos.html" class="pagination-link" aria-label="Los objetivos de la empresa">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Los objetivos de la empresa</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06-inversiones.html" class="pagination-link">
+      <a href="./06-inversiones.html" class="pagination-link" aria-label="Análisis de inversiones y financiación">
         <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Análisis de inversiones y financiación</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

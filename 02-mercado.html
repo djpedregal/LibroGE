@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -65,6 +72,33 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar floating">
@@ -73,12 +107,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-mercado.html"><strong>PARTE I: La empresa y los mercados</strong></a></li><li class="breadcrumb-item"><a href="./02-mercado.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funcionamiento de los mercados</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-mercado.html"><strong>PARTE I: La empresa y los mercados</strong></a></li><li class="breadcrumb-item"><a href="./02-mercado.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funcionamiento de los mercados</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -88,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Fundamentos de gestión empresarial para ingenieros</a> 
@@ -197,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -239,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-mercado.html"><strong>PARTE I: La empresa y los mercados</strong></a></li><li class="breadcrumb-item"><a href="./02-mercado.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funcionamiento de los mercados</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-chap2" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funcionamiento de los mercados</span></span></h1>
 </div>
@@ -254,9 +288,11 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
-<p>En este capítulo vamos a estudiar a nivel sencillo el funcionamiento de los mercados, es decir, cómo se forman los precios, sobre todo en el caso idealizado de mercados de competencia perfecta, además de ver qué tipo de mercados existen en el mundo real. Se trata de un capítulo típico de introducción a la Microeconomía.</p>
+
+<p>En este capítulo vamos a estudiar a nivel sencillo el funcionamiento de los mercados, es decir, cómo se forman los precios, sobre todo en el caso idealizado de mercados de competencia perfecta, además de ver qué tipo de mercados existen en el mundo real. Se trata de un capítulo típico de introducción a la microeconomía.</p>
 <section id="introducción" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">2.1</span> Introducción</h2>
 <p>De forma muy general se puede decir que todo sistema económico en la práctica debe dar respuesta a tres cuestiones fundamentales:</p>
@@ -275,7 +311,17 @@ Simultaneidad de las decisiones
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El desglose de estas preguntas no implica que se resuelvan secuencialmente. Muy al contrario, las tres preguntas se plantean y se resuelven simultáneamente, por lo que la solución a una de ellas está influida por la solución a las demás. Es decir, cuando se decide qué producir a la vez el cómo va implicito y su distribución también; cualquier decisión sobre la distribución puede condicionar las formas de producir y lo que de hecho se produce; etc. A menudo, se abren debates falaces en los que se trata una cuestión con independencia de las demás. Uno muy habitual y especialmente candente es el de la distribución de la renta y riqueza, normalmente abogando por una distribución <em>más equitativa</em>, como si lo que se distribuye fuera un producto que está dado y no hay que producirlo. El problema es que la distribución que se decida influye, y mucho, en las otras dos cuestiones.</p>
+<p>Este vídeo profundiza en el tema de la distribución de la renta y la riqueza.</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Ybk2P5DeulE?start=28" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
+<!-- El desglose de estas preguntas no implica que se resuelvan secuencialmente. Muy al contrario, las tres preguntas se plantean y se resuelven simultáneamente, por lo que la solución a una de ellas está influida por la solución a las demás. Es decir, cuando se decide qué producir a la vez el cómo va implicito y su distribución también; cualquier decisión sobre la distribución puede condicionar las formas de producir y lo que de hecho se produce; etc. A menudo, se abren debates falaces en los que se trata una cuestión con independencia de las demás. Uno muy habitual y especialmente candente es el de la distribución de la renta y riqueza, normalmente abogando por una distribución *más equitativa*, como si lo que se distribuye fuera un producto que está dado y no hay que producirlo. El problema es que la distribución que se decida influye, y mucho, en las otras dos cuestiones. -->
 </div>
 </div>
 <p>Todas las sociedades de todos los tiempos han dado respuestas de múltiples formas a las preguntas anteriores, dando lugar a tres tipos de <strong>sistemas económicos</strong>:</p>
@@ -284,12 +330,16 @@ Simultaneidad de las decisiones
 <li><strong>Economías centralizadas</strong> o <strong>planificadas</strong>: todas las decisiones las toma un organismo central de carácter público, basándose en algún tipo de cálculo económico. Solo existe el sector público. No existe libertad ni derechos de propiedad privada.</li>
 <li><strong>Economías mixtas</strong>: algunas decisiones se toman de forma centralizada y otras muchas las toman los mercados. En este caso existirá un sector privado conviviendo con uno público. Las proporciones de uno y otro pueden dar lugar a sistemas con resultados muy diferentes. Existe libertad económica y derecho a la propiedad privada, pero algunas decisiones se toman de forma coactiva.</li>
 </ul>
-<p>Estrictamente hablando, todas las economías del mundo actual son mixtas. Se podría hablar de la antigua Unión Soviética como el ejemplo más cercano a una economía centralizada. Sin embargo, se puede decir taxativamente que no hay ni ha habido ninguna economía de mercado pura. Una forma sencilla de ver la importancia del sector público en una economía es calculando el porcentaje del gasto público global sobre el <strong>Producto Interior Bruto</strong> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Es importante tener en cuenta que mediante el gasto público el Estado organiza amplios aspectos de la vida de los agentes privados, como son la educación, la sanidad, la justicia, etc. Es decir, muchas de las decisiones en esos ámbitos se hurtan al sector privado, pero en ningún sitio está escrito que el sector público gestione <em>necesariamente</em> mejor esas facetas de la economía. La <a href="#fig-fig1">Figura&nbsp;<span>2.1</span></a> muestra estas proporciones por países.</p>
+<p>Estrictamente hablando, todas las economías del mundo actual son mixtas. Se podría hablar de la antigua Unión Soviética como el ejemplo más cercano a una economía centralizada. Sin embargo, se puede decir taxativamente que no hay ni ha habido ninguna economía de mercado pura. Una forma sencilla de ver la importancia del sector público en una economía es calculando el porcentaje del gasto público global sobre el <strong>Producto Interior Bruto</strong> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Es importante tener en cuenta que mediante el gasto público el Estado organiza amplios aspectos de la vida de los agentes privados, como son la educación, la sanidad, la justicia, etc. Es decir, muchas de las decisiones en esos ámbitos se hurtan al sector privado, pero en ningún sitio está escrito que el sector público gestione <em>necesariamente</em> mejor esas facetas de la economía. La <a href="#fig-fig1" class="quarto-xref">Figura&nbsp;<span>2.1</span></a> muestra estas proporciones por países.</p>
 <!-- [![Proporción de gasto público sobre el PIB por países.](gastoSobrePib.png){#fig-fig1}](https://datosmacro.expansion.com/estado/gasto){target="_blank"} -->
-<div id="fig-fig1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="https://datosmacro.expansion.com/estado/gasto" target="_blank"><img src="figGOV.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figura&nbsp;2.1: Proporción de gasto público sobre el PIB por países. Fuente: Expansión.</figcaption>
+<div id="fig-fig1" class="quarto-figure quarto-figure-center quarto-float anchored" target="_blank">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://datosmacro.expansion.com/estado/gasto" target="_blank"><img src="figGOV.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.1: Proporción de gasto público sobre el PIB por países. Fuente: Expansión.
+</figcaption>
 </figure>
 </div>
 <!-- ![Proporción de gasto público sobre el PIB por países.](void.png){#fig-fig1} -->
@@ -311,7 +361,7 @@ Importante
 <div class="callout-body-container callout-body">
 <p>Se puede considerar que el <strong>capitalismo</strong> no es un sistema económico, sino simplemente una fase histórica más desde el punto de vista de la economía (igual que existió la época antigua o medieval). Es decir, el capitalismo <em>ES</em> la economía real y es un sistema mixto con sector público y privado, que dista mucho de ser economías puras de mercado, aunque muchas veces se identifican (mal)intencionadamente con él. De hecho, así lo consideran muchos marxistas de muchos tipos, para los que el <strong>socialismo</strong> es la siguiente y última fase que surgirá por superación de las limitaciones del capitalismo. Estos consideran que, puesto que <em>ya sabemos</em> que el socialismo es la evolución natural del capitalismo, lo ideal sería adelantar el socialismo por la vía de la revolución.</p>
 <p>Lo anterior nos lleva a que en la historia reciente solo ha habido dos sistemas económicos reales: capitalismo y <strong>comunismo</strong> (implantación real del socialismo ideal, con características muy diferentes a lo imaginado). El capitalismo, con muchas variantes, ha sido tremendamente exitoso, mientras que el comunismo ha sido un fracaso sistemático en todos los países donde se ha implantado.</p>
-<p>Aparte de lo anterior están todos los sistemas imaginados en las mentes de todo un elenco de personas, que hablan del tema con mayor o menor conocimiento de causa. Aquí se mezclan términos tan variados como anarquismo, anarco-capitlaismo, minarquismo, socialdemocracia, economía social de mercado, neoliberalismo, distributismo, keynesanismo, Estado del Bienestar, capitalismo de estado, socialismo libertario, economía tradicional, y un larguísimo etcétera. Se podría decir que hay tantos sistemas económicos pensados como cabezas pensantes.</p>
+<p>Aparte de lo anterior están todos los sistemas imaginados en las mentes de todo un elenco de personas, que hablan del tema con mayor o menor conocimiento de causa. Aquí se mezclan términos tan variados como anarquismo, anarco-capitalismo, minarquismo, socialdemocracia, economía social de mercado, neoliberalismo, distributismo, keynesanismo, Estado del Bienestar, capitalismo de estado, socialismo libertario, economía tradicional, y un larguísimo etcétera. Se podría decir que hay tantos sistemas económicos pensados como cabezas pensantes.</p>
 <p>No falta quien aborda este tema con humor (<a href="https://www.youtube.com/watch?v=aZJ1F-_kP7U&amp;ab_channel=AcademiaPlay" target="_blank">aquí</a>), que contrasta con las agrias confrontaciones que a menudo se dan en la realidad.</p>
 </div>
 </div>
@@ -361,19 +411,23 @@ Desigualdad
 </section>
 <section id="el-flujo-circular-de-la-renta" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="el-flujo-circular-de-la-renta"><span class="header-section-number">2.2</span> El flujo circular de la renta</h2>
-<p>El flujo circular de la renta es un enfoque elemental para explicar cómo funciona una economía a nivel básico. El esquema se representa en la <a href="#fig-fig2">Figura&nbsp;<span>2.2</span></a>.</p>
+<p>El flujo circular de la renta es un enfoque elemental para explicar cómo funciona una economía a nivel básico. El esquema se representa en la <a href="#fig-fig2" class="quarto-xref">Figura&nbsp;<span>2.2</span></a>.</p>
 <!-- [![Flujo circular de la renta.](flujoCircular.png){#fig-fig2}](https://docs.google.com/presentation/d/1Th7wbV4FiJQRLCm2WMSU7l86PgDiXvYV/edit?usp=sharing&ouid=106751112112175272147&rtpof=true&sd=true){target="_blank"} -->
-<div id="fig-fig2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="flujoCircular.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.2: Flujo circular de la renta.</figcaption>
+<div id="fig-fig2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="flujoCircular.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.2: Flujo circular de la renta.
+</figcaption>
 </figure>
 </div>
 <!-- ```{r echo=FALSE}
 knitr::include_url('https://docs.google.com/presentation/d/1Th7wbV4FiJQRLCm2WMSU7l86PgDiXvYV/edit?usp=sharing&ouid=106751112112175272147&rtpof=true&sd=true')
 ``` -->
 <p>Por lo que respecta al sector privado existen dos tipos de agentes con la peculiaridad de que tienen necesidades complementarias. Por un lado están los hogares que demandan o compran bienes y servicios y ofrecen o venden factores de producción. Por otro lado, están los empresarios o empresas que demandan o compran factores de producción y ofrecen o venden bienes y servicios.</p>
-<p>Estas necesidades complementarias les condena a entenderse en la práctica, y lo hacen a través de los mercados de bienes y servicios, donde los hogares los demandan y las empresas los ofrecen, y los mercados de factores de producción, demandados por las empresas y ofrecidos por los hogares. Naturalmente, todas estas transacciones se hacen a cambio de contraprestaciones monetarias como se indican en la <a href="#fig-fig1">Figura&nbsp;<span>2.1</span></a>. Por ejemplo, a cambio del trabajo, los hogares reciben un salario, etc. Este enfoque hace que se cierre un ciclo real de bienes, servicios y factores, que en la figura se representa con flechas continuas, y otro monetario en sentido contrario, representado por flechas discontinuas.</p>
+<p>Estas necesidades complementarias les condena a entenderse en la práctica, y lo hacen a través de los mercados de bienes y servicios, donde los hogares los demandan y las empresas los ofrecen, y los mercados de factores de producción, demandados por las empresas y ofrecidos por los hogares. Naturalmente, todas estas transacciones se hacen a cambio de contraprestaciones monetarias como se indican en la <a href="#fig-fig1" class="quarto-xref">Figura&nbsp;<span>2.1</span></a>. Por ejemplo, a cambio del trabajo, los hogares reciben un salario, etc. Este enfoque hace que se cierre un ciclo real de bienes, servicios y factores, que en la figura se representa con flechas continuas, y otro monetario en sentido contrario, representado por flechas discontinuas.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -407,12 +461,16 @@ Errores sobre la demanda y la oferta de trabajo
 </section>
 <section id="tipos-de-mercados" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="tipos-de-mercados"><span class="header-section-number">2.3</span> Tipos de mercados</h2>
-<p>Los mercados se pueden clasificar de muchas formas, pero una muy habitual y especialmente útil es la que aparecen en la <a href="#tbl-tab21">Tabla&nbsp;<span>2.1</span></a>, considerando, no sin cierta simplificación que matizaremos después, el número de agentes que actúan por el lado de la demanda y la oferta. Este factor es importante porque, cuanto mayor sea el número de agentes en un lado del mercado, más difícil será que se pongan de acuerdo para influir sobre los precios o sobre cualquier otra condición del mercado. De ahí se sigue que se supone que el precio surgirá más nítidamente de la interacción entre los agentes y no la voluntad de ninguno de ellos en particular o de un grupo.</p>
+<p>Los mercados se pueden clasificar de muchas formas, pero una muy habitual y especialmente útil es la que aparecen en la <a href="#tbl-tab21" class="quarto-xref">Tabla&nbsp;<span>2.1</span></a>, considerando, no sin cierta simplificación que matizaremos después, el número de agentes que actúan por el lado de la demanda y la oferta. Este factor es importante porque, cuanto mayor sea el número de agentes en un lado del mercado, más difícil será que se pongan de acuerdo para influir sobre los precios o sobre cualquier otra condición del mercado. De ahí se sigue que se supone que el precio surgirá más nítidamente de la interacción entre los agentes y no la voluntad de ninguno de ellos en particular o de un grupo.</p>
 <div class="cell">
+<div id="tbl-tab21" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab21-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;2.1: Tipos de mercado por número de agentes.
+</figcaption>
+<div aria-describedby="tbl-tab21-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab21" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;2.1: Tipos de mercado por número de agentes.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 23%">
 <col style="width: 23%">
@@ -456,12 +514,14 @@ Errores sobre la demanda y la oferta de trabajo
 </table>
 </div>
 </div>
+</figure>
 </div>
-<p>El caso que más ampliamente vamos a tratar en este capítulo es el de <strong>competencia perfecta</strong>, en el que hay un gran número de agentes por los dos lados del mercado. Es de esperar que en este caso los precios surgirán con más claridad de la interacción de los agentes. En realidad, como veremos en la siguiente sección, hacen falta más condiciones para considerar que un mercado sea de competencia perfecta, algunas de ellas muy restricitivas. Por ello, cuando algunas de esas condiciones adicionales no se cumple se suele hablar de <strong>competencia monopolista</strong>, que es un mercado que se encuentra en muchos casos reales.</p>
+</div>
+<p>El caso que más ampliamente vamos a tratar en este capítulo es el de <strong>competencia perfecta</strong>, en el que hay un gran número de agentes por los dos lados del mercado. Es de esperar que en este caso los precios surgirán con más claridad de la interacción de los agentes. En realidad, como veremos en la siguiente sección, hacen falta más condiciones para considerar que un mercado sea de competencia perfecta, algunas de ellas muy restrictivas. Por ello, cuando algunas de esas condiciones adicionales no se cumple se suele hablar de <strong>competencia monopolista</strong>, que es un mercado que se encuentra en muchos casos reales.</p>
 <p>Un caso bastante conocido es el de <strong>monopolio</strong> cuando hay muchos agentes por el lado de la demanda que tienen que comprar forzosamente a una sola empresa, que es el monopolio. El caso simétrico es el <strong>monopsonio</strong> o <strong>monopolio de demanda</strong>. El hecho de que haya una sola empresa operando en un mercado da poder de mercado a ese agente para fijar precios o restringir la cantidad que produce, pero ese poder no es totalmente arbitrario. El monopolista puede subir los precios cuanto quiera, pero eso influirá en la cantidad que puede vender, puesto que no puede obligar a los consumidores a comprar su producto, además de que cuanto más suba los precios más probabilidades hay de que surja un competidor que venda más barato y rompa el monopolio.</p>
 <p>Un caso bastante habitual en la vida real es el <strong>oligopolio</strong>, que además del número de agentes característico tiene otra peculiaridad, y es que tiene que existir dependencia estratégica entre las empresas. Es decir, la actuación de una empresa mueve a las demás a actuar de forma parecida, a veces degenerando en colusiones espontáneas (los acuerdos explícitos están prohibidos) o en guerras de precios. Aunque el número de agentes es reducido la competencia puede ser feroz por cautivar cuotas crecientes del mercado.</p>
 <!-- Índice de Herfindahl???? -->
-<p>En el caso de los oligopolios se suele medir el poder de mercado por el índice de Herfindahl (que fue el economista que lo inventó). Llamando <span class="math inline">\(s_i\)</span> a la cuota que cada empresa tiene de un mercado formado por <span class="math inline">\(n\)</span> empresas, el índice es sencillamanete</p>
+<p>En el caso de los oligopolios se suele medir el poder de mercado por el índice de Herfindahl (que fue el economista que lo inventó). Llamando <span class="math inline">\(s_i\)</span> a la cuota que cada empresa tiene de un mercado formado por <span class="math inline">\(n\)</span> empresas, el índice es sencillamente</p>
 <p><span class="math display">\[
 IH=\sum_{i=1}^n s_i^2
 \]</span> En el caso de monopolio, con una sola empresa el índice es 1, que indicará máxima concentración y poder de mercado. En el extremo opuesto tendremos competencia perfecta con muchas empresas y cada una de ellas con una porción pequeña del mercado, lo que hace que el índice tienda a cero. Por tanto, cuanto más cerca está el índice de 1 mayor es el poder de mercado.</p>
@@ -576,33 +636,37 @@ Importante
 <p>Como ya se ha dicho, para que existan los mercados se requiere que haya demandantes y oferentes con necesidades complementarias. En lo que sigue vamos a estudiar los determinantes de las funciones de demanda y oferta y cómo la interacción entre ellas lleva a la determinación de los precios y cantidades de equilibrio.</p>
 <section id="demanda" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="demanda"><span class="header-section-number">2.4.1</span> Demanda</h3>
-<p>La <strong>función de demanda</strong> relaciona la variable <strong>endógena</strong> (dependiente o salida) cantidad del bien o servicio con todo un conjunto de variables <strong>exógenas</strong> (independientes o entradas) de las que se supone que depende, como se indica en la <a href="#eq-demanda">Ecuación&nbsp;<span>2.1</span></a>.</p>
+<p>La <strong>función de demanda</strong> relaciona la variable <strong>endógena</strong> (dependiente o salida) cantidad del bien o servicio con todo un conjunto de variables <strong>exógenas</strong> (independientes o entradas) de las que se supone que depende, como se indica en la <a href="#eq-demanda" class="quarto-xref">Ecuación&nbsp;<span>2.1</span></a>.</p>
 <p><span id="eq-demanda"><span class="math display">\[
 x_i^D = D(P_i, R, P_{j,k,...}, \text{preferencias}, \text{expectativas}, \dots)
 \tag{2.1}\]</span></span></p>
-<p>Los términos de la <a href="#eq-demanda">Ecuación&nbsp;<span>2.1</span></a> son:</p>
+<p>Los términos de la <a href="#eq-demanda" class="quarto-xref">Ecuación&nbsp;<span>2.1</span></a> son:</p>
 <ul>
 <li><span class="math inline">\(x_i^D\)</span>: cantidad demandada del bien <span class="math inline">\(i-\)</span>ésimo en unidades físicas.</li>
 <li><span class="math inline">\(P_i\)</span>: precio por unidad del bien <span class="math inline">\(i-\)</span>ésimo en unidades monetarias.</li>
-<li><span class="math inline">\(R\)</span>: renta disponible (ya se definió en el <a href="01-intro.html">Capítulo&nbsp;<span>1</span></a>).</li>
+<li><span class="math inline">\(R\)</span>: renta disponible (ya se definió en el <a href="01-intro.html" class="quarto-xref">Capítulo&nbsp;<span>1</span></a>).</li>
 <li><span class="math inline">\(P_{j,k,...}\)</span>: representa los precios de otros bienes relacionados con el <span class="math inline">\(i-\)</span>ésimo. Aquí se pone de manifiesto las relaciones que existen entre distintos mercados.</li>
 <li>Preferencias: indica las preferencias del consumidor.</li>
 <li>Expectativas: lo que los consumidores esperan que sucederá en el futuro</li>
 <li><span class="math inline">\(\dots\)</span>: todas las variables adicionales que en casos concretos afectarán a la demanda de este bien en particular.</li>
 </ul>
 <p>La dependencia de la cantidad demandada de su propio precio es muy sencilla y basta con que el lector responda a la siguiente pregunta: ¿cómo variará el consumo de un bien concreto ante una subida de su precio por unidad? La respuesta <em>inequívoca</em> es que se reduciría o a lo sumo se mantendría constante. Aquí tenemos la primera ley económica que es tan fuerte como la ley física de la gravedad, que llamaremos ley de demanda y que implica una relación inversa entre el consumo o demanda de un bien y su precio por unidad, <em>ceteris paribus</em>. En este caso no es necesario explicitar la cláusula <em>ceteris paribus</em>, puesto que la pregunta ya la lleva implícita de forma natural, pero la hacemos explícita para que quede claro. Existen otras muchas ocasiones en las que dicha cláusula no está tan clara y ponerla sobre la mesa resulta iluminador.</p>
-<p>Basándonos en lo anterior, podemos hacer una representación gráfica de lo que llamaremos la <strong>curva de demanda</strong>, que siempre tendrá pendiente negativa (o sería vertical u horizontal como casos límite). Es importante destacar que a lo largo de la curva varían precio y cantidad, pero todas las demás variables de las que depende la función de demanda se mantienen constantes en unos valores determinados. En la <a href="#fig-fig21">Figura&nbsp;<span>2.3</span></a> se representa dicha curva, indicando entre paréntesis las variables que se mantienen constantes.</p>
+<p>Basándonos en lo anterior, podemos hacer una representación gráfica de lo que llamaremos la <strong>curva de demanda</strong>, que siempre tendrá pendiente negativa (o sería vertical u horizontal como casos límite). Es importante destacar que a lo largo de la curva varían precio y cantidad, pero todas las demás variables de las que depende la función de demanda se mantienen constantes en unos valores determinados. En la <a href="#fig-fig21" class="quarto-xref">Figura&nbsp;<span>2.3</span></a> se representa dicha curva, indicando entre paréntesis las variables que se mantienen constantes.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig21" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig21.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.3: La curva de demanda individual.</figcaption>
+<div id="fig-fig21" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig21-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig21.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig21-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.3: La curva de demanda individual.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>La <em>curva de demanda individual de un bien o un servicio</em> entonces, se puede definir como <em>la combinación de precios y cantidades de dicho bien o servicio tales que el consumidor optimiza su función objetivo por unidad de tiempo ceteris paribus</em>. Esto es, para cada precio el consumidor realiza un proceso de optimización interno por el que decide qué cantidad va a consumir. Otra forma de decir lo mismo es que la curva de demanda <em>indica la cantidad que está dispuesto a consumir un consumidor para cada precio (ceteris paribus)</em>. Una forma adicional de definir la demanda es <em>el precio que máximo que están dispuestos a pagar los consumidores por un determinada cantidad del bien (cteris paribus)</em>.</p>
+<p>La <em>curva de demanda individual de un bien o un servicio</em> entonces, se puede definir como <em>la combinación de precios y cantidades de dicho bien o servicio tales que el consumidor optimiza su función objetivo por unidad de tiempo ceteris paribus</em>. Esto es, para cada precio el consumidor realiza un proceso de optimización interno por el que decide qué cantidad va a consumir. Otra forma de decir lo mismo es que la curva de demanda <em>indica la cantidad que está dispuesto a consumir un consumidor para cada precio (ceteris paribus)</em>. Una forma adicional de definir la demanda es <em>el precio que máximo que están dispuestos a pagar los consumidores por un determinada cantidad del bien (ceteris paribus)</em>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -613,14 +677,14 @@ x_i^D = D(P_i, R, P_{j,k,...}, \text{preferencias}, \text{expectativas}, \dots)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Estrictamente hablando hay una incoherencia entre la representación de la <a href="#fig-fig21">Figura&nbsp;<span>2.3</span></a> y la forma habitual de representar funciones matemáticas. La variable endógena se ha representado en el eje de abscisas (horizontal), mientras que la exógena se encuentra en el de ordenadas (vertical). Esto ocasionará algún pequeño problema en el futuro, por lo que es conveniente ser conscientes de ello.</p>
+<p>Estrictamente hablando hay una incoherencia entre la representación de la <a href="#fig-fig21" class="quarto-xref">Figura&nbsp;<span>2.3</span></a> y la forma habitual de representar funciones matemáticas. La variable endógena se ha representado en el eje de abscisas (horizontal), mientras que la exógena se encuentra en el de ordenadas (vertical). Esto ocasionará algún pequeño problema en el futuro, por lo que es conveniente ser conscientes de ello.</p>
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<p>Comprueba que la “curva” de la <a href="#fig-fig21">Figura&nbsp;<span>2.3</span></a> es en realidad una recta con ecuación <span class="math inline">\(x_i=a-b P_i\)</span>, siendo <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> constantes positivas.</p>
+<p>Comprueba que la “curva” de la <a href="#fig-fig21" class="quarto-xref">Figura&nbsp;<span>2.3</span></a> es en realidad una recta con ecuación <span class="math inline">\(x_i=a-b P_i\)</span>, siendo <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> constantes positivas.</p>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <p>Efectivamente, se trata de una ecuación lineal con pendiente <span class="math inline">\(-b\)</span>. Para un valor <span class="math inline">\(P_i=0\)</span> la cantidad es <span class="math inline">\(x_i=a\)</span>. Por el contrario, cuando <span class="math inline">\(x_i=0\)</span>, <span class="math inline">\(P_i=a/b\)</span>. Por tanto, los cortes con los ejes de abcisas y ordenadas son <span class="math inline">\(a\)</span> y <span class="math inline">\(a/b\)</span>, respectivamente.</p>
@@ -628,18 +692,22 @@ x_i^D = D(P_i, R, P_{j,k,...}, \text{preferencias}, \text{expectativas}, \dots)
 </div>
 </div>
 <p>Analicemos ahora la dependencia de la curva de demanda de la renta disponible <span class="math inline">\(R\)</span>. ¿Cómo responderá <span class="math inline">\(x_i\)</span> ante un aumento de <span class="math inline">\(R\)</span>, <em>ceteris paribus</em>? La respuesta es que la cantidad aumenta para los bienes <strong>normales</strong> y se reduce para los <strong>inferiores</strong>. En efecto, llamaremos bienes normales a todos aquellos cuya demanda varía en el mismo sentido que la renta disponible, <em>ceteris paribus</em>, e inferiores a los que varían en sentido contrario. El caso de los bienes inferiores resulta menos evidente, hasta que el lector sea consciente de que un aumento de sueldo puede llevar a consumir menos de bienes de menos calidad (inferiores) y sustituirlos por bienes de más calidad o de marcas superiores (normales o de lujo).</p>
-<p>El efecto sobre la curva de demanda de un aumento de renta para un bien normal es muy sencillo. Supongamos el precio <span class="math inline">\(P_i^1\)</span> para el que los consumidores dicen que comprarán <span class="math inline">\(x_i^1\)</span>, como indica la <a href="#fig-fig22">Figura&nbsp;<span>2.4</span></a>. Si aumenta la renta manteniéndose todo lo demás constante, también <span class="math inline">\(P_i^1\)</span>, la nueva cantidad para un bien normal será mayor, <span class="math inline">\(x_i^2\)</span>. Eso indica que el nuevo punto de coordenadas (<span class="math inline">\(P_i^1\)</span>, <span class="math inline">\(x_i^2\)</span>) no se encuentra sobre la curva inicial. Si se repite el razonamiento para cualquier precio tenemos que lo que se ha producido es un desplazamiento de toda la curva de demanda.</p>
+<p>El efecto sobre la curva de demanda de un aumento de renta para un bien normal es muy sencillo. Supongamos el precio <span class="math inline">\(P_i^1\)</span> para el que los consumidores dicen que comprarán <span class="math inline">\(x_i^1\)</span>, como indica la <a href="#fig-fig22" class="quarto-xref">Figura&nbsp;<span>2.4</span></a>. Si aumenta la renta manteniéndose todo lo demás constante, también <span class="math inline">\(P_i^1\)</span>, la nueva cantidad para un bien normal será mayor, <span class="math inline">\(x_i^2\)</span>. Eso indica que el nuevo punto de coordenadas (<span class="math inline">\(P_i^1\)</span>, <span class="math inline">\(x_i^2\)</span>) no se encuentra sobre la curva inicial. Si se repite el razonamiento para cualquier precio tenemos que lo que se ha producido es un desplazamiento de toda la curva de demanda.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig22" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig22.png" class="img-fluid figure-img" style="width:40.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.4: Efecto sobre la demanda de un bien normal de un incremento de renta disponible.</figcaption>
+<div id="fig-fig22" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig22-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig22.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig22-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.4: Efecto sobre la demanda de un bien normal de un incremento de renta disponible.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>De lo anterior aprendemos algo que es en realidad una cuestión puramente geométrica: cuando cambia una variable que se encuentra en los ejes el consumidor seleccioina otro punto que está en la misma curva (se desplaza a lo largo de la curva), mientras que si cambia una variable de la que depende la función de demanda, pero no se encuentra en los ejes (sino en el paréntesis), se desplaza toda la curva de demanda hacia la derecha o hacia la izquierda. En este caso, puesto que la demanda se ha desplazado hacia la derecha con más consumo para cualquier precio, diremos que <em>la demanda ha aumentado</em>.</p>
+<p>De lo anterior aprendemos algo que es en realidad una cuestión puramente geométrica: cuando cambia una variable que se encuentra en los ejes el consumidor selecciona otro punto que está en la misma curva (se desplaza a lo largo de la curva), mientras que si cambia una variable de la que depende la función de demanda, pero no se encuentra en los ejes (sino en el paréntesis), se desplaza toda la curva de demanda hacia la derecha o hacia la izquierda. En este caso, puesto que la demanda se ha desplazado hacia la derecha con más consumo para cualquier precio, diremos que <em>la demanda ha aumentado</em>.</p>
 <p>La relación entre <span class="math inline">\(P_{j,k,...}\)</span> y la demanda es también muy sencilla, cuando sube el precio de un bien <strong>sustitutivo</strong> la demanda se desplaza a la derecha (aumenta). Esto sucede así porque el bien sustitutivo satisface la misma necesidad del consumidor, por lo que no va a consumir los dos bienes simultáneamente. Si se encarece uno de ellos se reducirá su demanda (por la pendiente negativa de su demanda), pero aumentará el consumo del sustitutivo. Lo contrario sucede con bienes <strong>complementarios</strong>, que son aquellos que se complementan y se tienen que consumir conjuntamente. En este caso si sube el precio de un bien complementario se reducirá el consumo de los dos bienes simultáneamente, desplazándose la demanda a la izquierda.</p>
 <p>El efecto de las preferencias es claro, si un bien, por la razón que sea, es más deseado al margen de cualquier cuestión adicional, su demanda aumentará, se desplazará a la derecha. Una mejora de las expectativas sobre el futuro supondrá un incremento de la demanda actual, incluso aunque las expectativas no se conviertan en realidad en el futuro.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -678,7 +746,7 @@ x_i^D = D(P_i, R, P_{j,k,...}, \text{preferencias}, \text{expectativas}, \dots)
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
-<p>Las funciones <strong>Cobb-Douglas</strong> son aquellas en las que todas las variables exógenas se encuentran elevadas a potencias y multiplicadas entre sí, así como multipliadas por constantes. Un ejemplo de demanda Cobb-Douglas es <span class="math inline">\(x_i=AP_i^aR^bP_j^cP_k^d\)</span>.</p>
+<p>Las funciones <strong>Cobb-Douglas</strong> son aquellas en las que todas las variables exógenas se encuentran elevadas a potencias y multiplicadas entre sí, así como multiplicadas por constantes. Un ejemplo de demanda Cobb-Douglas es <span class="math inline">\(x_i=AP_i^aR^bP_j^cP_k^d\)</span>.</p>
 <p>Si en un mercado hay 100 consumidores idénticos con función de demanda Cobb-Douglas <span class="math inline">\(x_i=P_i^{-0,5}R^bP_j^cP_k^d\)</span>. ¿Cuál será la demanda de mercado? ¿Cuál será la nueva demanda si se añaden otros 50 consumidores? ¿Qué desplazamiento se ha producido?</p>
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
@@ -697,7 +765,7 @@ x_i^D = D(P_i, R, P_{j,k,...}, \text{preferencias}, \text{expectativas}, \dots)
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="fig23.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Demanda de combustible automoción en España.</figcaption>
+<figcaption>Demanda de combustible automoción en España.</figcaption>
 </figure>
 </div>
 <!-- ```{r fig-fig23, echo=FALSE, fig.cap='Demanda de combustible automoción en España.', fig.align='center'} -->
@@ -713,7 +781,7 @@ x_i^D = D(P_i, R, P_{j,k,...}, \text{preferencias}, \text{expectativas}, \dots)
 </section>
 <section id="oferta" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="oferta"><span class="header-section-number">2.4.2</span> Oferta</h3>
-<p>Vista la explicación extendida de la función y curva de demanda, pasamos a definir más rápidamente y en términos análogos la función y curva de oferta de bienes y servicios. La <em>curva de oferta individual de un bien o un servicio</em> se define como <em>la combinación de precios y cantidades de dicho bien o servicio tales que el productor optimiza su función objetivo por unidad de tiempo, ceteris paribus</em>. En este caso la función objetivo será el beneficio, del que hablaremos extensamente en este libro, desde distinto puntos de vista. También se puede decir que <em>la curva de oferta indica la cantidad que a los empresarios les interesa producir para cada precio (ceteris paribus)</em>, o bien <em>el precio mínimo al que están dispuestos a ofrecer cada cantidad (ceteris paribus)</em>. La función de oferta del mercado se presenta en la <a href="#eq-oferta">Ecuación&nbsp;<span>2.2</span></a>.</p>
+<p>Vista la explicación extendida de la función y curva de demanda, pasamos a definir más rápidamente y en términos análogos la función y curva de oferta de bienes y servicios. La <em>curva de oferta individual de un bien o un servicio</em> se define como <em>la combinación de precios y cantidades de dicho bien o servicio tales que el productor optimiza su función objetivo por unidad de tiempo, ceteris paribus</em>. En este caso la función objetivo será el beneficio, del que hablaremos extensamente en este libro, desde distinto puntos de vista. También se puede decir que <em>la curva de oferta indica la cantidad que a los empresarios les interesa producir para cada precio (ceteris paribus)</em>, o bien <em>el precio mínimo al que están dispuestos a ofrecer cada cantidad (ceteris paribus)</em>. La función de oferta del mercado se presenta en la <a href="#eq-oferta" class="quarto-xref">Ecuación&nbsp;<span>2.2</span></a>.</p>
 <p><span id="eq-oferta"><span class="math display">\[
 x_i^O = O(P_i, P_{j,k,...}, P_{\text{factores}}, \text{tecnología}, \text{expectativas}, \text{nº oferentes}, \dots)
 \tag{2.2}\]</span></span></p>
@@ -731,13 +799,17 @@ Oferta individual y de mercado
 <p>La oferta individual tendrá la misma expresión suprimiendo el número de oferentes, y la oferta de mercado se generará como la suma horizontal de las ofertas individuales.</p>
 </div>
 </div>
-<p>La gran diferencia con la demanda es que precios elevados del bien (<span class="math inline">\(P_i\)</span>) animan la producción, lo que implica que, <em>ceteris paribus</em>, la curva de oferta tiene siempre pendiente positiva, como en la <a href="#fig-fig24">Figura&nbsp;<span>2.5</span></a>. Como límites podría ser vertical u horizontal, pero nunca con pendiente negativa. La función se desplazará hacia la derecha (aumenta la oferta) o hacia la izquierda (se reduce) siguiendo el mismo mecanismo que la demanda.</p>
+<p>La gran diferencia con la demanda es que precios elevados del bien (<span class="math inline">\(P_i\)</span>) animan la producción, lo que implica que, <em>ceteris paribus</em>, la curva de oferta tiene siempre pendiente positiva, como en la <a href="#fig-fig24" class="quarto-xref">Figura&nbsp;<span>2.5</span></a>. Como límites podría ser vertical u horizontal, pero nunca con pendiente negativa. La función se desplazará hacia la derecha (aumenta la oferta) o hacia la izquierda (se reduce) siguiendo el mismo mecanismo que la demanda.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig24" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig24.png" class="img-fluid figure-img" style="width:65.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.5: Curva de oferta de mercado.</figcaption>
+<div id="fig-fig24" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig24-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig24.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:65.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig24-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.5: Curva de oferta de mercado.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -808,13 +880,17 @@ Importante
 </section>
 <section id="equilibrio-de-mercado" class="level3" data-number="2.4.3">
 <h3 data-number="2.4.3" class="anchored" data-anchor-id="equilibrio-de-mercado"><span class="header-section-number">2.4.3</span> Equilibrio de mercado</h3>
-<p>Llegados a este punto, ya podemos empezar a analizar cómo encajan los dos lados del mercado. El panel izquierdo de la figura <a href="#fig-fig25">Figura&nbsp;<span>2.6</span></a> representa la demanda y la oferta en los mismos ejes de coordenadas.</p>
+<p>Llegados a este punto, ya podemos empezar a analizar cómo encajan los dos lados del mercado. El panel izquierdo de la figura <a href="#fig-fig25" class="quarto-xref">Figura&nbsp;<span>2.6</span></a> representa la demanda y la oferta en los mismos ejes de coordenadas.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig25" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig25.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.6: Oferta y demanda (panel izquierdo), exceso de oferta (centro) y equilibrio (derecho).</figcaption>
+<div id="fig-fig25" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig25-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig25.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:95.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig25-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.6: Oferta y demanda (panel izquierdo), exceso de oferta (centro) y equilibrio (derecho).
+</figcaption>
 </figure>
 </div>
 </div>
@@ -834,7 +910,7 @@ Importante
 <p>Es importante darse cuenta de que las curvas (y funciones) de oferta y demanda representan las combinaciones óptimas de precios y cantidades. Es decir, que para cualquier precio los consumidores y productores estarán <strong>peor</strong> tanto si eligen cantidades mayores como inferiores. Esto rompe la idea, por ejemplo, de que a los empresarios siempre les interesa producir (y vender) lo máximo posible.</p>
 </div>
 </div>
-<p>Ante todo lo anterior es evidente que existe un punto de <strong>equilibrio</strong>, que es el corte de las dos curvas, como se muestra en el panel derecho de la <a href="#fig-fig25">Figura&nbsp;<span>2.6</span></a>. Si las curvas son como las que se muestran el equilibrio será único y estable, en el sentido de que si por alguna razón el mercado se sale del equilibrio, la <em>mano invisible</em> vuelve a conducirlo a él. Es decir, las acciones libres de todos los agentes conducen a esa situación de equilibrio en la que lo que los empresarios producen es lo que los consumidores desean.</p>
+<p>Ante todo lo anterior es evidente que existe un punto de <strong>equilibrio</strong>, que es el corte de las dos curvas, como se muestra en el panel derecho de la <a href="#fig-fig25" class="quarto-xref">Figura&nbsp;<span>2.6</span></a>. Si las curvas son como las que se muestran el equilibrio será único y estable, en el sentido de que si por alguna razón el mercado se sale del equilibrio, la <em>mano invisible</em> vuelve a conducirlo a él. Es decir, las acciones libres de todos los agentes conducen a esa situación de equilibrio en la que lo que los empresarios producen es lo que los consumidores desean.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -852,13 +928,17 @@ Variables endógenas y exógenas
 <section id="variaciones-del-equilibrio" class="level3" data-number="2.4.4">
 <h3 data-number="2.4.4" class="anchored" data-anchor-id="variaciones-del-equilibrio"><span class="header-section-number">2.4.4</span> Variaciones del equilibrio</h3>
 <p>Ya tenemos todos los elementos para analizar cómo funcionan los mercados. La pregunta que nos tenemos que hacer a continuación es: asumiendo que partimos de un equilibrio y que el mercado tiende siempre a él, ¿qué sucederá cuando cambian las condiciones del mercado? Por ejemplo, si en el mercado de un bien normal aumenta la renta disponible de los consumidores, ¿cómo variarán el precio y la cantidad de equilibrio?</p>
-<p>Como hemos visto ya, un incremento de renta desplaza la curva de demanda de bienes normales a la derecha como se muestra en la <a href="#fig-fig26">Figura&nbsp;<span>2.7</span></a>. Esto hace que, para el precio inicial, se produzca un exceso de demanda que pondrá en marcha la <em>mano invisible</em> conduciendo a un equilibrio en el que tenemos mayores precios y cantidades producidas. Hay que hacer notar que si el incremento de renta es generalizado en la economía, lo que hemos dicho para un solo mercado sucederá en muchos mercados simultáneamente, por lo que podremos afirmar que a nivel global se va a producir <strong>inflación</strong> y <strong>crecimiento</strong> económico.</p>
+<p>Como hemos visto ya, un incremento de renta desplaza la curva de demanda de bienes normales a la derecha como se muestra en la <a href="#fig-fig26" class="quarto-xref">Figura&nbsp;<span>2.7</span></a>. Esto hace que, para el precio inicial, se produzca un exceso de demanda que pondrá en marcha la <em>mano invisible</em> conduciendo a un equilibrio en el que tenemos mayores precios y cantidades producidas. Hay que hacer notar que si el incremento de renta es generalizado en la economía, lo que hemos dicho para un solo mercado sucederá en muchos mercados simultáneamente, por lo que podremos afirmar que a nivel global se va a producir <strong>inflación</strong> y <strong>crecimiento</strong> económico.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig26" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig26.png" class="img-fluid figure-img" style="width:40.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.7: Variaciones del equilibrio del mercado de un bien normal cuando aumenta la renta disponible de los consumidores.</figcaption>
+<div id="fig-fig26" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig26-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig26.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig26-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.7: Variaciones del equilibrio del mercado de un bien normal cuando aumenta la renta disponible de los consumidores.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -917,7 +997,7 @@ Para no equivocarse
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pEnergia.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<p><img src="pEnergia.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%"></p>
 </figure>
 </div>
 </div>
@@ -930,7 +1010,7 @@ Para no equivocarse
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="irpf.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<p><img src="irpf.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%"></p>
 </figure>
 </div>
 </div>
@@ -943,12 +1023,12 @@ Para no equivocarse
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="vacuno.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="vacuno.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>En el mercado de carne de vacuno (gráfico izquierdo), al desaparecer los animales se da una reducción de la oferta que incrementa la el precio y reduce la cantidad. Pero esta carne es una materia prima de las hamburguesas (un factor de producción), por lo que al encarecerse la carne se reducira la oferta de hamburguesas, incrementando su precio y reduciendo la cantidad intercambiada (gráfico derecho).</p>
+<p>En el mercado de carne de vacuno (gráfico izquierdo), al desaparecer los animales se da una reducción de la oferta que incrementa la el precio y reduce la cantidad. Pero esta carne es una materia prima de las hamburguesas (un factor de producción), por lo que al encarecerse la carne se reducirá la oferta de hamburguesas, incrementando su precio y reduciendo la cantidad intercambiada (gráfico derecho).</p>
 <ul>
 <li>Se produce un incremento de precios de un bien sustitutivo en el consumo y la producción.</li>
 </ul>
@@ -956,7 +1036,7 @@ Para no equivocarse
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="sustitutivo.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<p><img src="sustitutivo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%"></p>
 </figure>
 </div>
 </div>
@@ -969,7 +1049,7 @@ Para no equivocarse
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pEnergia.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<p><img src="pEnergia.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%"></p>
 </figure>
 </div>
 </div>
@@ -982,7 +1062,7 @@ Para no equivocarse
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="gestion.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<p><img src="gestion.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%"></p>
 </figure>
 </div>
 </div>
@@ -1014,12 +1094,12 @@ Para no equivocarse
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="ricos.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<p><img src="ricos.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>El incremento de impuestos a las empresas reduce la oferta (desplazamiento hacia la izquierda). La reducción del impuesto sobre la renta a los consumidores incrementa la demand (desplazamiento a la derecha). De la conjunción de ambas se obtiene una subida de precios y una cantidad final indeterminada.</p>
+<p>El incremento de impuestos a las empresas reduce la oferta (desplazamiento hacia la izquierda). La reducción del impuesto sobre la renta a los consumidores incrementa la demanda (desplazamiento a la derecha). De la conjunción de ambas se obtiene una subida de precios y una cantidad final indeterminada.</p>
 <p>Es una mala medida puesto que, aunque consigue desplazar renta de los empresarios a los consumidores, la producción no tiene por qué aumentar, pero los precios aumentarán por doble partida. Es decir, los pobres consumidores tendrán más renta, pero el poder adquisitivo de la misma se ha reducido. Medidas de este estilo deben pensarse muy bien, puesto que puede ser que el efecto sea más bien pernicioso.</p>
 </div>
 </div>
@@ -1035,39 +1115,48 @@ Otra visión en la formación de precios de los mercados
 </div>
 <div class="callout-body-container callout-body">
 <p>La visión presentada aquí es, para muchos economistas excesivamente simplista, por los supuestos tan restrictivos de los que partimos, y porque en el mundo real a veces las cosas no son tan simples. Sin embargo, a pesar de su simplicidad, las conclusiones son válidas incluso en casos reales mucho más complejos. En definitiva lo que tiene en cuenta el modelo propuesto es cómo influye la escasez relativa de los bienes y servicios en la formación de los precios.</p>
-<p><a href="https://www.youtube.com/watch?v=Rnv9boyfEDw&amp;ab_channel=%C3%93scarVara" target="_blank">Este vídeo</a> muestra un ejemplo de cómo funcionan los mercados eléctricos occidentales. Es un caso muy diferente a la competencia perfecta.</p>
+<p>El siguiente vídeo muestra un ejemplo de cómo funcionan los mercados eléctricos occidentales, que son mercados llamados marginalistas y se parecen en muchos aspectos a lo explicado en este capítulo.</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/wyIpASnY1YM?start=34" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
 </div>
 </div>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">Solución</a></li></ul>
-<div class="tab-content">
-<div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
-<p>Un economista asegura que el valor que tienen los bienes producidos por una empresa es objetivo y equivale al valor del trabajo incorporado en el mismo. ¿Qué le dirías?</p>
-</div>
-<div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
-<p>Ese economista solo está teniendo en cuenta el valor de un factor de producción, que es el trabajo. Pero lo más importante es que el valor de las cosas (en realidad hablamos de su precio) no solo depende de las consideraciones de oferta, sino también de la demanda. Dos bienes que tnegan los mismos costes de producción (la misma oferta) tendrán distintos precios en función de cuántos potenciales demandantes están interesados en él.</p>
+<!-- [Este vídeo](https://www.youtube.com/watch?v=Rnv9boyfEDw&ab_channel=%C3%93scarVara){target="_blank"} muestra un ejemplo de cómo funcionan los mercados eléctricos occidentales. Es un caso muy diferente a la competencia perfecta. -->
 </div>
 </div>
-</div>
+<!-- ::: panel-tabset -->
+<!-- ## Resuelve {-} -->
+<!-- Un economista asegura que el valor que tienen los bienes producidos por una empresa es objetivo y equivale al valor del trabajo incorporado en el mismo. ¿Qué le dirías? -->
+<!-- ## Solución {-} -->
+<!-- Ese economista solo está teniendo en cuenta el valor de un factor de producción, que es el trabajo. Pero lo más importante es que el valor de las cosas (en realidad hablamos de su precio) no solo depende de las consideraciones de oferta, sino también de la demanda. Dos bienes que tnegan los mismos costes de producción (la misma oferta) tendrán distintos precios en función de cuántos potenciales demandantes están interesados en él.  -->
+<!-- ::: -->
 </section>
 </section>
 <section id="mercados-de-factores" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="mercados-de-factores"><span class="header-section-number">2.5</span> Mercados de factores</h2>
-<p>Hasta aquí todo lo dicho se refiere a los mercados de bienes y servicios. Vamos a tratar ahora el funcionamiento de los mercados de factores. Lo primero es volver al flujo circular de la renta de la <a href="#fig-fig2">Figura&nbsp;<span>2.2</span></a>, para recordar que son las empresas las que están en la demanda de factores y los consumidores, familias u hogares las que ofrecen los factores de producción.</p>
+<p>Hasta aquí todo lo dicho se refiere a los mercados de bienes y servicios. Vamos a tratar ahora el funcionamiento de los mercados de factores. Lo primero es volver al flujo circular de la renta de la <a href="#fig-fig2" class="quarto-xref">Figura&nbsp;<span>2.2</span></a>, para recordar que son las empresas las que están en la demanda de factores y los consumidores, familias u hogares las que ofrecen los factores de producción.</p>
 <p>En realidad las decisiones de demanda de todos los bienes que consumen los hogares y la oferta de factores de producción forman parte de un proceso de decisión conjunto. Por ejemplo, un hogar que oferte únicamente trabajo a cambio de un salario tendrá que adaptar la demanda de bienes a la cantidad de trabajo que esté dispuesta a ofrecer. Si trabaja mucho y tiene muchos ingresos salariales podrá demandar muchos bienes y servicios. Por el contrario, no podrá tener altos niveles de consumo si su oferta de trabajo es muy baja. En efecto, podremos decir que para ese hogar la oferta de trabajo por un lado y las demandas de bienes por otro son dos caras de la misma moneda.</p>
 <p>Lo mismo sucede con las empresas. La oferta de bienes y servicios y la demanda de factores de producción se deciden simultáneamente y están ligadas entre sí. Una empresa solo podrá ofrecer mucho producto en un mercado si está dispuesta a contratar muchos factores de producción.</p>
-<p>La <em>curva de demanda de un factor de producción</em> se define como <em>la combinación de precios y cantidades de dicho factor tales que el empresario optimiza su función objetivo por unidad de tiempo ceteris paribus</em>. De modo general podríamos decir que la demanda de los factores que realizan las empresas se podría representar como la de la <a href="#fig-fig26bis">Figura&nbsp;<span>2.8</span></a>, que se ha concretado para el caso del mercado de trabajo. La representación enfrenta cantidades de trabajo en unidades físicas (horas, días, personas, …), representada por <span class="math inline">\(L\)</span>, para cada nivel de salario por unidad, <span class="math inline">\(w\)</span>, medido en unidades monetarias.</p>
+<p>La <em>curva de demanda de un factor de producción</em> se define como <em>la combinación de precios y cantidades de dicho factor tales que el empresario optimiza su función objetivo por unidad de tiempo ceteris paribus</em>. De modo general podríamos decir que la demanda de los factores que realizan las empresas se podría representar como la de la <a href="#fig-fig26bis" class="quarto-xref">Figura&nbsp;<span>2.8</span></a>, que se ha concretado para el caso del mercado de trabajo. La representación enfrenta cantidades de trabajo en unidades físicas (horas, días, personas, …), representada por <span class="math inline">\(L\)</span>, para cada nivel de salario por unidad, <span class="math inline">\(w\)</span>, medido en unidades monetarias.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig26bis" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig26bis.png" class="img-fluid figure-img" style="width:65.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.8: Oferta y demanda de un mercado de trabajo.</figcaption>
+<div id="fig-fig26bis" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig26bis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig26bis.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:65.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig26bis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.8: Oferta y demanda de un mercado de trabajo.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Las variables de las que depende la demanda de trabajo son, <em>grosso modo</em>, las mismas de las que dependía la oferta del bien, puesto que las empresas que hay detrás de ambas funciones son exactamente las mismas. En efecto, si hablamos del mercado de <em>donuts</em>, consideraremos el mercado de dicho bien en relación además con el mercado de factores necesarios para fabricarlos. Esto hace que las empresas en la demanda de factores y en la oferta del bien sean las mismas. No sucede lo mismo con los consumidores, puesto que los demandantes de <em>donuts</em> no tienen por qué ser los que ofrecen los factores de producción necesarios para fabricarlos. Seguramentes, muchos de los trabajadores consumirán <em>donuts</em>, pero habrá muchos más consumidores que no trabajan en las fábricas de <em>donuts</em>. En este sentido, la demanda del bien no está ni mucho menos restringida por la oferta de trabajo en esas empresas concretas, sino que obedecerá a razones más amplias.</p>
+<p>Las variables de las que depende la demanda de trabajo son, <em>grosso modo</em>, las mismas de las que dependía la oferta del bien, puesto que las empresas que hay detrás de ambas funciones son exactamente las mismas. En efecto, si hablamos del mercado de <em>donuts</em>, consideraremos el mercado de dicho bien en relación además con el mercado de factores necesarios para fabricarlos. Esto hace que las empresas en la demanda de factores y en la oferta del bien sean las mismas. No sucede lo mismo con los consumidores, puesto que los demandantes de <em>donuts</em> no tienen por qué ser los que ofrecen los factores de producción necesarios para fabricarlos. Seguramente, muchos de los trabajadores consumirán <em>donuts</em>, pero habrá muchos más consumidores que no trabajan en las fábricas de <em>donuts</em>. En este sentido, la demanda del bien no está ni mucho menos restringida por la oferta de trabajo en esas empresas concretas, sino que obedecerá a razones más amplias.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1078,7 +1167,7 @@ No olvidar
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>No se puede olvidar que en los mercados de factores las empresas demandan factores de producción y las familias los ofrecen (<a href="#fig-fig2">Figura&nbsp;<span>2.2</span></a>).</p>
+<p>No se puede olvidar que en los mercados de factores las empresas demandan factores de producción y las familias los ofrecen (<a href="#fig-fig2" class="quarto-xref">Figura&nbsp;<span>2.2</span></a>).</p>
 <p>Además, las mismas empresas que ofrecen un bien o servicio son las que demandan los factores de producción necesarios. Pero, obviamente, los consumidores del bien o servicio no son los que ofrecen todos los factores de producción necesarios.</p>
 </div>
 </div>
@@ -1099,23 +1188,23 @@ No olvidar
 </ol>
 <p>Las variables exógenas, por tanto, quedan más diluidas que en el caso de la oferta de factores. De forma general podemos considerar las expectativas, el número de trabajadores y los puntos suspensivos.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
+<div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
 <p>Ilustra gráficamente una situación de desempleo en el mercado de trabajo.</p>
 </div>
-<div id="tabset-12-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
+<div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="desempleo.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<p><img src="desempleo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Para que haya desempleo se tiene que dar una situación de desequilibrio permanente en el que el salario se mantenga por encima del salario de equilibrio. En ese caso se produce un exceso de oferta que implica que la cantidad de trabajo ofrecida por las familias es superior a la cantidad de trabajo demandada por las empresas. El salario de <strong>desequilibrio</strong> será <span class="math inline">\(w^*\)</span> y la cantidad de trabajo <span class="math inline">\(L_D\)</span>, <em>el lado corto del mercado</em>.</p>
-<p>Para que esta situación de desempleo sea permanente, como sucede en el mundo real, tiene que haber circunstancias que impidan que el mercado se ajuste reduciendo los salarios, que es lo que sugeriría la <em>mano invisible</em>. Se suele hablar de rígideces del mercado laboral que motivan esta circunstancia, que en definitiva lo que implican es que este mercado NO es de competencia perfecta.</p>
+<p>Para que esta situación de desempleo sea permanente, como sucede en el mundo real, tiene que haber circunstancias que impidan que el mercado se ajuste reduciendo los salarios, que es lo que sugeriría la <em>mano invisible</em>. Se suele hablar de rigideces del mercado laboral que motivan esta circunstancia, que en definitiva lo que implican es que este mercado NO es de competencia perfecta.</p>
 </div>
 </div>
 </div>
@@ -1127,7 +1216,7 @@ No olvidar
 <section id="concepto-general" class="level3" data-number="2.6.1">
 <h3 data-number="2.6.1" class="anchored" data-anchor-id="concepto-general"><span class="header-section-number">2.6.1</span> Concepto general</h3>
 <p>Estrechamente relacionado con todo lo anterior la <strong>elasticidad</strong> es un concepto en economía cuya importancia es difícil de exagerar. Se puede definir como <em>la variación porcentual que experimenta una variable endógena cuando varía un 1% una variable exógena de la que depende (ceteris paribus)</em>. Por tanto, la elasticidad mide la intensidad con la que dependen las variables entre sí, pero es una dependencia medida en términos porcentuales. La derivada también mide dicha intensidad, pero tiene el inconveniente de que tiene unidades de medida. Así, la primera ventaja de utilizar es la ausencia de unidades. Dicha ventaja será evidente en el resto de la sección.</p>
-<p>Supongamos una función que nos proporciona una relación de causalidad entre variables dada por <span class="math inline">\(x_i=f(u_1,u_2,\dots,u_n)\)</span>, la elasticidad de la función respecto a la variable exógena <span class="math inline">\(x_j\)</span> se define como se indica en la <a href="#eq-elast">Ecuación&nbsp;<span>2.3</span></a>, aplicando estrictamente la definición.</p>
+<p>Supongamos una función que nos proporciona una relación de causalidad entre variables dada por <span class="math inline">\(x_i=f(u_1,u_2,\dots,u_n)\)</span>, la elasticidad de la función respecto a la variable exógena <span class="math inline">\(x_j\)</span> se define como se indica en la <a href="#eq-elast" class="quarto-xref">Ecuación&nbsp;<span>2.3</span></a>, aplicando estrictamente la definición.</p>
 <p><span id="eq-elast"><span class="math display">\[
 E=\frac{\text{Variación porcentual de } x_i}{\text{Variación porcentual de }u_j}=\frac{\Delta x_i/x_i}{\Delta u_j/u_j}=\frac{\Delta x_i}{\Delta u_j}\frac{u_j}{x_i}
 \tag{2.3}\]</span></span></p>
@@ -1135,7 +1224,7 @@ E=\frac{\text{Variación porcentual de } x_i}{\text{Variación porcentual de }u_
 <p><span id="eq-deriv"><span class="math display">\[
 E=\lim_{\Delta u_j \to 0} \frac{\Delta x_i}{\Delta u_j}\frac{u_j}{x_i} = \frac{\partial x_i}{\partial u_j}\frac{u_j}{x_i}
 \tag{2.4}\]</span></span></p>
-<p>Siempre que sea posible utilizaremos la <a href="#eq-deriv">Ecuación&nbsp;<span>2.4</span></a>, pero, a menudo la información de la que se dispone en economía es escasa, por lo que en determinados casos nos veremos obligados a utilizar la <a href="#eq-elast">Ecuación&nbsp;<span>2.3</span></a>. En realidad, en el caso discreto utilizaremos una versión un tanto más fina, para evitar el problema de que los incrementos porcentuales son distintos dependiendo de la dirección del cambio. En el caso discreto en el que solo tenemos dos puntos de la función utilizaremos la <a href="#eq-discreta">Ecuación&nbsp;<span>2.5</span></a>, donde <span class="math inline">\((u_j^0, x_i^0)\)</span> son las coordenadas del punto inicial, y <span class="math inline">\((u_j^1, x_i^1)\)</span> son las finales.</p>
+<p>Siempre que sea posible utilizaremos la <a href="#eq-deriv" class="quarto-xref">Ecuación&nbsp;<span>2.4</span></a>, pero, a menudo la información de la que se dispone en economía es escasa, por lo que en determinados casos nos veremos obligados a utilizar la <a href="#eq-elast" class="quarto-xref">Ecuación&nbsp;<span>2.3</span></a>. En realidad, en el caso discreto utilizaremos una versión un tanto más fina, para evitar el problema de que los incrementos porcentuales son distintos dependiendo de la dirección del cambio. En el caso discreto en el que solo tenemos dos puntos de la función utilizaremos la <a href="#eq-discreta" class="quarto-xref">Ecuación&nbsp;<span>2.5</span></a>, donde <span class="math inline">\((u_j^0, x_i^0)\)</span> son las coordenadas del punto inicial, y <span class="math inline">\((u_j^1, x_i^1)\)</span> son las finales.</p>
 <p><span id="eq-discreta"><span class="math display">\[
 E=\frac{\Delta x_i}{\Delta u_j}\frac{(u_j^0+u_j^1)/2}{(x_i^0+x_i^1)/2}
 \tag{2.5}\]</span></span></p>
@@ -1149,9 +1238,9 @@ Escasez de información
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Una variable endógena pasa de 10 a 20 cuando una exógena de la que depende pasa de 4 a 2. Si calculamos la elasticidad utilizando la <a href="#eq-elast">Ecuación&nbsp;<span>2.3</span></a> tenemos que vale <span class="math inline">\(\frac{(20-10)/10}{(2-4)/4}=-2\)</span>, que implica que por cada incremento del 1% de <span class="math inline">\(u_j\)</span>, <span class="math inline">\(x_i\)</span> se reduce un 2%.</p>
+<p>Una variable endógena pasa de 10 a 20 cuando una exógena de la que depende pasa de 4 a 2. Si calculamos la elasticidad utilizando la <a href="#eq-elast" class="quarto-xref">Ecuación&nbsp;<span>2.3</span></a> tenemos que vale <span class="math inline">\(\frac{(20-10)/10}{(2-4)/4}=-2\)</span>, que implica que por cada incremento del 1% de <span class="math inline">\(u_j\)</span>, <span class="math inline">\(x_i\)</span> se reduce un 2%.</p>
 <p>Si el cálculo lo hacemos con la misma ecuación pero invirtiendo el punto inicial y final, la elasticidad sería <span class="math inline">\(\frac{(10-20)/20}{(4-2)/2}=-0,5\)</span>. Por tanto, para la misma función la misma aproximación nos da resultados radicalmente diferentes, dependiendo de qué punto consideremos inicial y final. Esto se debe a que los porcentajes no son simétricos. Pasar de 10 a 20 no es la misma variación porcentual que pasar de 20 a 10.</p>
-<p>El problema desaparece cuando utilizamos la <a href="#eq-discreta">Ecuación&nbsp;<span>2.5</span></a>, que daría una elasticidad de <span class="math inline">\(\frac{20-10}{2-4}\frac{(2+4)/2}{(20+10)/2}=-1\)</span>.</p>
+<p>El problema desaparece cuando utilizamos la <a href="#eq-discreta" class="quarto-xref">Ecuación&nbsp;<span>2.5</span></a>, que daría una elasticidad de <span class="math inline">\(\frac{20-10}{2-4}\frac{(2+4)/2}{(20+10)/2}=-1\)</span>.</p>
 <p>Como se ve los resultados son muy dispares, pero son los inconvenientes de la escasez de información.</p>
 </div>
 </div>
@@ -1160,19 +1249,19 @@ Escasez de información
 <h3 data-number="2.6.2" class="anchored" data-anchor-id="elasticidades-de-demanda-y-de-oferta"><span class="header-section-number">2.6.2</span> Elasticidades de demanda y de oferta</h3>
 <p>Ahora corresponde concretar el concepto general de elasticidad en las funciones que hemos definido en este capítulo, aunque se pueden utilizar en cualquier otra función. Las elasticidades que más se usan son las siguientes:</p>
 <ol type="1">
-<li><strong>Elasticidad precio de la demanda</strong> o, sencillamente <strong>elasticidad de demanda</strong>: se calcula aplicando el concepto de elasticidad al precio de la función de demanda en la <a href="#eq-demanda">Ecuación&nbsp;<span>2.1</span></a>, es decir <span class="math inline">\(E_{P_i}=\frac{\partial x_i}{\partial P_i}\frac{P_i}{x_i}\)</span>. Esta elasticidad siempre es negativa, puesto que la pendiente de la curva de demanda siempre es negativa. A menudo se considera su valor absoluto entendiendo que en realidad siempre es negativa. Se suele hablar de <strong>demandas elásticas</strong> cuando su valor es mayor que 1 en valor absoluto e <strong>inelástica</strong> o <strong>rígida</strong> en caso contrario. La relevancia de este valor frontera se verá más adelante. El caso en el que la demanda sea totalmente insensible al precio, es decir, con elasticidad 0 se dirá que es <strong>completamente inelástica</strong> o <strong>completamente rígida</strong>. Cuando la sensibilidad es infinita, la elasticidad también lo es y diremos que la demanda es <strong>completamente elástica</strong>.</li>
-<li><strong>Elasticidad renta de la demanda</strong>: por definición será <span class="math inline">\(E_R=\frac{\partial x_i}{\partial R}\frac{R}{x_i}\)</span>, y nos da la variación pocentual que experimenta la demanda cuando la renta varía un 1%. Los bienes serán normales cuando tengan elasticidad renta positiva y serán inferiores con elasticidades renta negativas.</li>
+<li><strong>Elasticidad precio de la demanda</strong> o, sencillamente <strong>elasticidad de demanda</strong>: se calcula aplicando el concepto de elasticidad al precio de la función de demanda en la <a href="#eq-demanda" class="quarto-xref">Ecuación&nbsp;<span>2.1</span></a>, es decir <span class="math inline">\(E_{P_i}=\frac{\partial x_i}{\partial P_i}\frac{P_i}{x_i}\)</span>. Esta elasticidad siempre es negativa, puesto que la pendiente de la curva de demanda siempre es negativa. A menudo se considera su valor absoluto entendiendo que en realidad siempre es negativa. Se suele hablar de <strong>demandas elásticas</strong> cuando su valor es mayor que 1 en valor absoluto e <strong>inelástica</strong> o <strong>rígida</strong> en caso contrario. La relevancia de este valor frontera se verá más adelante. El caso en el que la demanda sea totalmente insensible al precio, es decir, con elasticidad 0 se dirá que es <strong>completamente inelástica</strong> o <strong>completamente rígida</strong>. Cuando la sensibilidad es infinita, la elasticidad también lo es y diremos que la demanda es <strong>completamente elástica</strong>.</li>
+<li><strong>Elasticidad renta de la demanda</strong>: por definición será <span class="math inline">\(E_R=\frac{\partial x_i}{\partial R}\frac{R}{x_i}\)</span>, y nos da la variación porcentual que experimenta la demanda cuando la renta varía un 1%. Los bienes serán normales cuando tengan elasticidad renta positiva y serán inferiores con elasticidades renta negativas.</li>
 <li><strong>Elasticidades cruzadas de demanda</strong>: <span class="math inline">\(E_{P_j}=\frac{\partial x_i}{\partial P_j}\frac{P_j}{x_i}\)</span>. Estas elasticidades serán positivas para los bienes sustitutivos y negativas para los complementarios.</li>
 <li><strong>Elasticidad precio de la oferta</strong> o <strong>elasticidad de oferta</strong>: la definición matemática es igual que en el caso de la demanda (<span class="math inline">\(E_{P_i}=\frac{\partial x_i}{\partial P_i}\frac{P_i}{x_i}\)</span>), pero el efecto se mide ahora sobre la oferta. Siempre será positiva puesto que las curvas de oferta siempre tienen pendiente positiva.</li>
 </ol>
 <p>Naturalmente, se pueden calcular las elasticidades para las demás variables de las que dependen la demanda y la oferta, como son la tecnología, precios de factores, número de demandantes u oferentes, etc. También es conveniente recordar que se pueden calcular elasticidades de otras muchas funciones en economía y en otras disciplinas.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
+<div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
 <p>Sabemos que una función de demanda es tal que varía entre 10 y 15 cuando su precio pasa de 2 a 1, o bien la renta pasa de 3 a 1 o el precio de otro bien pasa de 1 a 2. Calcula las elasticidades precio, renta y cruzada de dicha demanda. ¿El bien es inferior o normal? ¿Es sustitutivo o complementario?</p>
 </div>
-<div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
+<div id="tabset-12-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
 <p>Puesto que no tenemos la función de demanda, sino solo dos puntos de la misma, tenemos que utilizar las ecuaciones discretas:</p>
 <p><span class="math display">\[
 \begin{array}{l}
@@ -1188,13 +1277,17 @@ E_{P_j}=\frac{\Delta x_i}{\Delta P_j}\frac{(P_j^0+P_j^1)/2}{(x_i^0+x_i^1)/2}=\fr
 </section>
 <section id="elasticidades-de-demandas-particulares" class="level3" data-number="2.6.3">
 <h3 data-number="2.6.3" class="anchored" data-anchor-id="elasticidades-de-demandas-particulares"><span class="header-section-number">2.6.3</span> Elasticidades de demandas particulares</h3>
-<p>Vamos a considerar ahora el caso de una demanda lineal con pendiente finita. Para no complicar los cálculos vamos a prescindir de todas las variables con la excepción del precio, sería como considerar la curva de demanda, en lugar de toda la función. En ese caso, la ecuación de la demanda sería <span class="math inline">\(x_i=a-b P_i\)</span>, siendo <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> constantes positivas, ver la <a href="#fig-fig27">Figura&nbsp;<span>2.9</span></a>. En ese caso el cálculo de la elasticidad precio en valor absoluto es relativamente sencillo.</p>
+<p>Vamos a considerar ahora el caso de una demanda lineal con pendiente finita. Para no complicar los cálculos vamos a prescindir de todas las variables con la excepción del precio, sería como considerar la curva de demanda, en lugar de toda la función. En ese caso, la ecuación de la demanda sería <span class="math inline">\(x_i=a-b P_i\)</span>, siendo <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> constantes positivas, ver la <a href="#fig-fig27" class="quarto-xref">Figura&nbsp;<span>2.9</span></a>. En ese caso el cálculo de la elasticidad precio en valor absoluto es relativamente sencillo.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig27" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig27.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.9: Una demanda lineal y su elasticidad precio.</figcaption>
+<div id="fig-fig27" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig27-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig27.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig27-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.9: Una demanda lineal y su elasticidad precio.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1202,7 +1295,7 @@ E_{P_j}=\frac{\Delta x_i}{\Delta P_j}\frac{(P_j^0+P_j^1)/2}{(x_i^0+x_i^1)/2}=\fr
 <p><span class="math display">\[
 E_{P_i}=\bigg | \frac{\partial x_i}{\partial P_i} \bigg | \frac{P_i}{x_i}=b\frac{(a-x_i)/b}{x_i}=\frac{a-x_i}{x_i}
 \]</span></p>
-<p>De esta forma tenemos que la elasticidad en el corte de la demanda con el eje de abscisas la elasticidad es 0 (porque <span class="math inline">\(x_i=a\)</span>); en el punto intermedio entre ese punto y el origen de coordenadas es 1 (<span class="math inline">\(x_i=a/2\)</span>) y en corte con el eje de ordenadas es infinito (<span class="math inline">\(x_i=0\)</span>), como muestra la <a href="#fig-fig27">Figura&nbsp;<span>2.9</span></a>. Es llamativo que en una función relativamente sencilla como es la lineal la elasticidad NO es constante, sino que toma todos los valores posibles, dependiendo del punto concreto en el que se mida. De hecho la demanda lineal tiene regiones en las que se comporta de forma inelástica (<span class="math inline">\(E_{P_i} &lt; 1\)</span>); otra en la que es elástica (<span class="math inline">\(E_{P_i}&gt;1\)</span>); y puntos concretos en los que es completamente elástica, inelástica y con elasticidad unitaria.</p>
+<p>De esta forma tenemos que la elasticidad en el corte de la demanda con el eje de abscisas la elasticidad es 0 (porque <span class="math inline">\(x_i=a\)</span>); en el punto intermedio entre ese punto y el origen de coordenadas es 1 (<span class="math inline">\(x_i=a/2\)</span>) y en corte con el eje de ordenadas es infinito (<span class="math inline">\(x_i=0\)</span>), como muestra la <a href="#fig-fig27" class="quarto-xref">Figura&nbsp;<span>2.9</span></a>. Es llamativo que en una función relativamente sencilla como es la lineal la elasticidad NO es constante, sino que toma todos los valores posibles, dependiendo del punto concreto en el que se mida. De hecho la demanda lineal tiene regiones en las que se comporta de forma inelástica (<span class="math inline">\(E_{P_i} &lt; 1\)</span>); otra en la que es elástica (<span class="math inline">\(E_{P_i}&gt;1\)</span>); y puntos concretos en los que es completamente elástica, inelástica y con elasticidad unitaria.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1217,18 +1310,18 @@ Importante
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-14-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-14-1-tab">
+<div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
 <p>¿Cuánto vale la elasticidad de una demanda vertical? ¿Y la de una demanda horizontal?</p>
 </div>
-<div id="tabset-14-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-2-tab">
+<div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
 <p>La demanda vertical tiene pendiente 0 (<span class="math inline">\(\partial x_i / \partial P_i=0\)</span>) indicando que la demanda es completamente rígida. Es decir, es imposible cambiar la cantidad variando el precio. En ese caso la elasticidad será CERO en cualquier punto.</p>
 <p>La demanda horizontal es el caso contrario, tiene pendiente infinito y su elasticidad será INFINITO. Es decir, es completamente elástica, una subida del precio por pequeña que sea reducirá la cantidad a cero, mientras que una reducción del mismo llevará a una cantidad infinita.</p>
 </div>
 </div>
 </div>
-<p>Dado que el caso sencillo de demandas lineales tiene todo el rango de elasticidades posible, cabe entonces preguntarse si existe alguna función de demanda (que será no lineal) cuya elasticidad precio sea constante. Vamos a estudiar las funciones de demanda Cobb-Douglas como la de la <a href="#eq-demcobb">Ecuación&nbsp;<span>2.6</span></a>.</p>
+<p>Dado que el caso sencillo de demandas lineales tiene todo el rango de elasticidades posible, cabe entonces preguntarse si existe alguna función de demanda (que será no lineal) cuya elasticidad precio sea constante. Vamos a estudiar las funciones de demanda Cobb-Douglas como la de la <a href="#eq-demcobb" class="quarto-xref">Ecuación&nbsp;<span>2.6</span></a>.</p>
 <p><span id="eq-demcobb"><span class="math display">\[
 x_i=AP_i^aR^bP_j^cP_k^d
 \tag{2.6}\]</span></span></p>
@@ -1238,12 +1331,12 @@ E_{P_i}=\bigg | \frac{\partial x_i}{\partial P_i} \bigg | \frac{P_i}{x_i}=AaP_i^
 \]</span></p>
 <p>Por tanto, en esta demanda la elasticidad es constante en todos sus puntos. La elasticidad renta será <span class="math inline">\(b\)</span> y las cruzadas <span class="math inline">\(c\)</span> y <span class="math inline">\(d\)</span>, respectivamente.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-15-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-15-1-tab">
-<p>¿Qué signos tienen todas las constantes de la demanda de la <a href="#eq-demcobb">Ecuación&nbsp;<span>2.6</span></a>, teniendo en cuenta que el bien <span class="math inline">\(j-\)</span>ésimo es sustitutivo de <span class="math inline">\(x_i\)</span> y el bien <span class="math inline">\(k-\)</span>ésimo es complementario?</p>
+<div id="tabset-14-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-14-1-tab">
+<p>¿Qué signos tienen todas las constantes de la demanda de la <a href="#eq-demcobb" class="quarto-xref">Ecuación&nbsp;<span>2.6</span></a>, teniendo en cuenta que el bien <span class="math inline">\(j-\)</span>ésimo es sustitutivo de <span class="math inline">\(x_i\)</span> y el bien <span class="math inline">\(k-\)</span>ésimo es complementario?</p>
 </div>
-<div id="tabset-15-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-15-2-tab">
+<div id="tabset-14-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-2-tab">
 <ul>
 <li>La constante <span class="math inline">\(A\)</span> será siempre positiva para que la demanda sea positiva, es en realidad una “variable” en la que se puede incluir todo lo que no está explicítamente expresado en variables en la función, como el número de agentes.</li>
 <li><span class="math inline">\(a\)</span> será negativa, puesto que todas las demandas tienen pendiente negativa.</li>
@@ -1255,9 +1348,9 @@ E_{P_i}=\bigg | \frac{\partial x_i}{\partial P_i} \bigg | \frac{P_i}{x_i}=AaP_i^
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-16-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-1" role="tab" aria-controls="tabset-16-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-2" role="tab" aria-controls="tabset-16-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-16-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-16-1-tab">
+<div id="tabset-15-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-15-1-tab">
 <p>Calcula la elasticidad precio de las siguientes ofertas, y di sin son Cobb-Douglas:</p>
 <ul>
 <li><p><span class="math inline">\(x_i=2P_i\)</span>.</p></li>
@@ -1265,7 +1358,7 @@ E_{P_i}=\bigg | \frac{\partial x_i}{\partial P_i} \bigg | \frac{P_i}{x_i}=AaP_i^
 <li><p><span class="math inline">\(x_i=10P_i^{0,5}\)</span>.</p></li>
 </ul>
 </div>
-<div id="tabset-16-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-2-tab">
+<div id="tabset-15-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-15-2-tab">
 <ul>
 <li><span class="math inline">\(x_i=2P_i\)</span>.</li>
 </ul>
@@ -1324,23 +1417,49 @@ x_i^*=A^* + a P_i^* +b R^* + c P_j^* + d P_k^* + \epsilon^*,
 <p>El <strong>ingreso total</strong> es la cantidad monetaria que percibe un empresario por las ventas que realiza su empresa. Su cálculo es muy sencillo, pues basta con multiplicar el precio por unidad de cada producto por la cantidad vendida de cada producto, es decir, <span class="math inline">\(IT=P_i x_i\)</span>. A menudo los empresarios querrán saber cómo varía esta magnitud cuando cambian los precios de su producto. La cuestión no es trivial, puesto que sabemos que si el precio sube, <em>ceteris paribus</em>, la cantidad que van a demandar los clientes será inferior. De esta forma tenemos que las dos variables que conforman el ingreso total varían en sentido opuesto, haciendo, en principio, el resultado difícil de prever.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig28" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig28.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.10: Una demanda lineal y el ingreso total.</figcaption>
+<div id="fig-fig28" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig28-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig28.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig28-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.10: Una demanda lineal y el ingreso total.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Vamos a analizar esta cuestión en una demanda lineal cuya ecuación es <span class="math inline">\(x_i=10-P_i\)</span>, como la de la <a href="#fig-fig28">Figura&nbsp;<span>2.10</span></a>. Supongamos que el precio se incrementa pasando de 1 a 2. En ese caso la cantidad pasaría de 9 a 8 unidades y el ingreso total de 9 a 16, por tanto aumentaría. Es fácil comprobar, además, que la elasticidad es inferior a la unidad en esos dos puntos. Supongamos ahora un caso en el que el precio aumenta también un euro, pero pasando de 8 a 9, en ese caso la cantidad se reduciría de 2 a 1 y el ingreso total se reduciría de 16 a 9. Nuevamente, se puede comprobar que en esos dos puntos la elasticidad es superior a la unidad.</p>
+<p>Vamos a analizar esta cuestión en una demanda lineal cuya ecuación es <span class="math inline">\(x_i=10-P_i\)</span>, como la de la <a href="#fig-fig28" class="quarto-xref">Figura&nbsp;<span>2.10</span></a>. Supongamos que el precio se incrementa pasando de 1 a 2. En ese caso la cantidad pasaría de 9 a 8 unidades y el ingreso total de 9 a 16, por tanto aumentaría. Es fácil comprobar, además, que la elasticidad es inferior a la unidad en esos dos puntos. Supongamos ahora un caso en el que el precio aumenta también un euro, pero pasando de 8 a 9, en ese caso la cantidad se reduciría de 2 a 1 y el ingreso total se reduciría de 16 a 9. Nuevamente, se puede comprobar que en esos dos puntos la elasticidad es superior a la unidad.</p>
 <p>En resumen, el mismo incremento en el precio provoca un incremento del ingreso total cuando la demanda es rígida (elasticidad inferior a la unidad) y una reducción cuando la demanda es elástica. En realidad, esto tiene su lógica, puesto que si la demanda es rígida implica que es insensible al precio, por lo que subir el precio va a cambiar poco la cantidad de forma que el ingreso subirá. Cuando la demanda es elástica la subida del precio va a provocar una caída tan grande de la cantidad que el producto de las dos acaba cayendo.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Impuestos y elasticidad
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Algo parecido al ingreso total sucede con los impuestos y la recaudación. Compruébalo:</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/aGaPKs71_I8?start=24" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
+</div>
+</div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-17-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-1" role="tab" aria-controls="tabset-17-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-2" role="tab" aria-controls="tabset-17-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-16-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-1" role="tab" aria-controls="tabset-16-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-2" role="tab" aria-controls="tabset-16-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-17-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-17-1-tab">
+<div id="tabset-16-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-16-1-tab">
 <p>¿Cómo varía el ingreso total en la demanda tipo <em>Cobb-Douglas</em> <span class="math inline">\(x_i=aP_i^{-b}\)</span> cuando aumenta el precio?</p>
 </div>
-<div id="tabset-17-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-2-tab">
+<div id="tabset-16-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-2-tab">
 <p>La pregunta se puede responder muy fácilmente, sabiendo que la elasticidad precio es <span class="math inline">\(b\)</span>. Si <span class="math inline">\(b&lt;1\)</span> la demanda es rígida y un incremento del precio provocará un incremento del ingreso total. Lo contrario sucede con <span class="math inline">\(b&gt;1\)</span>. Lo curioso es que si la elasticidad es uno, entonces el ingreso total es constante.</p>
 <p>Otra forma de verlo es dándose cuenta de que el ingreso total es <span class="math inline">\(IT=P_ix_i=aP_i^{1-b}\)</span>, de donde se tienen las mismas conclusiones que antes. En el caso de elasticidad unitaria el ingreso total es <span class="math inline">\(a\)</span>.</p>
 </div>
@@ -1361,12 +1480,12 @@ La anécdota de los bienes Giffen y Veblen
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-18-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-1" role="tab" aria-controls="tabset-18-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-18-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-2" role="tab" aria-controls="tabset-18-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-17-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-1" role="tab" aria-controls="tabset-17-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-2" role="tab" aria-controls="tabset-17-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-18-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-18-1-tab">
+<div id="tabset-17-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-17-1-tab">
 <p>Busca noticias sobre destrucción de cosechas. ¿Por qué destruyen las cosechas algunas veces los agricultores? ¿Tiene relación con la elasticidad de demanda?</p>
 </div>
-<div id="tabset-18-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-18-2-tab">
+<div id="tabset-17-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-2-tab">
 <p>La destrucción supone una reducción de la oferta de dichos bienes, por lo que su precio tenderá a subir. La subida del precio incrementará los ingresos de los productores si, y solo si, las demandas de productos agrícolas son inelásticas. Esto debe ser así, puesto que los agricultores recurren a esta estrategia en numerosas ocasiones.</p>
 </div>
 </div>
@@ -1379,28 +1498,32 @@ La anécdota de los bienes Giffen y Veblen
 <p>Como ilustración vamos a introducir brevemente el establecimiento de precios máximos y mínimos en los mercados. Imaginemos un mercado en equilibrio en el que el gobierno establece un precio máximo legal por el que no se puede intercambiar ese bien a precios superiores. Naturalmente, para que este precio límite tenga algún efecto tiene que establecerse por debajo del precio de equilibrio. Las razones pueden ser muy diversas, pero en general serán que se considera que los precios de equilibrio son abusivos beneficiando artificialmente a los productores y perjudicando a los demandantes. Dos casos reales son, por ejemplo, los precios máximos en los alquileres en determinadas zonas de grandes ciudades y los precios de la energía eléctrica al consumidor final en España (que ha dado lugar al déficit de tarifa).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig29" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig29.png" class="img-fluid figure-img" style="width:75.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.11: Establecimiento de precios máximos y mínimos.</figcaption>
+<div id="fig-fig29" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig29-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig29.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig29-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.11: Establecimiento de precios máximos y mínimos.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>El panel izquierdo de la <a href="#fig-fig29">Figura&nbsp;<span>2.11</span></a> muestra el caso de un mercado en el que se establece un precio máximo (<span class="math inline">\(P_i^{máx}\)</span>). En ese caso, el punto donde se situará el mercado viene dado por las coordenadas (<span class="math inline">\(x_i^{máx}\)</span>, <span class="math inline">\(P_i^{máx}\)</span>). Dado que el precio es muy bajo, la oferta es inferior a la de equilibrio y la demanda superior, esto hace que aparezca un exceso de demanda que el mercado no puede desechar por la restricción. Eso quiere decir que muchos demandantes se quedarán sin producto y de hecho estarán dispuestos a pagar precios superiores, que serán ilegales. Es muy importante que en realidad esta restricción está perjudicando a muchos demandantes, que son aquellos que se pretendía beneficiar. También perjudica a los productores, puesto que preferirían producir más y vender más caro, cosas que son posibles dadas las curvas de demanda y oferta. El problema aquí es que algunos demandantes tendrán el producto a precio muy bajo, pero hay otros que se ven perjudicados y, puesto que no se puede satisfacer toda la demanda, habrá que arbitrar un sistema de adjudicación del bien.</p>
+<p>El panel izquierdo de la <a href="#fig-fig29" class="quarto-xref">Figura&nbsp;<span>2.11</span></a> muestra el caso de un mercado en el que se establece un precio máximo (<span class="math inline">\(P_i^{máx}\)</span>). En ese caso, el punto donde se situará el mercado viene dado por las coordenadas (<span class="math inline">\(x_i^{máx}\)</span>, <span class="math inline">\(P_i^{máx}\)</span>). Dado que el precio es muy bajo, la oferta es inferior a la de equilibrio y la demanda superior, esto hace que aparezca un exceso de demanda que el mercado no puede desechar por la restricción. Eso quiere decir que muchos demandantes se quedarán sin producto y de hecho estarán dispuestos a pagar precios superiores, que serán ilegales. Es muy importante que en realidad esta restricción está perjudicando a muchos demandantes, que son aquellos que se pretendía beneficiar. También perjudica a los productores, puesto que preferirían producir más y vender más caro, cosas que son posibles dadas las curvas de demanda y oferta. El problema aquí es que algunos demandantes tendrán el producto a precio muy bajo, pero hay otros que se ven perjudicados y, puesto que no se puede satisfacer toda la demanda, habrá que arbitrar un sistema de adjudicación del bien.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-19-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-19-1" role="tab" aria-controls="tabset-19-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-19-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-19-2" role="tab" aria-controls="tabset-19-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-18-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-1" role="tab" aria-controls="tabset-18-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-18-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-2" role="tab" aria-controls="tabset-18-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-19-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-19-1-tab">
+<div id="tabset-18-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-18-1-tab">
 <p>Dos economistas se enfrentan amargamente acerca de cómo abaratar los altos alquileres que se pagan en su ciudad. Uno de ellos opina que lo mejor es imponer precios máximos a los alquileres. El otro, sin embargo, dice que el problema es que habría que crear condiciones favorables para que sea posible construir más barato mediante la liberalización de suelo por parte de los ayuntamientos.</p>
 <p>Comenta las ventajas e inconvenientes de ambas opciones.</p>
 </div>
-<div id="tabset-19-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-19-2-tab">
+<div id="tabset-18-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-18-2-tab">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="alquiler.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="alquiler.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
 </figure>
 </div>
 </div>
@@ -1410,20 +1533,20 @@ La anécdota de los bienes Giffen y Veblen
 </div>
 </div>
 </div>
-<p>El razonamiento anterior se puede replicar exactamente igual para el establecimiento de precios mínimos por encima del precio de equilibrio (panel derecho de la <a href="#fig-fig29">Figura&nbsp;<span>2.11</span></a>). El punto de <em>desequilibrio</em> será (<span class="math inline">\(x_i^{mín}\)</span>, <span class="math inline">\(P_i^{mín}\)</span>). En este caso, el desequilibrio consiste igualmente en que la cantidad que se intercambia en el mercado es inferior a la de equilibrio y se produce un exceso de oferta que el mercado no puede desechar por la restricción. El caso más típico es el salario mínimo interprofesional del mercado de trabajo.</p>
+<p>El razonamiento anterior se puede replicar exactamente igual para el establecimiento de precios mínimos por encima del precio de equilibrio (panel derecho de la <a href="#fig-fig29" class="quarto-xref">Figura&nbsp;<span>2.11</span></a>). El punto de <em>desequilibrio</em> será (<span class="math inline">\(x_i^{mín}\)</span>, <span class="math inline">\(P_i^{mín}\)</span>). En este caso, el desequilibrio consiste igualmente en que la cantidad que se intercambia en el mercado es inferior a la de equilibrio y se produce un exceso de oferta que el mercado no puede desechar por la restricción. El caso más típico es el salario mínimo interprofesional del mercado de trabajo.</p>
 <p>Tanto en el caso de precios máximos como mínimos los propios agentes de ambos lados del mercado tienen incentivos a evadir la ley porque estarían mejor, y esto lleva a que, si la autoridad quiere de verdad mantener en el tiempo la restricción, tiene que imponer un sistemas férreo de control del mercado.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-20-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-20-1" role="tab" aria-controls="tabset-20-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-20-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-20-2" role="tab" aria-controls="tabset-20-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-19-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-19-1" role="tab" aria-controls="tabset-19-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-19-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-19-2" role="tab" aria-controls="tabset-19-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-20-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-20-1-tab">
+<div id="tabset-19-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-19-1-tab">
 <p>Ilustra gráficamente una situación de desempleo en el mercado de trabajo. ¿Qué sucedería si hubiera un incremento de población importante como consecuencia de la afluencia masiva de inmigración?</p>
 </div>
-<div id="tabset-20-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-20-2-tab">
+<div id="tabset-19-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-19-2-tab">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="desempleoInmigracion.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<p><img src="desempleoInmigracion.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%"></p>
 </figure>
 </div>
 </div>
@@ -1436,13 +1559,17 @@ La anécdota de los bienes Giffen y Veblen
 <section id="excedente-del-consumidor-y-productor" class="level3" data-number="2.7.3">
 <h3 data-number="2.7.3" class="anchored" data-anchor-id="excedente-del-consumidor-y-productor"><span class="header-section-number">2.7.3</span> Excedente del consumidor y productor</h3>
 <p>Como ya vimos, la demanda <em>proporciona el precio máximo que el consumidor está dispuesto a pagar por una determinada cantidad de un bien</em>. Si por alguna razón el precio que efectivamente paga el consumidor fuera inferior al que está dispuesto a pagar obtendría un beneficio que se podría medir en términos monetarios y que llamaremos excedente.</p>
-<p>Así, en la <a href="#fig-fig30">Figura&nbsp;<span>2.12</span></a>, para la cantidad <span class="math inline">\(x_i^0\)</span>, el <strong>excedente del consumidor</strong> será la diferencia entre el precio que indica la demanda para esa cantidad (<span class="math inline">\(P_i^D\)</span>) y lo que efectivamente se paga (<span class="math inline">\(P_i^1\)</span>, el excedente será <span class="math inline">\(P_i^D-P_i^1\)</span>). Si el razonamiento se repite para todos los precios por encima del de equilibrio y los sumamos tenemos que el excedente se puede medir como la superficie por debajo de la demanda hasta el precio de mercado.</p>
+<p>Así, en la <a href="#fig-fig30" class="quarto-xref">Figura&nbsp;<span>2.12</span></a>, para la cantidad <span class="math inline">\(x_i^0\)</span>, el <strong>excedente del consumidor</strong> será la diferencia entre el precio que indica la demanda para esa cantidad (<span class="math inline">\(P_i^D\)</span>) y lo que efectivamente se paga (<span class="math inline">\(P_i^1\)</span>, el excedente será <span class="math inline">\(P_i^D-P_i^1\)</span>). Si el razonamiento se repite para todos los precios por encima del de equilibrio y los sumamos tenemos que el excedente se puede medir como la superficie por debajo de la demanda hasta el precio de mercado.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig30" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig30.png" class="img-fluid figure-img" style="width:35.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.12: Excedente del consumidor y del productor.</figcaption>
+<div id="fig-fig30" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig30-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig30.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig30-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.12: Excedente del consumidor y del productor.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1463,17 +1590,17 @@ Importante
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-21-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-21-1" role="tab" aria-controls="tabset-21-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-21-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-21-2" role="tab" aria-controls="tabset-21-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-20-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-20-1" role="tab" aria-controls="tabset-20-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-20-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-20-2" role="tab" aria-controls="tabset-20-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-21-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-21-1-tab">
+<div id="tabset-20-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-20-1-tab">
 <p>¿Cómo varían los excedentes si aumenta la renta de los consumidores en mercados de bienes normales por una reducción del impuesto sobre la renta?</p>
 </div>
-<div id="tabset-21-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-21-2-tab">
+<div id="tabset-20-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-20-2-tab">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="excedenteRenta.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<p><img src="excedenteRenta.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%"></p>
 </figure>
 </div>
 </div>
@@ -1483,17 +1610,17 @@ Importante
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-22-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-22-1" role="tab" aria-controls="tabset-22-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-22-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-22-2" role="tab" aria-controls="tabset-22-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-21-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-21-1" role="tab" aria-controls="tabset-21-1" aria-selected="true">Resuelve</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-21-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-21-2" role="tab" aria-controls="tabset-21-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-22-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-22-1-tab">
+<div id="tabset-21-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-21-1-tab">
 <p>¿Cómo varían los excedentes si se establece un precio mínimo?</p>
 </div>
-<div id="tabset-22-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-22-2-tab">
+<div id="tabset-21-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-21-2-tab">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="excedentePM.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<p><img src="excedentePM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:35.0%"></p>
 </figure>
 </div>
 </div>
@@ -1510,15 +1637,28 @@ Importante
 <section id="cuestiones-y-problemas-resueltos" class="level3" data-number="2.8.1">
 <h3 data-number="2.8.1" class="anchored" data-anchor-id="cuestiones-y-problemas-resueltos"><span class="header-section-number">2.8.1</span> Cuestiones y problemas resueltos</h3>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-23-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-23-1" role="tab" aria-controls="tabset-23-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-23-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-23-2" role="tab" aria-controls="tabset-23-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-22-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-22-1" role="tab" aria-controls="tabset-22-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-22-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-22-2" role="tab" aria-controls="tabset-22-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-23-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-23-1-tab">
+<div id="tabset-22-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-22-1-tab">
 <ol type="1">
 <li>¿Cómo afecta a un mercado de productos químicos la imposición de una ecotasa por unidad de producto que tienen que pagar los empresarios del sector por la contaminación que producen, y a la vez se produce una reducción generalizada de los salarios en el sector?</li>
 </ol>
 </div>
-<div id="tabset-23-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-23-2-tab">
+<div id="tabset-22-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-22-2-tab">
 <p>La ecotasa hace que la oferta se desplace a la izquierda, la reducción de salarios desplaza la oferta hacia la derecha. No podemos saber nada sin información adicional.</p>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-23-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-23-1" role="tab" aria-controls="tabset-23-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-23-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-23-2" role="tab" aria-controls="tabset-23-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-23-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-23-1-tab">
+<ol start="2" type="1">
+<li>¿Cómo afecta al mercado del vino el programa de arranque de viñas de la Organización Común de Mercado (OCM) del vino de la Comisión Europea, además de una subida del salario de los trabajadores del sector?</li>
+</ol>
+</div>
+<div id="tabset-23-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-23-2-tab">
+<p>La OCM supone una reducción de la oferta de vino (desplazamiento de la curva hacia la izquierda), la subida del salario es de nuevo una reducción de oferta, por lo que sin duda los precios subirán y se comercializará menos vino.</p>
 </div>
 </div>
 </div>
@@ -1526,12 +1666,12 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-24-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-24-1" role="tab" aria-controls="tabset-24-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-24-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-24-2" role="tab" aria-controls="tabset-24-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-24-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-24-1-tab">
-<ol start="2" type="1">
-<li>¿Cómo afecta al mercado del vino el programa de arranque de viñas de la Organización Común de Mercado (OCM) del vino de la Comisión Europea, además de una subida del salario de los trabajadores del sector?</li>
+<ol start="3" type="1">
+<li>¿Qué quiere decir que la elasticidad precio de un bien es 0,68? Si en un mercado con esa elasticidad de demanda subieran los precios un 10%, ¿cuánto se reduciría la cantidad demandada?</li>
 </ol>
 </div>
 <div id="tabset-24-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-24-2-tab">
-<p>La OCM supone una reducción de la oferta de vino (desplazamiento de la curva hacia la izquierda), la subida del salario es de nuevo una reducción de oferta, por lo que sin duda los precios subirán y se comercializará menos vino.</p>
+<p>Un incremento del precio de un bien de un 1% genera una caída del consumo del bien en 0,68%. 6,8%.</p>
 </div>
 </div>
 </div>
@@ -1539,12 +1679,12 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-25-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-25-1" role="tab" aria-controls="tabset-25-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-25-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-25-2" role="tab" aria-controls="tabset-25-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-25-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-25-1-tab">
-<ol start="3" type="1">
-<li>¿Qué quiere decir que la elasticidad precio de un bien es 0,68? Si en un mercado con esa elasticidad de demanda subieran los precios un 10%, ¿cuánto se reduciría la cantidad demandada?</li>
+<ol start="4" type="1">
+<li>Comenta la frase: “los coches son bienes Giffen porque entre el año pasado y este los precios han bajado y las ventas también”.</li>
 </ol>
 </div>
 <div id="tabset-25-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-25-2-tab">
-<p>Un incremento del precio de un bien de un 1% genera una caída del consumo del bien en 0,68%. 6,8%.</p>
+<p>Esa frase es falsa, puesto que no se cumple la hipótesis de ceteris paribus, debido a que estamos tomando datos empíricos de la vida real.</p>
 </div>
 </div>
 </div>
@@ -1552,12 +1692,12 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-26-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-26-1" role="tab" aria-controls="tabset-26-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-26-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-26-2" role="tab" aria-controls="tabset-26-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-26-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-26-1-tab">
-<ol start="4" type="1">
-<li>Comenta la frase: “los coches son bienes Giffen porque entre el año pasado y este los precios han bajado y las ventas también”.</li>
+<ol start="5" type="1">
+<li>¿Qué demanda te parece más rígida, la de la gasolina o la de ordenadores IBM? ¿Cómo es la elasticidad de telefonía de una marca concreta?</li>
 </ol>
 </div>
 <div id="tabset-26-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-26-2-tab">
-<p>Esa frase es falsa, puesto que no se cumple la hipótesis de ceteris paribus, debido a que estamos tomando datos empíricos de la vida real.</p>
+<p>La de la gasolina es más rígida, el consumo varía muy poco con las variaciones de precios. Si suben los precios de los ordenadores IBM la gente comprará menos IBM y más de otros ordenadores, pero la cantidad de ordenadores IBM que se comprarán será menor.</p>
 </div>
 </div>
 </div>
@@ -1565,12 +1705,17 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-27-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-27-1" role="tab" aria-controls="tabset-27-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-27-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-27-2" role="tab" aria-controls="tabset-27-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-27-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-27-1-tab">
-<ol start="5" type="1">
-<li>¿Qué demanda te parece más rígida, la de la gasolina o la de ordenadores IBM? ¿Cómo es la elasticidad de telefonía de una marca concreta?</li>
+<ol start="6" type="1">
+<li>¿Cómo varía la elasticidad de una función de demanda lineal medida horizontalmente a medida que se desplaza paralelamente hacia la derecha? ¿Cómo varía la elasticidad verticalmente?</li>
 </ol>
 </div>
 <div id="tabset-27-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-27-2-tab">
-<p>La de la gasolina es más rígida, el consumo varía muy poco con las variaciones de precios. Si suben los precios de los ordenadores IBM la gente comprará menos IBM y más de otros ordenadores, pero la cantidad de ordenadores IBM que se comprarán será menor.</p>
+<p>Partimos del punto donde la elasticidad vale la unidad en la demanda inicial (A en la figura). En el punto B (cantidad igual) la elasticidad pasa a la zona donde la elasticidad es mayor que 1, por lo que el paso de A a B supone un crecimiento de elasticidad. Con el mismo razonamiento se puede ver que el paso de A a C supone una reducción de la elasticidad.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1578,15 +1723,15 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-28-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-28-1" role="tab" aria-controls="tabset-28-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-28-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-28-2" role="tab" aria-controls="tabset-28-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-28-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-28-1-tab">
-<ol start="6" type="1">
-<li>¿Cómo varía la elasticidad de una función de demanda lineal medida horizontalmente a medida que se desplaza paralelamente hacia la derecha? ¿Cómo varía la elasticidad verticalmente?</li>
+<ol start="7" type="1">
+<li>¿Cómo varía la elasticidad horizontalmente de una función de demanda lineal cuando pasa de <span class="math inline">\(x_i=a-2bP_i\)</span> a <span class="math inline">\(x_i=a-bP_i\)</span>? ¿Cómo varía la elasticidad verticalmente?</li>
 </ol>
 </div>
 <div id="tabset-28-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-28-2-tab">
-<p>Partimos del punto donde la elasticidad vale la unidad en la demanda inicial (A en la figura). En el punto B (cantidad igual) la elasticidad pasa a la zona donde la elasticidad es mayor que 1, por lo que el paso de A a B supone un crecimiento de elasticidad. Con el mismo razonamiento se puede ver que el paso de A a C supone una reducción de la elasticidad.</p>
+<p>En este caso la demanda se desplaza como indica la figura. Si el punto A es nuevamente el punto medio, su elasticidad será 1. Pero ese será también el punto medio medido en vertical para la segunda demanda, por lo que la elasticidad en B también será 1 y en C será menor que 1.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="fig1.png" class="img-fluid figure-img"></p>
+<p><img src="fig2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1596,17 +1741,12 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-29-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-29-1" role="tab" aria-controls="tabset-29-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-29-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-29-2" role="tab" aria-controls="tabset-29-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-29-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-29-1-tab">
-<ol start="7" type="1">
-<li>¿Cómo varía la elasticidad horizontalmente de una función de demanda lineal cuando pasa de <span class="math inline">\(x_i=a-2bP_i\)</span> a <span class="math inline">\(x_i=a-bP_i\)</span>? ¿Cómo varía la elasticidad verticalmente?</li>
+<ol start="8" type="1">
+<li>La elasticidad precio de las demandas lineales depende del precio y/o la cantidad. ¿Se puede decir lo mismo de las curvas de oferta lineales? Examina el caso de <span class="math inline">\(x_i=bP_i\)</span> y <span class="math inline">\(x_i=a+bP_i\)</span>. Calcula también la elasticidad de <span class="math inline">\(x_i=bP_i^{0,8}\)</span>.</li>
 </ol>
 </div>
 <div id="tabset-29-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-29-2-tab">
-<p>En este caso la demanda se desplaza como indica la figura. Si el punto A es nuevamente el punto medio, su elasticidad será 1. Pero ese será también el punto medio medido en vertical para la segunda demanda, por lo que la elasticidad en B también será 1 y en C será menor que 1.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="fig2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p>La oferta <span class="math inline">\(x_i=bP_i\)</span> es tipo Cobb-Douglas con elasticidad unitaria. La oferta <span class="math inline">\(x_i=a+bP_i\)</span> tiene elasticidad que varía con la cantidad, <span class="math inline">\(E=\frac{\partial x_i}{\partial P_i} \frac{P_i}{x_i} =(b (x_i-a)/b)/x_i =(x_i-a)/x_i\)</span>. Para cantidades pequeñas la elasticidad tiende a infinito, y la elasticidad tiende a 1 a medida que la cantidad crece. La oferta <span class="math inline">\(x_i=bP_i^{0,8}\)</span> es tipo Cobb-Douglas con elasticidad 0,8.</p>
 </div>
 </div>
 </div>
@@ -1614,12 +1754,12 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-30-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-30-1" role="tab" aria-controls="tabset-30-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-30-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-30-2" role="tab" aria-controls="tabset-30-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-30-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-30-1-tab">
-<ol start="8" type="1">
-<li>La elasticidad precio de las demandas lineales depende del precio y/o la cantidad. ¿Se puede decir lo mismo de las curvas de oferta lineales? Examina el caso de <span class="math inline">\(x_i=bP_i\)</span> y <span class="math inline">\(x_i=a+bP_i\)</span>. Calcula también la elasticidad de <span class="math inline">\(x_i=bP_i^{0,8}\)</span>.</li>
+<ol start="9" type="1">
+<li>Si fueras un empresario, ¿preferirías una demanda infinitamente rígida o infinitamente elástica?</li>
 </ol>
 </div>
 <div id="tabset-30-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-30-2-tab">
-<p>La oferta <span class="math inline">\(x_i=bP_i\)</span> es tipo Cobb-Douglas con elasticidad unitaria. La oferta <span class="math inline">\(x_i=a+bP_i\)</span> tiene elasticidad que varía con la cantidad, <span class="math inline">\(E=\frac{\partial x_i}{\partial P_i} \frac{P_i}{x_i} =(b (x_i-a)/b)/x_i =(x_i-a)/x_i\)</span>. Para cantidades pequeñas la elasticidad tiende a infinito, y la elasticidad tiende a 1 a medida que la cantidad crece. La oferta <span class="math inline">\(x_i=bP_i^{0,8}\)</span> es tipo Cobb-Douglas con elasticidad 0,8.</p>
+<p>Completamente rígida porque incrementos de precios no afectarían a la cantidad demandada y el ingreso total podría aumentar sin restricción.</p>
 </div>
 </div>
 </div>
@@ -1627,12 +1767,12 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-31-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-31-1" role="tab" aria-controls="tabset-31-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-31-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-31-2" role="tab" aria-controls="tabset-31-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-31-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-31-1-tab">
-<ol start="9" type="1">
-<li>Si fueras un empresario, ¿preferirías una demanda infinitamente rígida o infinitamente elástica?</li>
+<ol start="10" type="1">
+<li>¿Cuál es la elasticidad de demanda de un mercado con 1.000 consumidores idénticos cuya función de demanda individual es <span class="math inline">\(x_i=0,5P_i^{-0,1}R^{1,2}P_j^{0,3}P_k^{-0,8}\)</span>?</li>
 </ol>
 </div>
 <div id="tabset-31-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-31-2-tab">
-<p>Completamente rígida porque incrementos de precios no afectarían a la cantidad demandada y el ingreso total podría aumentar sin restricción.</p>
+<p>La función de demanda de los 1.000 consumidores es la misma multiplicando por 1.000 la parte derecha de la ecuación. Como esto no afecta al exponente, la demanda tiene las mismas elasticidades que para un solo consumidor.</p>
 </div>
 </div>
 </div>
@@ -1640,12 +1780,12 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-32-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-32-1" role="tab" aria-controls="tabset-32-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-32-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-32-2" role="tab" aria-controls="tabset-32-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-32-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-32-1-tab">
-<ol start="10" type="1">
-<li>¿Cuál es la elasticidad de demanda de un mercado con 1.000 consumidores idénticos cuya función de demanda individual es <span class="math inline">\(x_i=0,5P_i^{-0,1}R^{1,2}P_j^{0,3}P_k^{-0,8}\)</span>?</li>
+<ol start="11" type="1">
+<li>Si sabemos que un incremento de renta en un mercado de competencia perfecta no cambia los precios, ¿cuál es la elasticidad de demanda y oferta? ¿Y si no cambia la cantidad?</li>
 </ol>
 </div>
 <div id="tabset-32-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-32-2-tab">
-<p>La función de demanda de los 1.000 consumidores es la misma multiplicando por 1.000 la parte derecha de la ecuación. Como esto no afecta al exponente, la demanda tiene las mismas elasticidades que para un solo consumidor.</p>
+<p>La elasticidad de demanda puede ser cualquiera, pero la de oferta es infinito. Si no cambia la cantidad la elasticidad de oferta es 0.</p>
 </div>
 </div>
 </div>
@@ -1653,12 +1793,17 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-33-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-33-1" role="tab" aria-controls="tabset-33-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-33-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-33-2" role="tab" aria-controls="tabset-33-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-33-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-33-1-tab">
-<ol start="11" type="1">
-<li>Si sabemos que un incremento de renta en un mercado de competencia perfecta no cambia los precios, ¿cuál es la elasticidad de demanda y oferta? ¿Y si no cambia la cantidad?</li>
+<ol start="12" type="1">
+<li>Imagina un mercado con funciones de demanda y oferta lineales. Se llama excedente del consumidor a la superficie triangular comprendida entre el precio de equilibrio y la curva de demanda. El excedente del productor es la superficie triangular por encima de la oferta hasta el precio de equilibrio. El excedente social es la suma de los dos excedentes. ¿Cómo varían los excedentes si se produce un incremento de la renta? ¿Y si se produce una reducción de oferta?</li>
 </ol>
 </div>
 <div id="tabset-33-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-33-2-tab">
-<p>La elasticidad de demanda puede ser cualquiera, pero la de oferta es infinito. Si no cambia la cantidad la elasticidad de oferta es 0.</p>
+<p>Partiendo de una situación inicial de equilibrio, tenemos que el excedente del consumidor es ABD y el del productor DBC. Si aumenta la demanda (gráfico izquierdo) el excedente del consumidor pasa a EFG, es decir, aumenta. El excedente del productor pasa a CFG y también aumenta. Por tanto un incremento de la demanda beneficia a todos. Si se reduce la oferta (gráfico derecho) tenemos que ambos excedentes se reducen. Es decir, la reducción de la oferta perjudica a toda la sociedad.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1666,15 +1811,16 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-34-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-34-1" role="tab" aria-controls="tabset-34-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-34-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-34-2" role="tab" aria-controls="tabset-34-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-34-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-34-1-tab">
-<ol start="12" type="1">
-<li>Imagina un mercado con funciones de demanda y oferta lineales. Se llama excedente del consumidor a la superficie triangular comprendida entre el precio de equilibrio y la curva de demanda. El excedente del productor es la superficie triangular por encima de la oferta hasta el precio de equilibrio. El excedente social es la suma de los dos excedentes. ¿Cómo varían los excedentes si se produce un incremento de la renta? ¿Y si se produce una reducción de oferta?</li>
+<ol start="13" type="1">
+<li>¿Cómo cambian los excedentes del consumidor, productor y social en un mercado intervenido en el que se establece un precio máximo? ¿Y si se establece un precio mínimo? Comenta la siguiente frase: “es deseable la existencia de un salario mínimo, dado que de esta forma se garantiza una renta mínima para todos los ciudadanos del país”.</li>
 </ol>
 </div>
 <div id="tabset-34-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-34-2-tab">
-<p>Partiendo de una situación inicial de equilibrio, tenemos que el excedente del consumidor es ABD y el del productor DBC. Si aumenta la demanda (gráfico izquierdo) el excedente del consumidor pasa a EFG, es decir, aumenta. El excedente del productor pasa a CFG y también aumenta. Por tanto un incremento de la demanda beneficia a todos. Si se reduce la oferta (gráfico derecho) tenemos que ambos excedentes se reducen. Es decir, la reducción de la oferta perjudica a toda la sociedad.</p>
+<p>Partiendo de una situación inicial de equilibrio, tenemos que el excedente del consumidor es ABE y el del productor EBC. Si se establece un precio máximo al nivel del punto D (gráfico izquierdo) el excedente del consumidor pasa a AFGD, es decir, en general supondremos que aumenta. El excedente del productor pasa a DGC y se reduce. El precio máximo beneficia a los consumidores y perjudica a los productores. Pero hay la zona FBG se pierde, es decir, hay una pérdida de eficiencia respecto a la competencia perfecta.</p>
+<p>Si se establece un precio mínimo al nivel de D (gráfico derecho) tenemos que el excedente del consumidor pasa a AFD y se reduce, mientras que el del productor pasa a DFGC y casi con seguridad aumenta. Es decir, el precio mínimo beneficia a los productores y perjudica a los consumidores. En cualquier hay una pérdida de eficiencia de FBG.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="fig3.png" class="img-fluid figure-img"></p>
+<p><img src="fig4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1684,30 +1830,11 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-35-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-35-1" role="tab" aria-controls="tabset-35-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-35-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-35-2" role="tab" aria-controls="tabset-35-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-35-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-35-1-tab">
-<ol start="13" type="1">
-<li>¿Cómo cambian los excedentes del consumidor, productor y social en un mercado intervenido en el que se establece un precio máximo? ¿Y si se establece un precio mínimo? Comenta la siguiente frase: “es deseable la existencia de un salario mínimo, dado que de esta forma se garantiza una renta mínima para todos los ciudadanos del país”.</li>
-</ol>
-</div>
-<div id="tabset-35-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-35-2-tab">
-<p>Partiendo de una situación inicial de equilibrio, tenemos que el excedente del consumidor es ABE y el del productor EBC. Si se establece un precio máximo al nivel del punto D (gráfico izquierdo) el excedente del consumidor pasa a AFGD, es decir, en general supondremos que aumenta. El excedente del productor pasa a DGC y se reduce. El precio máximo beneficia a los consumidores y perjudica a los productores. Pero hay la zona FBG se pierde, es decir, hay una pérdida de eficiencia respecto a la competencia perfecta.</p>
-<p>Si se establece un precio mínimo al nivel de D (gráfico derecho) tenemos que el excende del consumidor pasa a AFD y se reduce, mientras que el del productor pasa a DFGC y casi con seguridad aumenta. Es decir, el precio mínimo beneficia a los productores y perjudica a los consumidores. En cualquier hay una pérdida de eficiencia de FBG.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="fig4.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-36-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-36-1" role="tab" aria-controls="tabset-36-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-36-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-36-2" role="tab" aria-controls="tabset-36-2" aria-selected="false">Solución</a></li></ul>
-<div class="tab-content">
-<div id="tabset-36-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-36-1-tab">
 <ol start="14" type="1">
 <li>¿En cuál de los dos mercados oligopolísticos existe mayor concentración o poder de mercado utilizando el índice de Herfindahl?: a) 7 empresas con idéntica cuota de mercado que suman el 70% de la cuota de mercado más otra con el resto y b) 5 empresas con idéntica cuota de mercado.</li>
 </ol>
 </div>
-<div id="tabset-36-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-36-2-tab">
+<div id="tabset-35-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-35-2-tab">
 <p><span class="math display">\[IH_a=7 \times 0,1^2+ 0,3^2=0,16\]</span> <span class="math display">\[IH_b=5 \times 0,2^2=0,2.\]</span></p>
 <p>En el segundo mercado hay mayor concentración.</p>
 </div>
@@ -1720,15 +1847,29 @@ Importante
 <!-- El precio de equilibrio es $P_i=(9-A)/3$ y la cantidad es $x_i=(21-2A)/3$, de modo que el precio y la cantidad se reducen a medida que aumentan los años. Esto se debe a que la demanda se va reduciendo paulatinamente. -->
 <!-- ::: -->
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-37-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-37-1" role="tab" aria-controls="tabset-37-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-37-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-37-2" role="tab" aria-controls="tabset-37-2" aria-selected="false">Solución</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-36-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-36-1" role="tab" aria-controls="tabset-36-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-36-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-36-2" role="tab" aria-controls="tabset-36-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
-<div id="tabset-37-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-37-1-tab">
+<div id="tabset-36-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-36-1-tab">
 <ol start="15" type="1">
 <li>Explique el significado de la siguiente frase: “en un mercado en desequilibrio siempre domina el lado corto del mercado”. ¿Quién determina las cantidades que se intercambian en el mercado en esas condiciones?</li>
 </ol>
 </div>
-<div id="tabset-37-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-37-2-tab">
+<div id="tabset-36-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-36-2-tab">
 <p>En el caso de un exceso de demanda (porque el precio es muy bajo) los consumidores quieren una cantidad muy grande, pero los productores producen mucho menos, por lo que se intercambiará en el mercado es la cantidad menor, la que producen los empresarios. En el caso de un exceso de oferta, el precio es tan alto que los empresarios producen más de lo que quieren los consumidores. Se intercambiará en el mercado la cantidad que quieren los consumidores. En ambos casos quien decide la cantidad es el menor de los dos, es decir “el lado corto”.</p>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-37-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-37-1" role="tab" aria-controls="tabset-37-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-37-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-37-2" role="tab" aria-controls="tabset-37-2" aria-selected="false">Solución</a></li></ul>
+<div class="tab-content">
+<div id="tabset-37-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-37-1-tab">
+<ol start="16" type="1">
+<li>En el año 2000 surgió el escándalo conocido como las “vacas locas” que, básicamente, consistió en que una mala alimentación del ganado vacuno en GB provocó una crisis del sector por enfermedades del ganado que se podían transmitir a los humanos por el consumo. En consecuencia, se produjo un sacrificio masivo de ganado joven con el fin de evitar el contagio. En ese tiempo se produjo un incremento de los precios de las demás carnes, mientras que la de vacuno no se redujo. ¿Se corresponden estas observaciones con el funcionamiento normal del mercado, según lo explicado en el tema?</li>
+</ol>
+</div>
+<div id="tabset-37-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-37-2-tab">
+<p>El escándalo supone una reducción de la demanda de vacuno y mayor consumo de otras carnes y posiblemente otros tipos de alimentos. A la vez, el sacrificio del ganado vacuno supone una reducción de oferta del mismo. En resumen una reducción de demanda y oferta que lleva a que la cantidad de equilibrio se reduzca con un resultado incierto en los precios.</p>
+<p>En el mercado de las demás carnes aumentaron las demandas, por lo que los precios aumentaron.</p>
 </div>
 </div>
 </div>
@@ -1736,13 +1877,12 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-38-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-38-1" role="tab" aria-controls="tabset-38-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-38-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-38-2" role="tab" aria-controls="tabset-38-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-38-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-38-1-tab">
-<ol start="16" type="1">
-<li>En el año 2000 surgió el escándalo conocido como las “vacas locas” que, básicamente, consistió en que una mala alimentación del ganado vacuno en GB provocó una crisis del sector por enfermedades del ganado que se podían transmitir a los humanos por el consumo. En consecuencia, se produjo un sacrificio masivo de ganado joven con el fin de evitar el contagio. En ese tiempo se produjo un incremento de los precios de las demás carnes, mientras que la de vacuno no se redujo. ¿Se corresponden estas observaciones con el funcionamiento normal del mercado, según lo explicado en el tema?</li>
+<ol start="17" type="1">
+<li>Demuestra que la función de ingresos totales para una función de demanda lineal tiene un máximo en el punto en que la elasticidad precio es exactamente la unidad.</li>
 </ol>
 </div>
 <div id="tabset-38-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-38-2-tab">
-<p>El escándalo supone una reducción de la demanda de vacuno y mayor consumo de otras carnes y posiblemente otros tipos de alimentos. A la vez, el sacrificio del ganado vacuno supone una reducción de oferta del mismo. En resumen una reducción de demanda y oferta que lleva a que la cantidad de equilibrio se reduzca con un resultado incierto en los precios.</p>
-<p>En el mercado de las demás carnes aumentaron las demandas, por lo que los precios aumentaron.</p>
+<p>Una demanda lineal general será <span class="math inline">\(x_i=a-bP_i\)</span>. El ingreso total será <span class="math inline">\(IT=P_i x_i=(a-x_i)/b x_i=(ax_i-x_i^2)/b\)</span>. La maximización del ingreso se produce para <span class="math inline">\(x_i=a/2\)</span> y <span class="math inline">\(P_i=a/(2b)\)</span>. La elasticidad de la demanda es <span class="math inline">\(E=\bigg | \frac{\partial x_i}{\partial P_i} \bigg | \frac{P_i}{x_i}  = \frac{x_i-a}{x_i}\)</span>. Sustituyendo <span class="math inline">\(x_i=a/2\)</span> se obtiene que la elasticidad es 1.</p>
 </div>
 </div>
 </div>
@@ -1750,12 +1890,12 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-39-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-39-1" role="tab" aria-controls="tabset-39-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-39-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-39-2" role="tab" aria-controls="tabset-39-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-39-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-39-1-tab">
-<ol start="17" type="1">
-<li>Demuestra que la función de ingresos totales para una función de demanda lineal tiene un máximo en el punto en que la elasticidad precio es exactamente la unidad.</li>
+<ol start="18" type="1">
+<li>¿Crees que la elasticidad precio y renta del transporte público es igual en una ciudad grande que en una pequeña? ¿Dicha elasticidad ha sido la misma durante los últimos 30 años?</li>
 </ol>
 </div>
 <div id="tabset-39-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-39-2-tab">
-<p>Una demanda lineal general será <span class="math inline">\(x_i=a-bP_i\)</span>. El ingreso total será <span class="math inline">\(IT=P_i x_i=(a-x_i)/b x_i=(ax_i-x_i^2)/b\)</span>. La maximización del ingreso se produce para <span class="math inline">\(x_i=a/2\)</span> y <span class="math inline">\(P_i=a/(2b)\)</span>. La elasticidad de la demanda es <span class="math inline">\(E=\bigg | \frac{\partial x_i}{\partial P_i} \bigg | \frac{P_i}{x_i} = \frac{x_i-a}{x_i}\)</span>. Sustituyendo <span class="math inline">\(x_i=a/2\)</span> se obtiene que la elasticidad es 1.</p>
+<p>En una ciudad grande la elasticidad es menor, la gente se ve más obligada a utilizarlo por problemas de congestión, coste, etc. La elasticidad se ha ido reduciendo a medida que las ciudades se han hecho más grandes y más complejas desde el punto de vista de la circulación.</p>
 </div>
 </div>
 </div>
@@ -1763,19 +1903,6 @@ Importante
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-40-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-40-1" role="tab" aria-controls="tabset-40-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-40-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-40-2" role="tab" aria-controls="tabset-40-2" aria-selected="false">Solución</a></li></ul>
 <div class="tab-content">
 <div id="tabset-40-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-40-1-tab">
-<ol start="18" type="1">
-<li>¿Crees que la elasticidad precio y renta del transporte público es igual en una ciudad grande que en una pequeña? ¿Dicha elasticidad ha sido la misma durante los últimos 30 años?</li>
-</ol>
-</div>
-<div id="tabset-40-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-40-2-tab">
-<p>En una ciudad grande la elasticidad es menor, la gente se ve más obligada a utilizarlo por problemas de congestión, coste, etc. La elasticidad se ha ido reduciendo a medida que las ciudades se han hecho más grandes y más complejas desde el punto de vista de la circulación.</p>
-</div>
-</div>
-</div>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-41-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-41-1" role="tab" aria-controls="tabset-41-1" aria-selected="true"></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-41-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-41-2" role="tab" aria-controls="tabset-41-2" aria-selected="false">Solución</a></li></ul>
-<div class="tab-content">
-<div id="tabset-41-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-41-1-tab">
 <ol start="19" type="1">
 <li><p><em>Problema avanzado:</em> Imagina un mercado con funciones de demanda y oferta lineales:</p>
 <ol type="a">
@@ -1786,13 +1913,13 @@ Importante
 </ol></li>
 </ol>
 </div>
-<div id="tabset-41-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-41-2-tab">
+<div id="tabset-40-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-40-2-tab">
 <ol type="a">
 <li>La consecuencia es que el precio que pagan los consumidores es diferente al que cobran los productores, la diferencia es precisamente el impuesto. El equilibrio pasa del punto B al F para los consumidores y G para los productores (F-G es el impuesto).</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="fig5.png" class="img-fluid figure-img"></p>
+<p><img src="fig5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <ol start="2" type="a">
@@ -1828,8 +1955,11 @@ Importante
 <p>Pedregal, D.J. (2011). Manual de Microeconomía. Todo lo imprescindible para entenderla. Ediciones Lulú. ISBN 978-1-4475-1725-2. <a href="https://www.lulu.com/es/shop/diego-jos%C3%A9-pedregal-tercero/microeconom%C3%ADa/paperback/product-16qw7j2n.html?page=1&amp;pageSize=4" target="_blank">Enlace</a>.</p>
 <p>Pedregal, D.J. (2011). Manual de Macroeconomía. Todo lo imprescindible para entenderla. Ediciones Lulú. ISBN 978-1-4477-1113-1. <a href="https://www.lulu.com/es/shop/diego-jos%C3%A9-pedregal-tercero/macroeconom%C3%ADa/paperback/product-12vngrz8.html?page=1&amp;pageSize=4" target="_blank">Enlace</a>.</p>
 <p>Pedregal, D.J.(2016). Economía para ingenieros, Ediciones Lulú. ISBN 978-1-326-73331-5. <a href="https://www.lulu.com/es/shop/diego-j-pedregal-tercero/econom%C3%ADa-para-ingenieros/paperback/product-14rgv4m5.html?q=pedregal&amp;page=1&amp;pageSize=4" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). Mercados de energía [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=wyIpASnY1YM" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). Tres problemas económicos [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=Ybk2P5DeulE" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). Recaudación, impuestos y elasticidad [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=aGaPKs71_I8" target="_blank">Enlace</a>.</p>
 <p>Trapero, J.R., García, F.P., Pedregal, D.J. (2013). Dirección y Gestión Empresarial. Mcgraw-Hill. <a href="https://www.mheducation.es/direccion-y-gestion-empresarial-9788448190385-spain" target="_blank">Enlace</a>.</p>
-<p>Vara, O. (2023). Europa interviene el precio de la electricidad. [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=Rnv9boyfEDw&amp;ab_channel=%C3%93scarVara" target="_blank">Enlace</a>.</p>
+<!-- Vara, O. (2023). Europa interviene el precio de la electricidad. [Archivo de vídeo]. Youtube. [Enlace](https://www.youtube.com/watch?v=Rnv9boyfEDw&ab_channel=%C3%93scarVara){target="_blank"}. -->
 <!-- ### Incidencia de los impuestos directos e indirectos -->
 <!-- El estudio de las variaciones de los excedentes nos permite analizar la incidencia de los impuestos, es decir, quién paga efectivamente los impuestos. El tema no es tan evidente como puede parecer a simple vista, como demuestra este ejemplo sencillo: un impuesto especial a la banca hace que los bancos tengan que hacer una declaración adicional por dicho impuesto y tendrán que ingresar de su caja el importe correspondiente. Pero eso no quiere decir que ellos paguen todo el impuesto, puesto que pueden estar repercutiendo parte del mismo en los clientes, de forma que una parte lo pagan los clientes. Pero si suben los precios para repercutir el impuesto los bancos venderán menos, por lo que la incidencia global es complicada de analizar. Veámoslo. -->
 <!-- #### Impuestos directos {.unnumbered} -->
@@ -1927,10 +2057,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1940,8 +2087,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1953,7 +2109,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1997,6 +2276,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2022,6 +2302,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2083,17 +2389,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01-intro.html" class="pagination-link">
+      <a href="./01-intro.html" class="pagination-link" aria-label="Introducción">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03-costes.html" class="pagination-link">
+      <a href="./03-costes.html" class="pagination-link" aria-label="Producción y costes">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producción y costes</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -71,12 +78,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -86,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Fundamentos de gestión empresarial para ingenieros</a> 
@@ -195,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -241,7 +248,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <!-- ::: columns -->
 <!-- ::: {.column width="10%"} -->
@@ -335,11 +344,15 @@ Más sectores
 <p>Más recientemente hay autores que han incorporado a la clasificación el <strong>sector cuaternario</strong> relacionado con las actividades de la economía del conocimiento, e incluso <strong>quinario</strong>, pero ambos se pueden englobar en el sector de los servicios.</p>
 </div>
 </div>
-<p>La importancia de cada sector en la economía global suele ser un indicador del desarrollo de los países. Un país es más desarrollado cuanto menor cantidad de recursos se concentra en el sector primario en favor, sobre todo, del sector servicios. La <a href="#fig-porPIB">Figura&nbsp;<span>1.1</span></a> muestra los porcentajes de los sectores sobre el total del PIB para algunos países.</p>
-<div id="fig-porPIB" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="https://es.wikipedia.org/wiki/Anexo:Pa%C3%ADses_por_PIB_seg%C3%BAn_composici%C3%B3n_del_sector" target="_blank"><img src="rentaSectores.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figura&nbsp;1.1: Porcentaje de cada sector económico sobre el PIB. Fuente: Wikipedia (2023).</figcaption>
+<p>La importancia de cada sector en la economía global suele ser un indicador del desarrollo de los países. Un país es más desarrollado cuanto menor cantidad de recursos se concentra en el sector primario en favor, sobre todo, del sector servicios. La <a href="#fig-porPIB" class="quarto-xref">Figura&nbsp;<span>1.1</span></a> muestra los porcentajes de los sectores sobre el total del PIB para algunos países.</p>
+<div id="fig-porPIB" class="quarto-figure quarto-figure-center quarto-float anchored" target="_blank">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-porPIB-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://es.wikipedia.org/wiki/Anexo:Pa%C3%ADses_por_PIB_seg%C3%BAn_composici%C3%B3n_del_sector" target="_blank"><img src="rentaSectores.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-porPIB-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.1: Porcentaje de cada sector económico sobre el PIB. Fuente: Wikipedia (2023).
+</figcaption>
 </figure>
 </div>
 <p>Hay otros dos conceptos relacionados con todo lo anterior que es necesario tener claros y saber diferenciar desde el principio. A menudo se utilizan como sinónimos, pero son radicalmente diferentes:</p>
@@ -370,11 +383,15 @@ Renta per capita
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La renta per capita es la renta de un país dividida por el número de habitantes. Se trata de una renta media que podrían obtener todos los habitantes con un reparto absolutamente igualitario de la renta. Es una medida útil para realizar comparaciones internacionales, sobre todo si se hace con países similares en sus características. Por ejemplo, en la <a href="#fig-perCAP">Figura&nbsp;<span>1.2</span></a> se muestra el porcentaje de la renta per capita española frente a la media de la Unión Europea. Se puede ver cómo estamos sistemáticamente por debajo de la media y se acusan algunos periodos de fuerte acercamiento a Europa, a la vez que las crisis nos alejan de ella. Así pasa en la crisis a partir de 1992, de 2008 y la pandemia del COVID. Desde 2008 las economías sufrieron una crisis financiera que no se había visto en mucho tiempo, con quiebras de empresas gigantescas y países. Sin embargo, parece que a la media de la UE les ha ido mejor. Pulsando en la imagen puedes obtener más información sobre la renta per capita de distintos países.</p>
-<div id="fig-perCAP" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=ES" target="_blank"><img src="rentaPerCapita.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figura&nbsp;1.2: Renta per capita española frente a la media de la Unión Europea.</figcaption>
+<p>La renta per capita es la renta de un país dividida por el número de habitantes. Se trata de una renta media que podrían obtener todos los habitantes con un reparto absolutamente igualitario de la renta. Es una medida útil para realizar comparaciones internacionales, sobre todo si se hace con países similares en sus características. Por ejemplo, en la <a href="#fig-perCAP" class="quarto-xref">Figura&nbsp;<span>1.2</span></a> se muestra el porcentaje de la renta per capita española frente a la media de la Unión Europea. Se puede ver cómo estamos sistemáticamente por debajo de la media y se acusan algunos periodos de fuerte acercamiento a Europa, a la vez que las crisis nos alejan de ella. Así pasa en la crisis a partir de 1992, de 2008 y la pandemia del COVID. Desde 2008 las economías sufrieron una crisis financiera que no se había visto en mucho tiempo, con quiebras de empresas gigantescas y países. Sin embargo, parece que a la media de la UE les ha ido mejor. Pulsando en la imagen puedes obtener más información sobre la renta per capita de distintos países.</p>
+<div id="fig-perCAP" class="quarto-figure quarto-figure-center quarto-float anchored" target="_blank">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-perCAP-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=ES" target="_blank"><img src="rentaPerCapita.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-perCAP-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.2: Renta per capita española frente a la media de la Unión Europea.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -416,16 +433,30 @@ Doble imposición
 <li>El impuesto sobre el patrimonio o sobre circulación de vehículos, etc. gravan todos los años el mismo hecho imponible.</li>
 <li>Los beneficios de las empresas están gravados por el impuesto sobre la renta. Parte del resultado neto se distribuye a los propietarios, por el que a su vez tendrán que pagar impuesto sobre la renta.</li>
 </ul>
-<p>En la <a href="#fig-calculadora">Figura&nbsp;<span>1.3</span></a> se muestra el volumen total de impuestos que aproximadamente pagaría un trabajador por cuenta ajena que ingresara 50.000€ al año. Si se tiene en cuenta las contribuciones a la Seguridad Social que paga la empresa y el trabajador, además del impuesto sobre la renta, IVA y demás impuestos, resulta que este trabajador pagaría un 50,1% de su renta bruta (considerando que las cotizaciones sociales de la empresa son del trabajador) o un 34,7% sobre el sueldo bruto que se considera habitualmente.</p>
-<div id="fig-calculadora" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href=""><img src="calculadoraWEB.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figura&nbsp;1.3: Aproximación a los impuestos que paga en España una persona física que ingresa 50.000€ brutos al año.</figcaption>
+<p>En la <a href="#fig-calculadora" class="quarto-xref">Figura&nbsp;<span>1.3</span></a> se muestra el volumen total de impuestos que aproximadamente pagaría un trabajador por cuenta ajena que ingresara 50.000€ al año. Si se tiene en cuenta las contribuciones a la Seguridad Social que paga la empresa y el trabajador, además del impuesto sobre la renta, IVA y demás impuestos, resulta que este trabajador pagaría un 50,1% de su renta bruta (considerando que las cotizaciones sociales de la empresa son del trabajador) o un 34,7% sobre el sueldo bruto que se considera habitualmente.</p>
+<div id="fig-calculadora" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-calculadora-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href=""><img src="calculadoraWEB.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-calculadora-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.3: Aproximación a los impuestos que paga en España una persona física que ingresa 50.000€ brutos al año.
+</figcaption>
 </figure>
 </div>
 <div class="cell">
 <div class="cell-output-display">
 <a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,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" download="calculadoraWEB.xlsx">Puedes hacer simulaciones con distinto nivel de ingresos descargándote esta calculadora.</a>
+</div>
+</div>
+<p>En el siguiente vídeo tienes una explicación más exhaustiva y algunos ejemplos.</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/a3a33HZ-KuQ?start=72" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
 </div>
 </div>
 <!-- En la siguiente libro Excel tienes una calculadora de impuestos para ver cuántos impuestos pagan las personas físicas y jurídicas realmente en España. -->
@@ -492,12 +523,16 @@ Las matemáticas y la economía
 <section id="las-ramas-de-la-economía" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="las-ramas-de-la-economía"><span class="header-section-number">1.2.1</span> Las ramas de la economía</h3>
 <p>La economía, como toda disciplina, se divide en ramas o subdisciplinas. Tal subdivisión se puede ver de muchas formas, pero en este libro nos interesa dividirla inicialmente en dos ramas inconmensurables: <strong>economía general</strong> (relacionada con los grados de Economía) y <strong>economía de la empresa</strong> (grados de Administración de Empresas o ADE).</p>
-<p>Cada una de estas ramas tiene a su vez un sinfín de sub-ramas. Por ejemplo, sin ánimo de ser exhaustivos, se podrían dividir como se indica en la <a href="#tbl-tab1">Tabla&nbsp;<span>1.1</span></a>.</p>
+<p>Cada una de estas ramas tiene a su vez un sinfín de sub-ramas. Por ejemplo, sin ánimo de ser exhaustivos, se podrían dividir como se indica en la <a href="#tbl-tab1" class="quarto-xref">Tabla&nbsp;<span>1.1</span></a>.</p>
 <div class="cell">
+<div id="tbl-tab1" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1.1: Ramas de la economía.
+</figcaption>
+<div aria-describedby="tbl-tab1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab1" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;1.1: Ramas de la economía.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Economía general</th>
@@ -541,11 +576,13 @@ Las matemáticas y la economía
 </table>
 </div>
 </div>
+</figure>
+</div>
 </div>
 <p>Esta división es parcial y muchos autores la harían de otra forma. Las divisiones, como no podía ser de otra forma, no se acaban aquí, puesto que cada especialista de cada una de esas subdisciplinas verían un sinfín de ramificaciones adicionales y no acabaríamos nunca. De momento solo nos interesa una de estas subdivisiones que es dentro de la teoría económica distinguir entre microeconomía y macroeconomía.</p>
 <p>La <strong>microeconomía</strong> estudia el comportamiento económico de agentes individuales, mercados aislados o un conjunto amplio de mercados, pero siempre haciendo hincapié en la variables <em>micro</em>, especialmente precios y cantidades. Es decir, nos interesa lo que sucede dentro de cada mercado y con cada bien, servicio o factor de producción.</p>
 <p>La <strong>macroeconomía</strong> estudia el comportamiento económico de una economía en su conjunto y su interacción con otras con las que está relacionada, sin importar lo que sucede con agentes individuales y sobre la base de variables <em>macro</em>, es decir, agregadas. Estas variables son, por ejemplo, el nivel de producción, el empleo, nivel general de precios, déficit público, etc.</p>
-<p>Estas disquisiciones nos van a ser útiles en el futuro, para situarnos bien en el espectro de disciplinas, puesto que esta sección junto con los capítulos del 2 a 4 son una introducción a la Microeconomía (sobre todo, aunque también aparecen algunas cuestiones de economía de la empresa), mientras que todos los demás, incluyendo este, se inscriben en la economía de la empresa. Queda patente con esto que este libro acaba necesariamente siendo una introducción muy breve a lo que es la economía. Pero abre a la vez un inmenso campo en el que cualquier estudiante interesado puede dedicar el resto de sus días.</p>
+<p>Estas disquisiciones nos van a ser útiles en el futuro, para situarnos bien en el espectro de disciplinas, puesto que esta sección junto con los capítulos del 2 a 4 son una introducción a la microeconomía (sobre todo, aunque también aparecen algunas cuestiones de economía de la empresa), mientras que todos los demás, incluyendo este, se inscriben en la economía de la empresa. Queda patente con esto que este libro acaba necesariamente siendo una introducción muy breve a lo que es la economía. Pero abre a la vez un inmenso campo en el que cualquier estudiante interesado puede dedicar el resto de sus días.</p>
 </section>
 <section id="el-coste-de-oportunidad-y-otras-consideraciones-clave-sobre-la-economía" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="el-coste-de-oportunidad-y-otras-consideraciones-clave-sobre-la-economía"><span class="header-section-number">1.2.2</span> El coste de oportunidad y otras consideraciones clave sobre la economía</h3>
@@ -561,11 +598,18 @@ Las matemáticas y la economía
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El siguiente <a href="https://www.youtube.com/watch?v=pplbyImPNJw&amp;ab_channel=Iconom%C3%ADa" target="_blank">vídeo explica cómo calcularlo</a>.</p>
-<p>¿Cuál sería el coste de oportunidad de trabajar en lugar de estudiar?</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/qJHrdXwlaTw?start=21" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
 </div>
 </div>
-<p>La utilidad, sin embargo, de este concepto radica en que se pueda eliminar el contenido subjetivo de alguna forma y valorar en unidades monetarias. Por ejemplo, ante varias inversiones excluyentes posibles, el coste de oportunidad de cualquiera de ellas es el valor de la mejor alternativa. Es importante hacer notar que este cálculo puede ser muy complicado, puesto que está envuelto en la incertidumbre del futuro (como veremos en el <a href="06-inversiones.html">Capítulo&nbsp;<span>6</span></a>). No obstante, por complicado que sea, siempre merece la pena realizar una evaluación, porque puede haber sorpresas.</p>
+</div>
+</div>
+<p>La utilidad, sin embargo, de este concepto radica en que se pueda eliminar el contenido subjetivo de alguna forma y valorar en unidades monetarias. Por ejemplo, ante varias inversiones excluyentes posibles, el coste de oportunidad de cualquiera de ellas es el valor de la mejor alternativa. Es importante hacer notar que este cálculo puede ser muy complicado, puesto que está envuelto en la incertidumbre del futuro (como veremos en el <a href="06-inversiones.html" class="quarto-xref">Capítulo&nbsp;<span>6</span></a>). No obstante, por complicado que sea, siempre merece la pena realizar una evaluación, porque puede haber sorpresas.</p>
 <p>Otro aspecto importante de esta noción es que a menudo se plantean determinadas opciones como las únicas posibles y se alaban todas las bondades sin considerar alternativas. Esto sucede hoy en día en muchos aspectos muy importantes de la economía, como es la selección de fuentes de energía contraponiéndolas al medio ambiente, inversiones públicas alternativas en sanidad, educación, infraestructuras, etc. Solo se habla de una de las opciones y se presentan como un falso dilema en el que la única alternativa tiene un coste de oportunidad infinito, cuando en la realidad nunca es así.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -610,19 +654,10 @@ Experimentos sobre renta básica universal
 <p>Un ejemplo paradigmático de intento de experimento completamente erróneo son todos los relacionados con la <em>renta básica universal</em>, puesto que las condiciones de los experimentos son radicalmente diferentes a los que se darían en la realidad bajo el supuesto de que se llegara a implantar en algún país. En Cataluña han tenido la mala suerte de que van a ser víctimas de un <a href="https://presidencia.gencat.cat/es/ambits_d_actuacio/renda-basica-universal/" target="_blank">experimento en esta dirección</a>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-El muro de Berlín
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Aquí puedes ver un <a href="https://www.youtube.com/watch?v=DGmbQzgSpTU&amp;ab_channel=ElLiberal" target="_blank">vídeo interesante sobre el muro de Berlín</a>.</p>
-</div>
-</div>
+<!-- :::{.callout-tip} -->
+<!-- ## El muro de Berlín -->
+<!-- Aquí puedes ver un [vídeo interesante sobre el muro de Berlín](https://www.youtube.com/watch?v=DGmbQzgSpTU&ab_channel=ElLiberal){target="_blank"}. -->
+<!-- ::: -->
 </section>
 </section>
 <section id="empresario" class="level2" data-number="1.3">
@@ -646,7 +681,7 @@ El muro de Berlín
 <ul>
 <li><p><strong>Teoría neoclásica</strong>: los mercados fijan los precios de bienes, servicios y factores y en ese contexto la empresa lo único que tiene que hacer es combinar los factores de producción para producir bienes y servicios con un objetivo en mente que es la maximización del beneficio. Como ya hemos dicho con anterioridad, esta visión para algunos es muy engañosa, puesto que las condiciones de contorno muchas veces no están dadas, o son difíciles de conocer y además están cambiando continuamente.</p></li>
 <li><p><strong>Teoría de la agencia</strong>: las empresas se considera como un conjunto de relaciones de agencia en las que el <em>principal</em> delega o contrata los servicios del <em>agente</em> para que realice tareas en su nombre. La relación principal-agente más habitual es la de los propietarios y directivos en las empresas. Los propietarios encargan la gestión de la empresa a los directivos y controlan sus acciones a través de los órganos de representación de la empresa. A menudo surgen problemas por la disparidad de objetivos entre unos y otros, puesto que los propietarios pueden estar interesados en maximizar la rentabilidad de su inversión, mientras que los directivos pueden buscar su visibilidad, su sueldo, etc. que estará relacionado con el tamaño y la buena imagen de la empresa y no tanto con la rentabilidad.</p></li>
-<li><p><strong>Teoría de los costes de transacción</strong>: a la hora de comprar cualquier bien o contratar cualquier servicio, la empresa puede decidir realizarlo por sí misma o externarlizarlo. Es decir, puede organizar la producción del bien o servicio o puede encargarlo a alguien externo. En el primer caso incurre en costes de organización, mientras que en el segundo tendrá costes de transacción (búsqueda de proveedores, contratación, incertidumbre, etc.). La visión de esta teoría estipula que la empresa decidirá incurrir en costes de transacción cuando sean menores que los de organización.</p></li>
+<li><p><strong>Teoría de los costes de transacción</strong>: a la hora de comprar cualquier bien o contratar cualquier servicio, la empresa puede decidir realizarlo por sí misma o externalizarlo. Es decir, puede organizar la producción del bien o servicio o puede encargarlo a alguien externo. En el primer caso incurre en costes de organización, mientras que en el segundo tendrá costes de transacción (búsqueda de proveedores, contratación, incertidumbre, etc.). La visión de esta teoría estipula que la empresa decidirá incurrir en costes de transacción cuando sean menores que los de organización.</p></li>
 <li><p><strong>Teoría social</strong>: la actividad de las empresas, aun teniendo un objetivo puramente económico, tiene consecuencias sociales, por lo que es necesario que incluyan dichos efectos dentro de sus actividades. Algunos incluso propugnan que se contabilicen en un balance social.</p></li>
 <li><p><strong>Teoría de la empresa como sistema</strong>: la empresa es un conjunto de elementos relacionados entre sí que actúan funcionalmente de forma indivisible para conseguir unos objetivos. Aunque es indivisible desde un punto de vista funcional, sí se puede dividir estructuralmente en partes. Habitualmente se considera a la empresa como un sistema abierto en el sentido de que recibe entradas de su entorno y a él vuelca sus salidas. La ventaja de esta visión es que permite dividir el sistema global en subsistemas atendiendo a distintos criterios. Algunos de estas divisiones son:</p>
 <ul>
@@ -674,13 +709,17 @@ El muro de Berlín
 <li><strong>Nacional</strong>: operan dentro de un solo país.</li>
 <li><strong>Multinacional</strong>: operan en diversos países.</li>
 </ul></li>
-<li><p>Por tamaño: en este caso seguimos el criterio de la Unión Europea que las clasifica en <strong>microempresas</strong>, <strong>pequeñas</strong>, <strong>medianas</strong> y <strong>grandes</strong> de acuerdo con el número de empleados, como se indica en la <a href="#tbl-tab2">Tabla&nbsp;<span>1.2</span></a>. El principal es el número de empleados, pero además para clasificar en cada una de las categorías tiene que cumplirse el criterio de facturación o de volumen de balance de acuerdo con la <a href="#tbl-tab2">Tabla&nbsp;<span>1.2</span></a>. Las <strong>PYMES</strong> son todas las empresas excluyendo las grandes. Por ejemplo, una empresa con 3 empleados que factura un millón de € y tiene un balance de 3 millones de € es una microempresa, mientras que la misma empresa con una facturación de 6€ sería pequeña. Cualquier empresa con 250 empleados o más es grande, por regla general tendrán también una facturación superior a 50 millones y un balance mayor de 43 millones.</p></li>
+<li><p>Por tamaño: en este caso seguimos el criterio de la Unión Europea que las clasifica en <strong>microempresas</strong>, <strong>pequeñas</strong>, <strong>medianas</strong> y <strong>grandes</strong> de acuerdo con el número de empleados, como se indica en la <a href="#tbl-tab2" class="quarto-xref">Tabla&nbsp;<span>1.2</span></a>. El principal es el número de empleados, pero además para clasificar en cada una de las categorías tiene que cumplirse el criterio de facturación o de volumen de balance de acuerdo con la <a href="#tbl-tab2" class="quarto-xref">Tabla&nbsp;<span>1.2</span></a>. Las <strong>PYMES</strong> son todas las empresas excluyendo las grandes. Por ejemplo, una empresa con 3 empleados que factura un millón de € y tiene un balance de 3 millones de € es una microempresa, mientras que la misma empresa con una facturación de 6€ sería pequeña. Cualquier empresa con 250 empleados o más es grande, por regla general tendrán también una facturación superior a 50 millones y un balance mayor de 43 millones.</p></li>
 </ol>
 <div class="cell">
+<div id="tbl-tab2" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1.2: Tipos de empresa por tamaño.
+</figcaption>
+<div aria-describedby="tbl-tab2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab2" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;1.2: Tipos de empresa por tamaño.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 23%">
 <col style="width: 14%">
@@ -724,6 +763,8 @@ El muro de Berlín
 </table>
 </div>
 </div>
+</figure>
+</div>
 </div>
 <ol start="5" type="1">
 <li><p>Por su forma jurídica:</p>
@@ -747,11 +788,15 @@ El muro de Berlín
 <li>Tipo de responsabilidad: puede ser ilimitada, por la que los socios responden por todo su patrimonio personal; o limitada, en el caso en que solo respondan por la aportación concreta a la sociedad.</li>
 <li>Régimen fiscal: en general habrá que tener en cuenta todos los impuestos, pero el que más influencia tiene es el impuesto sobre la renta. Algunas empresas tributan por el IRPF y otras por el impuesto de sociedades. Debido a que los tipos impositivos son diferentes en uno y otro caso, el gasto en impuestos anual puede variar considerablemente según la forma jurídica.</li>
 </ul>
-<p>La <a href="#fig-fig3">Figura&nbsp;<span>1.4</span></a> muestra los tipos de empresa más habituales en la legislación española.</p>
-<div id="fig-fig3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><a href="http://plataformapyme.es/es-es/herramientas-digitales/Paginas/formas-juridicas.aspx" target="_blank"><img src="tiposEmpresas.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Figura&nbsp;1.4: Tipos de empresas por su forma jurídica.</figcaption>
+<p>La <a href="#fig-fig3" class="quarto-xref">Figura&nbsp;<span>1.4</span></a> muestra los tipos de empresa más habituales en la legislación española.</p>
+<div id="fig-fig3" class="quarto-figure quarto-figure-center quarto-float anchored" target="_blank">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="http://plataformapyme.es/es-es/herramientas-digitales/Paginas/formas-juridicas.aspx" target="_blank"><img src="tiposEmpresas.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.4: Tipos de empresas por su forma jurídica.
+</figcaption>
 </figure>
 </div>
 <p>El <strong>empresario individual</strong> son los <strong>autónomos</strong>. Al tener responsabilidad ilimitada, se creó una figura similar limitando la responsabilidad en algunas excepciones (el emprendedor de responsabilidad limitada).</p>
@@ -772,6 +817,15 @@ Las empresas en España
 </div>
 <div class="callout-body-container callout-body">
 <p>En <a href="https://ipyme.org/es-es/Paginas/default.aspx" target="_blank">este enlace puedes encontrar estadísticas interesantes sobre el parque empresarial de España</a>. En el informe sobre cifras PYME encontrarás el número de empresas por tamaño, sectores económicos, el empleo generado por tipos de empresa y sector, etc.</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:80%;">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/w-RaQy01d-0?start=32" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div><div class="column" style="width:10%;">
+
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -901,11 +955,13 @@ Las empresas en España
 <ol start="5" type="1">
 <li>Clasifica las siguientes empresas por su tamaño, donde la facturación y el balance se dan en millones:</li>
 </ol>
-<div id="tbl-panel" class="tbl-parent quarto-layout-panel anchored">
-<div class="panel-caption table-caption">
-<p>Métricas de varias empresas a clasificar por su tamaño</p>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-panel" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1.3: Métricas de varias empresas a clasificar por su tamaño
+</figcaption>
+<div aria-describedby="tbl-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <table class="table">
 <thead>
@@ -989,15 +1045,16 @@ Las empresas en España
 </div>
 </div>
 </div>
+</figure>
+</div>
 </section>
 </section>
 <section id="referencias" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="referencias"><strong>Referencias</strong></h2>
-<p>Canal Iconomía (2023). Coste de oportunidad explicado en 2 minutos. [Archivo de vídeo]. YouTube. <a href="https://www.youtube.com/watch?v=pplbyImPNJw&amp;ab_channel=Iconom%C3%ADa" target="_blank">Enlace</a>.</p>
 <p>Civio (2023). ¿Dónde van mis impuestos? Recuperado el 4 de mayo de 2023. <a href="https://dondevanmisimpuestos.es/politicas#view=income&amp;year=2022" target="_blank">Enlace</a>.</p>
 <p>Cuervo, A., Vázquez, C.J. (2008), Introducción a la administración de empresas, Thomson Reuters-Civitas.</p>
 <p>de Miguel, B., Baixauli, J.J. (2010), Empresa y Economía Industrial, Mc-Graw Hill.</p>
-<p>El Liberal (2022). El Muro de Berlín. [Archivo de vídeo]. YouTube. <a href="https://www.youtube.com/watch?v=DGmbQzgSpTU&amp;ab_channel=ElLiberal" target="_blank">Enlace</a>.</p>
+<!-- El Liberal (2022). El Muro de Berlín. [Archivo de vídeo]. YouTube. [Enlace](https://www.youtube.com/watch?v=DGmbQzgSpTU&ab_channel=ElLiberal){target="_blank"}. -->
 <p>Garrido, S., Romero, M. (2021), Fundamentos de gestión de empresas, Editorial Universitaria Ramón Areces.</p>
 <p>Generalidad de Cataluña (2023). Renta Básica Universal. Recuperado el 4 de mayo de 2023. <a href="https://presidencia.gencat.cat/es/ambits_d_actuacio/renda-basica-universal/" target="_blank">Enlace</a>.</p>
 <p>Maynar, P. (2007), La economía de la empresa en el espacio de educación superior, Mc-Graw Hill, Madrid, España.</p>
@@ -1006,6 +1063,9 @@ Las empresas en España
 <p>Pedregal, D.J. (2011). Manual de Microeconomía. Todo lo imprescindible para entenderla. Ediciones Lulú. ISBN 978-1-4475-1725-2. <a href="https://www.lulu.com/es/shop/diego-jos%C3%A9-pedregal-tercero/microeconom%C3%ADa/paperback/product-16qw7j2n.html?page=1&amp;pageSize=4" target="_blank">Enlace</a>.</p>
 <p>Pedregal, D.J. (2011). Manual de Macroeconomía. Todo lo imprescindible para entenderla. Ediciones Lulú. ISBN 978-1-4477-1113-1. <a href="https://www.lulu.com/es/shop/diego-jos%C3%A9-pedregal-tercero/macroeconom%C3%ADa/paperback/product-12vngrz8.html?page=1&amp;pageSize=4" target="_blank">Enlace</a>.</p>
 <p>Pedregal, D.J.(2016). Economía para ingenieros, Ediciones Lulú. ISBN 978-1-326-73331-5. <a href="https://www.lulu.com/es/shop/diego-j-pedregal-tercero/econom%C3%ADa-para-ingenieros/paperback/product-14rgv4m5.html?q=pedregal&amp;page=1&amp;pageSize=4" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). ¿Pagas muchos o pocos impuestos? [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=a3a33HZ-KuQ" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). ¿Estudias o trabajas? [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=qJHrdXwlaTw" target="_blank">Enlace</a>.</p>
+<p>Pedregal, D.J. (2024). Las empresas españolas en pocos gráficos [Archivo de vídeo]. Youtube. <a href="https://www.youtube.com/watch?v=w-RaQy01d-0" target="_blank">Enlace</a>.</p>
 <p>Trapero, J.R., García, F.P., Pedregal, D.J. (2013). Dirección y Gestión Empresarial. Mcgraw-Hill. <a href="https://www.mheducation.es/direccion-y-gestion-empresarial-9788448190385-spain" target="_blank">Enlace</a>.</p>
 <p>Wikipedia (2023). Anexo:Países por PIB según composición del sector. Recuperado el 4 de mayo 2023. <a href="https://es.wikipedia.org/wiki/Anexo:Pa%C3%ADses_por_PIB_seg%C3%BAn_composici%C3%B3n_del_sector" target="_blank">Enlace</a>.</p>
 <p>World Bank Data (2023). GDP per capita (current US$) - Spain. Recuperado el 4 de mayo de 2023. <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=ES" target="_blank">Enlace</a>.</p>
@@ -1093,10 +1153,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1106,8 +1183,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1119,7 +1205,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1163,6 +1372,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1188,6 +1398,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1249,17 +1485,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
+      <a href="./index.html" class="pagination-link" aria-label="Prólogo">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prólogo</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-mercado.html" class="pagination-link">
+      <a href="./02-mercado.html" class="pagination-link" aria-label="Funcionamiento de los mercados">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Funcionamiento de los mercados</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -56,12 +62,42 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -71,12 +107,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-interno.html"><strong>PARTE III: Estrategia y planificación</strong></a></li><li class="breadcrumb-item"><a href="./07-interno.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis interno y externo de la empresa</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-interno.html"><strong>PARTE III: Estrategia y planificación</strong></a></li><li class="breadcrumb-item"><a href="./07-interno.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis interno y externo de la empresa</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -86,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Fundamentos de gestión empresarial para ingenieros</a> 
@@ -195,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -213,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#entorno-general" id="toc-entorno-general" class="nav-link" data-scroll-target="#entorno-general"><span class="header-section-number">7.3.1</span> Entorno general</a></li>
   <li><a href="#entorno-específico" id="toc-entorno-específico" class="nav-link" data-scroll-target="#entorno-específico"><span class="header-section-number">7.3.2</span> Entorno específico</a></li>
   </ul></li>
-  <li><a href="#síntesis-dafo" id="toc-síntesis-dafo" class="nav-link" data-scroll-target="#síntesis-dafo"><span class="header-section-number">7.4</span> Síntesis DAFO</a></li>
+  <li><a href="#análisis-dafo-came" id="toc-análisis-dafo-came" class="nav-link" data-scroll-target="#análisis-dafo-came"><span class="header-section-number">7.4</span> Análisis DAFO-CAME</a></li>
   <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><strong>Referencias</strong></a></li>
   </ul>
 </nav>
@@ -221,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-interno.html"><strong>PARTE III: Estrategia y planificación</strong></a></li><li class="breadcrumb-item"><a href="./07-interno.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis interno y externo de la empresa</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="chap7" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis interno y externo de la empresa</span></span></h1>
 </div>
@@ -236,19 +272,25 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p>Los dos siguientes capítulos versarán sobre estrategia empresarial, que es una disciplina que se ha ido desarrollando desde mediados del siglo XX. Se puede decir que hay un enfoque tradicional, en el que se da una planificación racional con un análisis sistemático de las posibilidades de desarrollo así como del entorno con el fin de conseguir los objetivos. Pero es evidente que este enfoque tradicional choca de frente con muchas experiencias empresariales exitosas que han carecido de tal sistematización en el análisis. Esto hace mucho más fascinante el tema de la estrategia empresarial, puesto que es una mezcla de análisis de la realidad, talento personal y oportunidad en la toma de decisiones.</p>
 <p>El entorno cambiante en el que se desarrollan las empresas, cada vez a mayor velocidad, obliga a las mismas a tratar de dar respuestas a qué factores son los determinantes para desempeñar con eficacia y eficiencia sus funciones, o simplemente sobrevivir.</p>
 <p>La definición clásica del concepto de <strong>estrategia</strong> se debe a Andrews (1965), que lo definió como el patrón de los principales objetivos, propósitos o metas y las políticas y planes esenciales para lograrlos, establecidos de tal manera que definan en qué clase de negocio la empresa está o quiere estar y qué clase de empresa es o quiere ser. La estrategia comprende todo un conjunto de actividades a largo plazo.</p>
 <p>Es evidente que un aspecto fundamental de la estrategia es la relación de la empresa con su entorno, de forma que aquella es determinada por este, pero que a la vez la empresa también determina al propio entorno. En este esfuerzo nada sencillo por sobrevivir o imponerse al ambiente reinante la empresa acaba mejorando en muchos aspectos, por ejemplo, siendo más competitiva, hecho que se suele reflejar en una mayor rentabilidad.</p>
-<p>El esquema general de la planificación estratégica se puede resumir según el esquema de la <a href="#fig-fig71">Figura&nbsp;<span>7.1</span></a>. En primer lugar habrá que concretar la misión, visión y objetivos de la empresa. Se continuará con un análisis interno y externo pormenorizado que se concretará en la matriz de debilidades, amenazas, fortalezas y oportunidades (DAFO), que dará una visión general de las posibilidades que tiene un negocio de prosperar. Pasada positivamente esta fase se formularán estrategias para conseguir los objetivos. Finalmente se concretará todo en un plan y calendario de implantación</p>
+<p>El esquema general de la planificación estratégica se puede resumir según el esquema de la <a href="#fig-fig71" class="quarto-xref">Figura&nbsp;<span>7.1</span></a>. En primer lugar habrá que concretar la misión, visión y objetivos de la empresa. Se continuará con un análisis interno y externo pormenorizado que se concretará en la matriz de debilidades, amenazas, fortalezas y oportunidades (DAFO), que dará una visión general de las posibilidades que tiene un negocio de prosperar. Pasada positivamente esta fase se formularán estrategias para conseguir los objetivos. Finalmente se concretará todo en un plan y calendario de implantación</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig71" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig71.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;7.1: Esquema de planificación estratégica.</figcaption>
+<div id="fig-fig71" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig71-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig71.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig71-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.1: Esquema de planificación estratégica.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -340,18 +382,22 @@ Más misiones y visiones
 <p>El análisis interno pretende evaluar de forma realista las fortalezas y debilidades de la organización en relación con sus competidores para desarrollar su actividad de forma competitiva. Para ello existen diversas herramientas complementarias, entre las que destacan la <strong>cadena de valor</strong>, el <strong>benchmarking</strong>, el <strong>perfil estratégico</strong> y la <strong>matriz crecimiento-cuota de mercado</strong>, el <strong>análisis de recursos y capacidades</strong>, el análisis de brechas (<strong>GAP</strong>), análisis <strong>VRIO</strong> (valor, rareza, imitabilidad, organización), evaluación de la capacidad organizacional (<strong>OCAT</strong>), etc.</p>
 <section id="cadena-de-valor" class="level3" data-number="7.2.1">
 <h3 data-number="7.2.1" class="anchored" data-anchor-id="cadena-de-valor"><span class="header-section-number">7.2.1</span> Cadena de valor</h3>
-<p>Una de las herramientas más populares es la cadena de valor propuesta por Michael Porter (no confundir con <em>cadena de suministro</em>), que considera a la empresa como un proceso secuencial de actividades para crear valor. El valor se puede medir de forma empírica como la cantidad que están dispuestos a pagar los clientes por el producto o servicio. Las actividades están destinadas a satisfacer las necesidades de los clientes y son de dos tipos. Las primarias son aquellas relacionadas directamente con la producción y son la logística interna y externa, producción, marketing y ventas y servicios del producto (ver <a href="#fig-figFlecha">Figura&nbsp;<span>7.2</span></a>). Las actividades de apoyo o soporte sustentan las actividades primarias y son las compras, el desarrollo de tecnología, la gestión de recursos humanos y la gestión de las infraestructuras.</p>
+<p>Una de las herramientas más populares es la cadena de valor propuesta por Michael Porter (no confundir con <em>cadena de suministro</em>), que considera a la empresa como un proceso secuencial de actividades para crear valor. El valor se puede medir de forma empírica como la cantidad que están dispuestos a pagar los clientes por el producto o servicio. Las actividades están destinadas a satisfacer las necesidades de los clientes y son de dos tipos. Las primarias son aquellas relacionadas directamente con la producción y son la logística interna y externa, producción, marketing y ventas y servicios del producto (ver <a href="#fig-figFlecha" class="quarto-xref">Figura&nbsp;<span>7.2</span></a>). Las actividades de apoyo o soporte sustentan las actividades primarias y son las compras, el desarrollo de tecnología, la gestión de recursos humanos y la gestión de las infraestructuras.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-figFlecha" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figFlecha.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;7.2: Cadena de valor. Fuente: Porter, M.E. (1985), Competitive advantage :Creating and sustaining superior performance. Free Press, New York.</figcaption>
+<div id="fig-figFlecha" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figFlecha-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figFlecha.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figFlecha-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.2: Cadena de valor. Fuente: Porter, M.E. (1985), Competitive advantage :Creating and sustaining superior performance. Free Press, New York.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Cada actividad de la cadena de valor se puede dividir en categorías y subcategorías tanto cuanto se consiere oportuno hasta llegar a actividades elementales adecuadas para el análisis de la situación concreta de cada empresa.</p>
+<p>Cada actividad de la cadena de valor se puede dividir en categorías y subcategorías tanto cuanto se considere oportuno hasta llegar a actividades elementales adecuadas para el análisis de la situación concreta de cada empresa.</p>
 <p>Sobre la cadena de valor cabe hacer dos puntualizaciones:</p>
 <ul>
 <li>Además de la cadena de valor, la empresa tiene que tener en cuenta que esta forma parte de un sistema de valor más amplio en el que es fundamental la relación con clientes y proveedores. Por ello es aconsejable analizar la cadena completa, incluyendo las cadenas de proveedores y clientes.</li>
@@ -373,13 +419,17 @@ Cadena de valor de Starbucks
 </section>
 <section id="perfil-estratégico" class="level3" data-number="7.2.2">
 <h3 data-number="7.2.2" class="anchored" data-anchor-id="perfil-estratégico"><span class="header-section-number">7.2.2</span> Perfil estratégico</h3>
-<p>El perfil estratégico de la empresa es otra herramienta útil para detectar las fortalezas y debilidades de la empresa frente a la competencia. Se trata de elaborar una lista de variables para las áreas funcionales de la empresa, darles una valoración lo más objetivamente posible a la empresa y la competencia (normalmente en una escala Likert con cinco posibilidades) e interpretar el perfil. Normalmente se representa con una línea continua y la competencia con línea discontinua, como en la <a href="#fig-figEstra">Figura&nbsp;<span>7.3</span></a>.</p>
+<p>El perfil estratégico de la empresa es otra herramienta útil para detectar las fortalezas y debilidades de la empresa frente a la competencia. Se trata de elaborar una lista de variables para las áreas funcionales de la empresa, darles una valoración lo más objetivamente posible a la empresa y la competencia (normalmente en una escala Likert con cinco posibilidades) e interpretar el perfil. Normalmente se representa con una línea continua y la competencia con línea discontinua, como en la <a href="#fig-figEstra" class="quarto-xref">Figura&nbsp;<span>7.3</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-figEstra" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figEstra.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;7.3: Perfil estratégico de la empresa.</figcaption>
+<div id="fig-figEstra" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figEstra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figEstra.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figEstra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.3: Perfil estratégico de la empresa.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -413,31 +463,39 @@ Cadena de valor de Starbucks
 </section>
 <section id="análisis-externo" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="análisis-externo"><span class="header-section-number">7.3</span> Análisis externo</h2>
-<p>Es evidente que el éxito de la empresa depende de las debilidades y fortalezas propias, pero también va a depender del ambiente exterior en el que se desenvuelve. La misma empresa en un ambiente adverso producirá resultados inferiores sin ninguna duda. Por tanto, el análisis externo también es de gran importancia. En la <a href="#fig-fig719">Figura&nbsp;<span>7.4</span></a> se muestra la distinción entre el <strong>entorno general</strong>, que es todo aquello que afecta a la empresa de forma global y el <strong>entorno específico</strong> que tienen que ver con el sector industrial en el que desarrolla su actividad y las fuerzas competitivas a las que está sometida.</p>
+<p>Es evidente que el éxito de la empresa depende de las debilidades y fortalezas propias, pero también va a depender del ambiente exterior en el que se desenvuelve. La misma empresa en un ambiente adverso producirá resultados inferiores sin ninguna duda. Por tanto, el análisis externo también es de gran importancia. En la <a href="#fig-fig719" class="quarto-xref">Figura&nbsp;<span>7.4</span></a> se muestra la distinción entre el <strong>entorno general</strong>, que es todo aquello que afecta a la empresa de forma global y el <strong>entorno específico</strong> que tienen que ver con el sector industrial en el que desarrolla su actividad y las fuerzas competitivas a las que está sometida.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig719" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig719.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;7.4: Esquema de ambiente externo.</figcaption>
+<div id="fig-fig719" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig719-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig719.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig719-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.4: Esquema de ambiente externo.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <section id="entorno-general" class="level3" data-number="7.3.1">
 <h3 data-number="7.3.1" class="anchored" data-anchor-id="entorno-general"><span class="header-section-number">7.3.1</span> Entorno general</h3>
-<p>Para el entorno general se suele utilizar el <strong>análisis PESTEL</strong>, que es un acrónimo para el contexto político, económico, socio-cultural, tecnológico, ecológico y legal. En la <a href="#fig-fig720">Figura&nbsp;<span>7.5</span></a> se muestran ejemplos de aspectos a estudiar dentro de cada apartado.</p>
+<p>Para el entorno general se suele utilizar el <strong>análisis PESTEL</strong>, que es un acrónimo para el contexto político, económico, socio-cultural, tecnológico, ecológico y legal. En la <a href="#fig-fig720" class="quarto-xref">Figura&nbsp;<span>7.5</span></a> se muestran ejemplos de aspectos a estudiar dentro de cada apartado.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-fig720" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig720.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;7.5: Esquema de ambiente externo.</figcaption>
+<div id="fig-fig720" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig720-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig720.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig720-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.5: Esquema de ambiente externo.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Dado un caso concreto, se puede realizar un perfil estratégico similar al del análisis interno de la <a href="#fig-figEstra">Figura&nbsp;<span>7.3</span></a> en el que se puntúa una lista de ítems dentro de cada uno de los contextos.</p>
+<p>Dado un caso concreto, se puede realizar un perfil estratégico similar al del análisis interno de la <a href="#fig-figEstra" class="quarto-xref">Figura&nbsp;<span>7.3</span></a> en el que se puntúa una lista de ítems dentro de cada uno de los contextos.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -455,12 +513,16 @@ Ejemplos
 </section>
 <section id="entorno-específico" class="level3" data-number="7.3.2">
 <h3 data-number="7.3.2" class="anchored" data-anchor-id="entorno-específico"><span class="header-section-number">7.3.2</span> Entorno específico</h3>
-<p>El análisis del entorno específico pretende determinar las amenazas y oportunidades a las que está sometida una empresa concreta. Aquí juegan un papel determinante las empresas competidoras que ofrecen bienes o servicios sustitutivos perfectos o imperfectos. Por ello es de suma importancia delimitar y analizar de la competencia mediante una sencilla tabla como se muestra en la <a href="#tbl-tab71">Tabla&nbsp;<span>7.1</span></a>. Es evidente que esta tabla va a mostrar rápidamente el contexto económico en el que se desenvuelve la empresa.</p>
+<p>El análisis del entorno específico pretende determinar las amenazas y oportunidades a las que está sometida una empresa concreta. Aquí juegan un papel determinante las empresas competidoras que ofrecen bienes o servicios sustitutivos perfectos o imperfectos. Por ello es de suma importancia delimitar y analizar de la competencia mediante una sencilla tabla como se muestra en la <a href="#tbl-tab71" class="quarto-xref">Tabla&nbsp;<span>7.1</span></a>. Es evidente que esta tabla va a mostrar rápidamente el contexto económico en el que se desenvuelve la empresa.</p>
 <div class="cell">
+<div id="tbl-tab71" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tab71-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;7.1: Análisis de la competencia.
+</figcaption>
+<div aria-describedby="tbl-tab71-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-tab71" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;7.1: Análisis de la competencia.</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 11%">
@@ -516,14 +578,20 @@ Ejemplos
 </table>
 </div>
 </div>
+</figure>
 </div>
-<p>Otra herramienta muy utilizada es el <strong>modelo de las cinco fuerzas de Porter</strong>, representada esquemáticamente en la <a href="#fig-figPorter">Figura&nbsp;<span>7.6</span></a>.</p>
+</div>
+<p>Otra herramienta muy utilizada es el <strong>modelo de las cinco fuerzas de Porter</strong>, representada esquemáticamente en la <a href="#fig-figPorter" class="quarto-xref">Figura&nbsp;<span>7.6</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-figPorter" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figPorter.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;7.6: Esquema de las cinco fuerzas de Porter.</figcaption>
+<div id="fig-figPorter" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figPorter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figPorter.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figPorter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.6: Esquema de las cinco fuerzas de Porter.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -557,49 +625,67 @@ Ejemplos
 <!-- La apuesta de Iberdrola por Brasil tiene fundamento. Según las previsiones del grupo, la demanda eléctrica en América Latina registrará un aumento entre 2008 y 2035 del 65% frente al 15% de EEUU y el 17% de Europa, mercados ya maduros -->
 </section>
 </section>
-<section id="síntesis-dafo" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="síntesis-dafo"><span class="header-section-number">7.4</span> Síntesis DAFO</h2>
-<p>La matriz DAFO (debilidades, amenazas, fortalezas y oportunidades, ver <a href="#fig-figDAFO">Figura&nbsp;<span>7.7</span></a>) proporciona una síntesis del análisis interno que analizaba las fortalezas y debilidades y del externo encargado de determinar las amenazas y oportunidades en una única herramienta que nos permite de un vistazo evaluar la situación estratégica de la empresa.</p>
+<section id="análisis-dafo-came" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="análisis-dafo-came"><span class="header-section-number">7.4</span> Análisis DAFO-CAME</h2>
+<p>La matriz DAFO (debilidades, amenazas, fortalezas y oportunidades, ver <a href="#fig-figDAFO" class="quarto-xref">Figura&nbsp;<span>7.7</span></a>) proporciona una síntesis del análisis interno que analizaba las fortalezas y debilidades y del externo encargado de determinar las amenazas y oportunidades en una única herramienta que nos permite de un vistazo evaluar la situación estratégica de la empresa.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-figDAFO" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figDAFO.png" class="img-fluid figure-img" style="width:40.0%"></p>
-<figcaption class="figure-caption">Figura&nbsp;7.7: Matriz DAFO.</figcaption>
+<div id="fig-figDAFO" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figDAFO-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figDAFO.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figDAFO-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.7: Matriz DAFO.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>La matriz DAFO en sí solo proporciona un listado de factores internos y externos que afectan a la posición competitiva de la empresa, pero su utilidad está en que nos sirve para comenzar a plantear opciones estratégicas que aprovechen las fortalezas y las oportunidades, a la vez que protejan de las amenazas y tratar corrijan las debilidades. De la combinación de los factores internos con los externos se puede obtener una matriz como la de la <a href="#tbl-tab72">Tabla&nbsp;<span>7.2</span></a>, en la que se pueden ver distintos tipos de estrategias.</p>
-<div class="cell">
+<p>El análisis CAME es una metodología que se basa en los datos obtenidos del análisis DAFO para llevar a cabo un plan estratégico. El nombre CAME es un acrónimo de las acciones aplicables: corregir, adaptar, mantener y explotar.</p>
+<p>El análisis CAME también puede expresarse gráficamente con la ayuda de una matriz <span class="math inline">\(2\times2\)</span> (ver <a href="#fig-figCAME" class="quarto-xref">Figura&nbsp;<span>7.8</span></a>), con los cuadrantes que se corresponden a un tipo de estrategia y están condicionadas por los datos recogidos en el análisis DAFO.</p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="tbl-tab72" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Tabla&nbsp;7.2: Opciones estratégicas.</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: center;">Fortalezas</th>
-<th style="text-align: center;">Debilidades</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>Oportunidades</strong></td>
-<td style="text-align: center;">OFENSIVAS</td>
-<td style="text-align: center;">REORIENTACIÓN</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Amenazas</strong></td>
-<td style="text-align: center;">DEFENSIVAS</td>
-<td style="text-align: center;">SUPERVIVENCIA</td>
-</tr>
-</tbody>
-</table>
+<div id="fig-figCAME" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figCAME-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figCAME.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figCAME-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.8: Matriz CAME.
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-<p>Así, las estrategias ofensivas surgirán para utilizar las fortalezas para aprovechar las oportunidades. Serán necesarias estrategias de reorientación para aprovechar las oportunidades pero superando las debilidades. Las estrategias defensivas serán necesarias para resistir las amenazas aprovechando las fortalezas. Finalmente, las estrategias de supervivencia son el único remedio para intentar reducir las debilidades internas y evitar las amenazas al mismo tiempo.</p>
+<p>Acciones en el análisis CAME:</p>
+<ul>
+<li>Corregir: aborda las debilidades internas. Se implementan planes de acción para reforzar estructuras y estrategias internas.</li>
+<li>Afrontar: enfrenta las amenazas externas. Se estudian los peligros y se aplican medidas para evitar que una amenaza se convierta en una debilidad.</li>
+<li>Mantener: protege las fortalezas internas. Se busca mantener una posición privilegiada en el mercado.</li>
+<li>Explorar: aprovecha las oportunidades externas. Diseña estrategias para aprovechar al máximo las oportunidades.</li>
+</ul>
+<p>Las estrategias que se derivan del análisis CAME son las siguientes:</p>
+<ul>
+<li><strong>Estrategia ofensiva</strong>: combina las <strong>fortalezas</strong> y <strong>oportunidades</strong> de la empresa o negocio. Es recomendable para aquellas empresas que tienen un elemento diferenciador muy competitivo y enfrentan poca competencia en el mercado.</li>
+<li><strong>Estrategia defensiva</strong>: se basa en mantener las <strong>fortalezas</strong> y enfrentar las <strong>amenazas</strong> de la empresa o negocio para mantener su posición de liderazgo.</li>
+<li><strong>Estrategia de reorientación</strong>: relevante para combatir situaciones de debilidad de la empresa. Si aún es posible evitar un fracaso, esta estrategia se enfoca en explorar <strong>oportunidades</strong> de negocio que ayuden a corregir las <strong>debilidades</strong> de la empresa.</li>
+<li><strong>Estrategia de supervivencia</strong>: apropiada para empresas en sectores cada vez más debilitados y que necesitan mantenerse a flote. Aquí es necesario buscar soluciones que corrijan las <strong>debilidades</strong> de la empresa mientras se enfrentan las <strong>amenazas</strong> externas.</li>
+</ul>
+<!-- La matriz DAFO en sí solo proporciona un listado de factores internos y externos que afectan a la posición competitiva de la empresa, pero su utilidad está en que nos sirve para comenzar a plantear opciones estratégicas que aprovechen las fortalezas y las oportunidades, a la vez que protejan de las amenazas y tratar corrijan las debilidades. De la combinación de los factores internos con los externos se puede obtener una matriz como la de la @tbl-tab72, en la que se pueden ver distintos tipos de estrategias. -->
+<!-- ```{r tbl-tab72, echo=FALSE} -->
+<!-- #| tbl-cap: Opciones estratégicas. -->
+<!-- table72 = rbind(c("OFENSIVAS", "REORIENTACIÓN"), -->
+<!--                 c("DEFENSIVAS", "SUPERVIVENCIA")) -->
+<!-- colnames(table72) = c("Fortalezas", "Debilidades") -->
+<!-- rownames(table72) = c("**Oportunidades**", "**Amenazas**") -->
+<!-- knitr::kable( -->
+<!--   head(table72, nrow(table72)), -->
+<!--   booktabs = TRUE, -->
+<!--   align = "cc", -->
+<!-- ) -->
+<!-- ``` -->
+<!-- Así, las estrategias ofensivas surgirán para utilizar las fortalezas para aprovechar las oportunidades. Serán necesarias estrategias de reorientación para aprovechar las oportunidades pero superando las debilidades. Las estrategias defensivas serán necesarias para resistir las amenazas aprovechando las fortalezas. Finalmente, las estrategias de supervivencia son el único remedio para intentar reducir las debilidades internas y evitar las amenazas al mismo tiempo. -->
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -610,7 +696,7 @@ Análisis DAFO de Amazon y otros
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>En <a href="https://modelo-canvas.com/analisis-foda-amazon/" target="_blank">este enlace</a> puedes consultar un análisis DAFO de Amazon. <a href="https://blog.hubspot.es/sales/como-hacer-analisis-dafo" target="_blank">Aquí</a> tienes otros ejemplos.</p>
+<p>En <a href="https://modelo-canvas.com/analisis-foda-amazon/" target="_blank">este enlace</a> puedes consultar un análisis DAFO de Amazon, y en <a href="https://coggle.it/diagram/YzLfmUCwZkiU3Um8/t/caso-amazon" target="_blank">este otro</a> tienes un análisis combinado DAFO-CAME. <a href="https://blog.hubspot.es/sales/como-hacer-analisis-dafo" target="_blank">Aquí</a> tienes otros ejemplos.</p>
 </div>
 </div>
 <!-- DAFO Amazon: -->
@@ -621,6 +707,7 @@ Análisis DAFO de Amazon y otros
 <section id="referencias" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="referencias"><strong>Referencias</strong></h2>
 <p>Andrews, K. A. (1965). Business Policy: Text and Cases. Homewood: Irwin.</p>
+<p>Coggle (2024). Diagrama DAFO-CAME de Amazon. Recuperado el 20 de mayo de 2024. <a href="https://www.coggle.it/diagram/YzLfmUCwZkiU3Um8/t/caso-amazon" target="_blank">Enlace</a>.</p>
 <p>Dispatchtrack (2023). Cadena de valor de Starbucks. Recuperado el 18 de mayo de 2023. <a href="https://www.beetrack.com/es/blog/cadena-de-valor-starbucks" target="_blank">Enlace</a>.</p>
 <p>Economipedia (2023). Resultados de visión y misión. Recuperado el 18 de mayo de 2023. <a href="https://economipedia.com/?s=visi%C3%B3n+y+misi%C3%B3n" target="_blank">Enlace</a>.</p>
 <p>Guerras Martín, L.A. y Navas, J.E. (2022), La dirección estratégica de la empresa. Teoría y aplicaciones, 6ª edición, Thomson Reuters.</p>
@@ -715,10 +802,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -728,8 +832,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -741,7 +854,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -785,6 +1021,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -810,6 +1047,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -871,17 +1134,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06-inversiones.html" class="pagination-link">
+      <a href="./06-inversiones.html" class="pagination-link" aria-label="Análisis de inversiones y financiación">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Análisis de inversiones y financiación</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./08-estrategia.html" class="pagination-link">
+      <a href="./08-estrategia.html" class="pagination-link" aria-label="Estrategias y ventajas competitivas">
         <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Estrategias y ventajas competitivas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
