@@ -1,3 +1,6 @@
-# LibroGE
+# Libro de Fundamentos de Gestión Empresarial de la ETSI Industrial de Ciudad Real, UCLM
 
-Dirección WEB: https://djpedregal.github.io/LibroGE/
+
+
+https://djpedregal.github.io/LibroGE/
+
